@@ -1,0 +1,24 @@
+title = "NOTHING"
+description = "Developer & Creator" 
+base_url = "https://github.com/NOTHING-R/the_blog.git"
+
+compile_sass = true
+minify_html = true
+build_search_index = false
+
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+render_emoji = false
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = true
+
+[extra]
+name = "NOTHING"
+bio = "I don't speak, I operate a machine called language. It creaks and groans, but is mine own."
+email = "hello@nothing.dev"
+github = "nothing" 
+twitter = "nothing"
+linkedin = "nothing"

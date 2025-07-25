@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="projects-header">
+    <h1>Projects</h1>
+    <p>{{ section.content | safe }}</p>
+</div>
+
+<div class="projects-grid">
+    {% for page in section.pages %}
+    <div class="project-card">
+        <h3 class="project-title">
+            {% if page.extra.link %}
+            <a href="{{ page.extra.link }}" target="_blank" rel="noopener">{{ page.title }}</a>
+            {% else %}
+            {{ page.title }}
+            {% endif %}
+        </h3>
+        <p class="project-description">{{ page.description }}</p>
+        {% if page.extra.tech %}
+        <div class="tech-tags">
+            {% for tech in page.extra.tech %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

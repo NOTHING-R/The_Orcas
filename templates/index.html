@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1 class="name">{{ config.extra.name }}</h1>
+    <p class="bio">{{ config.extra.bio }}</p>
+    
+    <div class="links">
+        {% if config.extra.github %}
+        <a href="https://github.com/{{ config.extra.github }}" target="_blank" rel="noopener" class="link">github</a>
+        {% endif %}
+        {% if config.extra.email %}
+        <a href="mailto:{{ config.extra.email }}" class="link">email</a>
+        {% endif %}
+        {% if config.extra.twitter %}
+        <a href="https://twitter.com/{{ config.extra.twitter }}" target="_blank" rel="noopener" class="link">twitter</a>
+        {% endif %}
+        {% if config.extra.linkedin %}
+        <a href="https://linkedin.com/in/{{ config.extra.linkedin }}" target="_blank" rel="noopener" class="link">linkedin</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
