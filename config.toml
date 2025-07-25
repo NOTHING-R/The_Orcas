@@ -1,24 +1,43 @@
-title = "NOTHING"
-description = "Developer & Creator" 
+# Basic site configuration
 base_url = "https://nothing-r.github.io/the_blog/"
+title = "The_Orcas"
+description = "Thoughts, tutorials, and insights on technology and cybersecurity"
 
+# Language and timezone
+default_language = "en"
+
+# Build settings
 compile_sass = true
-minify_html = true
-build_search_index = false
+build_search_index = true
+generate_feeds = true
 
+# Markdown configuration
 [markdown]
 highlight_code = true
 highlight_theme = "base16-ocean-dark"
-render_emoji = false
+render_emoji = true
 external_links_target_blank = true
 external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
 
+# Extra configuration for your site
 [extra]
-name = "NOTHING"
+# Your username/handle that appears in the header
+username = "The_Orcas"
+
+# Your bio text that appears on the homepage
 bio = "I don't speak, I operate a machine called language. It creaks and groans, but is mine own."
-email = "hello@nothing.dev"
-github = "nothing" 
-twitter = "nothing"
-linkedin = "nothing"
+
+# Social links
+github_url = "https://github.com/yourusername"  # Optional: add your GitHub URL
+
+# Taxonomy configuration
+# Taxonomy configuration
+[[taxonomies]]
+name = "tags"
+paginate_by = 10
+
+[[taxonomies]]
+name = "categories"
+paginate_by = 10

@@ -1,7 +1,11 @@
 +++
-title = "Blog"
-template = "blog.html"
+title = "blog"
+description = "Thoughts, tutorials, and insights on technology and cybersecurity"
 sort_by = "date"
-+++
+template = "section.html"
+page_template = "page.html"
 
-Thoughts, technical writings, and life updates.
+[extra]
+intro = "Whenever I find a grain of time between my occupations, I write. Thus, this blog was born."
+posts_title = "Recent posts"
++++

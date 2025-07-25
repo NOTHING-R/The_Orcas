@@ -2,22 +2,16 @@
 
 {% block content %}
 <div class="hero">
-    <h1 class="name">{{ config.extra.name }}</h1>
-    <p class="bio">{{ config.extra.bio }}</p>
+    <div class="ascii-art">
+        <div class="main-symbol">
+            <span class="number">1</span>
+            <span class="hash">#</span>
+            <span class="zero">0</span>
+        </div>
+    </div>
     
-    <div class="links">
-        {% if config.extra.github %}
-        <a href="https://github.com/{{ config.extra.github }}" target="_blank" rel="noopener" class="link">github</a>
-        {% endif %}
-        {% if config.extra.email %}
-        <a href="mailto:{{ config.extra.email }}" class="link">email</a>
-        {% endif %}
-        {% if config.extra.twitter %}
-        <a href="https://twitter.com/{{ config.extra.twitter }}" target="_blank" rel="noopener" class="link">twitter</a>
-        {% endif %}
-        {% if config.extra.linkedin %}
-        <a href="https://linkedin.com/in/{{ config.extra.linkedin }}" target="_blank" rel="noopener" class="link">linkedin</a>
-        {% endif %}
+    <div class="intro-text">
+        <p>{{ config.extra.bio | default(value="I don't speak, I operate a machine called language. It creaks and groans, but is mine own.") }}</p>
     </div>
 </div>
 {% endblock content %}

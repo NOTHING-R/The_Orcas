@@ -7,37 +7,81 @@
         <loc>https://nothing-r.github.io/the_blog/blog/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/life/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/welcome/</loc>
+        <lastmod>2025-01-25</lastmod>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/tech/</loc>
+        <loc>https://nothing-r.github.io/the_blog/categories/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/tech/first-post/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://nothing-r.github.io/the_blog/tags/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/whoami/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/blog/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/writeups/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/blog/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/command-line/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/project-1/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/command-line/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/project-2/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/ctf/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/project-3/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/ctf/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/project-4/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/introduction/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/projects/project-5/</loc>
+        <loc>https://nothing-r.github.io/the_blog/tags/introduction/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/linux/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/linux/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/sql-injection/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/sql-injection/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/tutorial/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/tutorial/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/web-security/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/web-security/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/welcome/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tags/welcome/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tech/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/tech/linux-basic/</loc>
+        <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/writeups/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/the_blog/writeups/sample-ctf/</loc>
+        <lastmod>2025-01-15</lastmod>
     </url>
 </urlset>

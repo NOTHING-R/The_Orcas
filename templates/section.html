@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="back-nav">
+    <a href="javascript:history.back()" class="back-link">../</a>
+</div>
+
+<div class="section-header">
+    <h1>{{ section.title | default(value=section.components | last) }}</h1>
+    {% if section.description %}
+    <p class="section-description">{{ section.description }}</p>
+    {% endif %}
+</div>
+
+{% if section.extra.intro %}
+<div class="section-intro">
+    <p>{{ section.extra.intro }}</p>
+</div>
+{% endif %}
+
+{% if section.pages %}
+<div class="posts-list">
+    <h2>{{ section.extra.posts_title | default(value="Technical writing") }}</h2>
+    {% for page in section.pages %}
+    <div class="post-item">
+        <span class="post-date">{{ page.date | date(format="%Y.%m.%d") }}</span>
+        <span class="post-separator"> - </span>
+        <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if section.subsections %}
+<div class="subsections">
+    {% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+    <div class="subsection-item">
+        <a href="{{ subsection.permalink }}">{{ subsection.title }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock content %}

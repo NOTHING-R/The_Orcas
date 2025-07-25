@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="section-header">
+    <h1 class="section-title">{{ taxonomy.name | title }}</h1>
+    <p class="section-description">All {{ taxonomy.name }} used on this blog</p>
+</div>
+
+<div class="tags-cloud">
+    {% for term in terms %}
+        <a href="{{ term.permalink }}" class="tag-link">
+            <span class="tag-name">{{ term.name }}</span>
+            <span class="tag-count">({{ term.pages | length }})</span>
+        </a>
+    {% endfor %}
+</div>
+
+<style>
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tag-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-bg, #36393f);
+    color: var(--text-color, #dcddde);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid var(--border-color, #484c52);
+    transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+    border-color: var(--accent-color, #c478ff);
+    transform: translateY(-2px);
+}
+
+.tag-name {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color, #c478ff);
+}
+
+.tag-count {
+    font-size: 0.8em;
+    color: var(--text-muted, #b5bac1);
+}
+</style>
+{% endblock content %}
