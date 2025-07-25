@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://nothing-r.github.io/the_blog/sitemap.xml
