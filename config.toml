@@ -1,6 +1,6 @@
 title = "NOTHING"
 description = "Developer & Creator" 
-base_url = "https://github.com/NOTHING-R/the_blog.git"
+base_url = "https://github.com/NOTHING-R/the_blog.git/"
 
 compile_sass = true
 minify_html = true
