@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/</loc>
+        <loc>https://nothing-r.github.io/the_blog/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/life/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/life/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/tech/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/tech/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/tech/first-post/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/tech/first-post/</loc>
         <lastmod>2024-01-15</lastmod>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/whoami/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/whoami/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/blog/writeups/</loc>
+        <loc>https://nothing-r.github.io/the_blog/blog/writeups/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/project-1/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/project-1/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/project-2/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/project-2/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/project-3/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/project-3/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/project-4/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/project-4/</loc>
     </url>
     <url>
-        <loc>https://github.com/NOTHING-R/the_blog.git/projects/project-5/</loc>
+        <loc>https://nothing-r.github.io/the_blog/projects/project-5/</loc>
     </url>
 </urlset>

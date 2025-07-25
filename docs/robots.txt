@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://github.com/NOTHING-R/the_blog.git/sitemap.xml
+Sitemap: https://nothing-r.github.io/the_blog/sitemap.xml
