@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://nothing-r.github.io/the_blog/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/blog/welcome/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/welcome/</loc>
         <lastmod>2025-01-25</lastmod>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/categories/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/categories/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/blog/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/blog/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/blog/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/blog/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/command-line/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/command-line/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/command-line/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/command-line/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/ctf/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/ctf/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/introduction/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/introduction/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/introduction/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/introduction/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/linux/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/linux/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/linux/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/linux/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/sql-injection/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/sql-injection/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/tutorial/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/tutorial/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/tutorial/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/tutorial/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/web-security/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/web-security/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/welcome/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/welcome/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tags/welcome/page/1/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tags/welcome/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tech/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tech/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/tech/linux-basic/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/tech/linux-basic/</loc>
         <lastmod>2025-01-20</lastmod>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/writeups/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/writeups/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/the_blog/writeups/sample-ctf/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/</loc>
         <lastmod>2025-01-15</lastmod>
     </url>
 </urlset>

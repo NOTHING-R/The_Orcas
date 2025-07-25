@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>The_Orcas</title>
     <subtitle>Thoughts, tutorials, and insights on technology and cybersecurity</subtitle>
-    <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/the_blog/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://nothing-r.github.io/the_blog/"/>
+    <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-01-25T00:00:00+00:00</updated>
-    <id>https://nothing-r.github.io/the_blog/atom.xml</id>
+    <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
     <entry xml:lang="en">
         <title>Welcome to The_Orcas Blog</title>
         <published>2025-01-25T00:00:00+00:00</published>
@@ -20,10 +20,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/the_blog/blog/welcome/"/>
-        <id>https://nothing-r.github.io/the_blog/blog/welcome/</id>
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/welcome/"/>
+        <id>https://nothing-r.github.io/The_Orcas/blog/welcome/</id>
         
-        <content type="html" xml:base="https://nothing-r.github.io/the_blog/blog/welcome/">&lt;h1 id=&quot;welcome-to-the-orcas-blog&quot;&gt;Welcome to The_Orcas Blog&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/welcome/">&lt;h1 id=&quot;welcome-to-the-orcas-blog&quot;&gt;Welcome to The_Orcas Blog&lt;&#x2F;h1&gt;
 &lt;p&gt;Hi there! Welcome to my corner of the internet. I’m The_Orcas, and this is where I share my thoughts, discoveries, and experiences in the world of technology and cybersecurity.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-you-ll-find-here&quot;&gt;What You’ll Find Here&lt;&#x2F;h2&gt;
 &lt;p&gt;This blog is divided into several sections:&lt;&#x2F;p&gt;
@@ -55,10 +55,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/the_blog/tech/linux-basic/"/>
-        <id>https://nothing-r.github.io/the_blog/tech/linux-basic/</id>
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/tech/linux-basic/"/>
+        <id>https://nothing-r.github.io/The_Orcas/tech/linux-basic/</id>
         
-        <content type="html" xml:base="https://nothing-r.github.io/the_blog/tech/linux-basic/">&lt;h1 id=&quot;linux-command-line-essentials&quot;&gt;Linux Command Line Essentials&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/tech/linux-basic/">&lt;h1 id=&quot;linux-command-line-essentials&quot;&gt;Linux Command Line Essentials&lt;&#x2F;h1&gt;
 &lt;p&gt;The Linux command line is a powerful tool that every developer and cybersecurity professional should master. Here are some essential commands that will make your life easier.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;file-and-directory-operations&quot;&gt;File and Directory Operations&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;navigation&quot;&gt;Navigation&lt;&#x2F;h3&gt;
@@ -142,10 +142,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/the_blog/writeups/sample-ctf/"/>
-        <id>https://nothing-r.github.io/the_blog/writeups/sample-ctf/</id>
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/"/>
+        <id>https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/</id>
         
-        <content type="html" xml:base="https://nothing-r.github.io/the_blog/writeups/sample-ctf/">&lt;h1 id=&quot;ctf-challenge-web-exploitation-basics&quot;&gt;CTF Challenge: Web Exploitation Basics&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/">&lt;h1 id=&quot;ctf-challenge-web-exploitation-basics&quot;&gt;CTF Challenge: Web Exploitation Basics&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;challenge-description&quot;&gt;Challenge Description&lt;&#x2F;h2&gt;
 &lt;p&gt;The challenge presented a simple login form with the following message:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
