@@ -7,6 +7,10 @@
         <loc>https://nothing-r.github.io/The_Orcas/blog/</loc>
     </url>
     <url>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/install/</loc>
+        <lastmod>2025-07-27</lastmod>
+    </url>
+    <url>
         <loc>https://nothing-r.github.io/The_Orcas/blog/welcome/</loc>
         <lastmod>2025-01-25</lastmod>
     </url>
@@ -17,34 +21,10 @@
         <loc>https://nothing-r.github.io/The_Orcas/tags/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/blog/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/blog/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/command-line/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/command-line/page/1/</loc>
-    </url>
-    <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/introduction/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/introduction/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/linux/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/linux/page/1/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/</loc>
@@ -53,22 +33,10 @@
         <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/tutorial/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/tutorial/page/1/</loc>
-    </url>
-    <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/welcome/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/welcome/page/1/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/tech/</loc>

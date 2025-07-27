@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The_Orcas</title>
     <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
 </head>
 <body>
     <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+            <!-- TOC will be injected here from page.html -->
+            
+        </div>
         
         <header>
             <nav>
-                <a href="https://nothing-r.github.io/The_Orcas" class="home-link">The_Orcas</a>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   The_Orcas
+                </a>
                 <div class="nav-links">
-                    <a href="https://nothing-r.github.io/The_Orcas/blog">blog</a>
-                    <a href="https://nothing-r.github.io/The_Orcas/tech">tech</a>
-                    <a href="https://nothing-r.github.io/The_Orcas/writeups">writeups</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="">blog</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/tech" class="">tech</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">writeups</a>
                     
                     <a href="https:&#x2F;&#x2F;github.com&#x2F;yourusername" target="_blank">github</a>
                     
@@ -33,28 +48,8 @@
 
 <div class="tags-cloud">
     
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;blog&#x2F;" class="tag-link">
-            <span class="tag-name">blog</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;command-line&#x2F;" class="tag-link">
-            <span class="tag-name">command-line</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
         <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;ctf&#x2F;" class="tag-link">
             <span class="tag-name">ctf</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;introduction&#x2F;" class="tag-link">
-            <span class="tag-name">introduction</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;linux&#x2F;" class="tag-link">
-            <span class="tag-name">linux</span>
             <span class="tag-count">(1)</span>
         </a>
     
@@ -63,18 +58,8 @@
             <span class="tag-count">(1)</span>
         </a>
     
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;tutorial&#x2F;" class="tag-link">
-            <span class="tag-name">tutorial</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
         <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;web-security&#x2F;" class="tag-link">
             <span class="tag-name">web-security</span>
-            <span class="tag-count">(1)</span>
-        </a>
-    
-        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;tags&#x2F;welcome&#x2F;" class="tag-link">
-            <span class="tag-name">welcome</span>
             <span class="tag-count">(1)</span>
         </a>
     
@@ -119,5 +104,19 @@
 
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

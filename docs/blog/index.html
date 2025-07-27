@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The_Orcas</title>
     <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
 </head>
 <body>
     <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+            <!-- TOC will be injected here from page.html -->
+            
+        </div>
         
         <header>
             <nav>
-                <a href="https://nothing-r.github.io/The_Orcas" class="home-link">The_Orcas</a>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   The_Orcas
+                </a>
                 <div class="nav-links">
-                    <a href="https://nothing-r.github.io/The_Orcas/blog">blog</a>
-                    <a href="https://nothing-r.github.io/The_Orcas/tech">tech</a>
-                    <a href="https://nothing-r.github.io/The_Orcas/writeups">writeups</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="active">blog</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/tech" class="">tech</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">writeups</a>
                     
                     <a href="https:&#x2F;&#x2F;github.com&#x2F;yourusername" target="_blank">github</a>
                     
@@ -26,12 +41,8 @@
 
         <main>
             
-<div class="back-nav">
-    <a href="javascript:history.back()" class="back-link">../</a>
-</div>
-
 <div class="section-header">
-    <h1>blog</h1>
+    <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>blog</h1>
     
     <p class="section-description">Thoughts, tutorials, and insights on technology and cybersecurity</p>
     
@@ -48,6 +59,12 @@
     <h2>Recent posts</h2>
     
     <div class="post-item">
+        <span class="post-date">2025.07.27</span>
+        <span class="post-separator"> - </span>
+        <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;blog&#x2F;install&#x2F;" class="post-title">Emacs Installation Guide: Linux, macOS, and Windows</a>
+    </div>
+    
+    <div class="post-item">
         <span class="post-date">2025.01.25</span>
         <span class="post-separator"> - </span>
         <a href="https:&#x2F;&#x2F;nothing-r.github.io&#x2F;The_Orcas&#x2F;blog&#x2F;welcome&#x2F;" class="post-title">Welcome to The_Orcas Blog</a>
@@ -60,5 +77,19 @@
 
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
