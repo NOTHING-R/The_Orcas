@@ -2,8 +2,6 @@
 title = "Welcome to The_Orcas Blog"
 date = 2025-01-25
 description = "Introduction to my blog and what you can expect to find here"
-[taxonomies]
-tags = ["welcome", "introduction", "blog"]
 +++
 
 # Welcome to The_Orcas Blog

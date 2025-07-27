@@ -6,19 +6,15 @@
 }
 
 body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background-color: #0e1f39;
+    color: #e6edf3;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 14px;
     line-height: 1.6;
     min-height: 100vh;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+
 
 // Header and navigation
 header {
@@ -29,13 +25,24 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 20px 0;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #21262d;
+        position: relative; // Add this for absolute positioning of back nav
         
         .home-link {
-            color: #ff6ec7;
+            color: #a9b6c5;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
+
+                            
+            &:hover {
+                color: #a53131; // Changed to white
+            }
+            
+            &.active {
+                color: #483faf !important; /* Active home link - green */
+                font-weight: bold;
+            }
         }
         
         .nav-links {
@@ -43,15 +50,38 @@ header {
             gap: 30px;
             
             a {
-                color: #e0e0e0;
+                color: #e6edf3;
                 text-decoration: none;
                 transition: color 0.3s ease;
                 
                 &:hover {
-                    color: #ff6ec7;
+                    color: #7172da; // Changed to white
+                }
+                
+                &.active {
+                    color: #483faf !important; /* Active nav links - green */
+                    font-weight: bold;
                 }
             }
         }
+    }
+}
+
+// Logo image styles are now inside .hero .ascii-art .main-symbol
+
+/* Optional: Adjust spacing for small screens */
+@media (max-width: 600px) {
+    .hero {
+        padding: 20px;
+        
+        .ascii-art .main-symbol .logo-image {
+            width: 90%;
+            max-width: 250px;
+        }
+    }
+
+    .intro-text p {
+        font-size: 1rem;
     }
 }
 
@@ -71,17 +101,26 @@ header {
             align-items: center;
             gap: 10px;
             
+            .logo-image {
+                width: 80%;
+                max-width: 300px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 8px;
+            }
+            
             .number {
-                color: #ff6ec7;
+                color: #58a6ff;
             }
             
             .hash {
-                color: #ff6ec7;
+                color: #58a6ff;
                 transform: rotate(-15deg);
             }
             
             .zero {
-                color: #ff6ec7;
+                color: #58a6ff;
                 font-size: 80px;
                 align-self: flex-start;
                 margin-top: 20px;
@@ -95,24 +134,27 @@ header {
         
         p {
             font-size: 16px;
-            color: #b0b0b0;
+            color: #8b949e;
             line-height: 1.8;
         }
     }
 }
 
-// Back navigation
+// Back navigation - INLINE WITH HEADERS
 .back-nav {
-    margin-bottom: 30px;
+    display: inline;
+    margin: 0;
+    margin-right: 0.5rem; // Add space after the ../
     
     .back-link {
-        color: #ff6ec7;
+        color: #ffffff; // CHANGE THIS for normal color
         text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
+        font-size: inherit; // Use same size as the header
+        font-weight: inherit; // Use same weight as the header
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
         
         &:hover {
-            text-decoration: underline;
+            color: #7762e9; // CHANGE THIS for hover color
         }
     }
 }
@@ -122,25 +164,28 @@ header {
     margin-bottom: 40px;
     
     h1 {
-        color: #ff6ec7;
+        color: #58a6ff;
         font-size: 32px;
         margin-bottom: 10px;
         text-transform: lowercase;
+        display: inline; // Make h1 inline so back-nav can be beside it
     }
     
     .section-description {
-        color: #b0b0b0;
+        color: #8b949e;
         font-size: 16px;
+        display: block; // Keep description on its own line
+        margin-top: 10px;
     }
 }
 
 .section-intro {
     margin-bottom: 40px;
     padding: 20px 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #21262d;
     
     p {
-        color: #b0b0b0;
+        color: #8b949e;
         font-size: 16px;
         line-height: 1.8;
     }
@@ -149,7 +194,7 @@ header {
 // Posts list
 .posts-list {
     h2 {
-        color: #e0e0e0;
+        color: #e6edf3;
         font-size: 18px;
         margin-bottom: 20px;
         font-weight: normal;
@@ -162,21 +207,22 @@ header {
         font-family: monospace;
         
         .post-date {
-            color: #888;
+            color: #7d8590;
             font-size: 13px;
             min-width: 80px;
         }
         
         .post-separator {
-            color: #888;
+            color: #7d8590;
             margin: 0 10px;
         }
         
         .post-title {
-            color: #ff6ec7;
+            color: #58a6ff;
             text-decoration: none;
             
             &:hover {
+                color: #ffffff; // Changed to white
                 text-decoration: underline;
             }
         }
@@ -191,23 +237,26 @@ header {
         margin-bottom: 40px;
         
         h1 {
-            color: #e0e0e0;
+            color: #e6edf3;
             font-size: 28px;
             margin-bottom: 10px;
+            display: inline; // Make h1 inline so back-nav can be beside it
         }
         
         .page-meta {
-            color: #888;
+            color: #7d8590;
             font-size: 13px;
+            display: block; // Keep meta on its own line
+            margin-top: 10px;
         }
     }
     
     .content {
-        color: #e0e0e0;
+        color: #e6edf3;
         line-height: 1.8;
         
         h1, h2, h3, h4, h5, h6 {
-            color: #ff6ec7;
+            color: #58a6ff;
             margin: 30px 0 15px 0;
         }
         
@@ -220,41 +269,43 @@ header {
         }
         
         a {
-            color: #ff6ec7;
+            color: #58a6ff;
             text-decoration: none;
             
             &:hover {
+                color: #ffffff; // Changed to white
                 text-decoration: underline;
             }
         }
         
         code {
-            background-color: #2a2a2a;
-            color: #ff6ec7;
+            background-color: #21262d;
+            color: #f85149;
             padding: 2px 6px;
             border-radius: 3px;
             font-family: monospace;
         }
         
         pre {
-            background-color: #2a2a2a;
+            background-color: #0d1117;
+            border: 1px solid #21262d;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 6px;
             overflow-x: auto;
             margin: 20px 0;
             
             code {
                 background: none;
                 padding: 0;
-                color: #e0e0e0;
+                color: #e6edf3;
             }
         }
         
         blockquote {
-            border-left: 3px solid #ff6ec7;
+            border-left: 3px solid #58a6ff;
             padding-left: 20px;
             margin: 20px 0;
-            color: #b0b0b0;
+            color: #8b949e;
             font-style: italic;
         }
         
@@ -270,10 +321,10 @@ header {
     .tags {
         margin-top: 40px;
         padding-top: 20px;
-        border-top: 1px solid #333;
+        border-top: 1px solid #21262d;
         
         .tag {
-            color: #888;
+            color: #7d8590;
             font-size: 13px;
             margin-right: 15px;
         }
@@ -296,6 +347,11 @@ header {
         }
     }
     
+    // Adjust back nav for mobile
+    .back-nav {
+        display: inline; // Keep inline behavior on mobile too
+    }
+    
     .hero .ascii-art .main-symbol {
         font-size: 80px;
         
@@ -313,5 +369,190 @@ header {
         .post-separator {
             display: none;
         }
+    }
+}
+
+// Add this to your style.scss file
+
+// Table of Contents Sidebar - Exact LT Blog Behavior
+#desktop-toc {
+    position: fixed;
+    top: 200px;
+    left: 20px;
+    width: 250px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 100;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1157px) {
+        display: none; // Hide original sidebar on mobile
+    }
+    
+    h3 {
+        color: #c478ff;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        text-transform: none;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+            margin: 0;
+            
+            a {
+                color: #7d8590;
+                text-decoration: none;
+                font-size: 13px;
+                display: block;
+                padding: 2px 0;
+                line-height: 1.4;
+                transition: color 0.2s ease;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                
+                &:hover {
+                    color: #c478ff;
+                }
+            }
+            
+            // Sub-headings
+            ul {
+                margin-left: 15px;
+                margin-top: 0;
+                
+                // Reduce indentation on smaller screens
+                @media (max-width: 800px) {
+                    margin-left: 10px;
+                }
+                
+                @media (max-width: 600px) {
+                    margin-left: 8px;
+                }
+                
+                a {
+                    font-size: 12px;
+                    color: #6a737d;
+                    
+                    &:hover {
+                        color: #8b949e;
+                    }
+                }
+                
+                // Third level headings
+                ul {
+                    margin-left: 15px;
+                    
+                    @media (max-width: 800px) {
+                        margin-left: 8px;
+                    }
+                    
+                    @media (max-width: 600px) {
+                        margin-left: 5px;
+                    }
+                    
+                    a {
+                        font-size: 11px;
+                        color: #586069;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Hide scrollbar completely
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#mobile-toc {
+    display: block;
+}
+
+// Center the content while avoiding TOC overlap
+.container {
+    max-width: 800px;
+    margin: 0 auto; // Center the container
+    padding: 20px;
+    position: relative;
+    
+    @media (min-width: 1158px) {
+        padding-left: 290px;
+        left: -145px;
+    }
+}
+
+// Hamburger menu
+.hamburger {
+    display: none; // Hidden by default
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #e6edf3;
+        transition: all 0.3s ease;
+    }
+
+    &.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    &.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    @media (max-width: 1157px) {
+        display: block; // Show on mobile
+    }
+}
+
+// Navigation drawer
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -300px; // Start off-screen
+    width: 280px;
+    height: 100%;
+    background-color: #0d1117;
+    border-left: 1px solid #21262d;
+    padding: 60px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+
+    &.is-open {
+        right: 0; // Slide in
+    }
+
+    .toc-sidebar {
+        display: block !important; // Ensure TOC is visible inside drawer
     }
 }

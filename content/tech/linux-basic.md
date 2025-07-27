@@ -2,8 +2,6 @@
 title = "Linux Command Line Essentials"
 date = 2025-01-20
 description = "Essential Linux commands every developer should know"
-[taxonomies]
-tags = ["linux", "command-line", "tutorial"]
 +++
 
 # Linux Command Line Essentials

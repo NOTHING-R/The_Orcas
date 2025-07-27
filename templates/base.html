@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+    <link rel="icon" type="image/png" href="{{ get_url(path="favicon.png") }}">
+    <link rel="shortcut icon" type="image/png" href="{{ get_url(path="favicon-16x16.png") }}">
 </head>
 <body>
     <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            {% block nav_drawer_content %}
+            <!-- TOC will be injected here from page.html -->
+            {% endblock nav_drawer_content %}
+        </div>
         {% block header %}
         <header>
             <nav>
-                <a href="{{ get_url(path="/") }}" class="home-link">{{ config.extra.username | default(value="user") }}</a>
+                <a href="{{ get_url(path="/") }}"
+                   class="home-link {% if current_path == "/" %}active{% endif %}">
+                   {{ config.extra.username | default(value="user") }}
+                </a>
                 <div class="nav-links">
-                    <a href="{{ get_url(path="/blog/") }}">blog</a>
-                    <a href="{{ get_url(path="/tech/") }}">tech</a>
-                    <a href="{{ get_url(path="/writeups/") }}">writeups</a>
+                    <a href="{{ get_url(path="/blog/") }}" class="{% if current_path is starting_with("/blog/") %}active{% endif %}">blog</a>
+                    <a href="{{ get_url(path="/tech/") }}" class="{% if current_path is starting_with("/tech/") %}active{% endif %}">tech</a>
+                    <a href="{{ get_url(path="/writeups/") }}" class="{% if current_path is starting_with("/writeups/") %}active{% endif %}">writeups</a>
                     {% if config.extra.github_url %}
                     <a href="{{ config.extra.github_url }}" target="_blank">github</a>
                     {% endif %}
@@ -28,5 +43,19 @@
             {% block content %}{% endblock content %}
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

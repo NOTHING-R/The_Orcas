@@ -2,14 +2,22 @@
 
 {% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
 
+{% block nav_drawer_content %}
+<div class="toc-sidebar" id="mobile-toc">
+    <h3>Table of Contents</h3>
+    <ul id="mobile-toc-list"></ul>
+</div>
+{% endblock nav_drawer_content %}
+
 {% block content %}
-<div class="back-nav">
-    <a href="javascript:history.back()" class="back-link">../</a>
+<div class="toc-sidebar" id="desktop-toc">
+    <h3>Table of Contents</h3>
+    <ul id="desktop-toc-list"></ul>
 </div>
 
 <article class="page-content">
     <header class="page-header">
-        <h1>{{ page.title }}</h1>
+        <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>{{ page.title }}</h1>
         {% if page.date %}
         <div class="page-meta">
             <time datetime="{{ page.date }}">{{ page.date | date(format="%Y.%m.%d") }}</time>
@@ -29,4 +37,83 @@
     </div>
     {% endif %}
 </article>
+
+<script>
+// Auto-generate Table of Contents - LT Blog Style
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.content');
+    const desktopTocList = document.getElementById('desktop-toc-list');
+    const mobileTocList = document.getElementById('mobile-toc-list');
+    const desktopToc = document.getElementById('desktop-toc');
+    const mobileToc = document.getElementById('mobile-toc');
+
+    if (!content || !desktopTocList || !mobileTocList) return;
+
+    const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    if (headings.length === 0) {
+        if (desktopToc) desktopToc.style.display = 'none';
+        if (mobileToc) mobileToc.style.display = 'none';
+        return;
+    }
+
+    const createToc = (tocList) => {
+        let currentLevel = 0;
+        let currentUl = tocList;
+        let levelStack = [tocList];
+
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                heading.id = 'heading-' + index;
+            }
+
+            const level = parseInt(heading.tagName.charAt(1));
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.className = 'toc-' + heading.tagName.toLowerCase();
+
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                heading.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            if (level > currentLevel) {
+                const nestedUl = document.createElement('ul');
+                if (levelStack[levelStack.length - 1].lastElementChild) {
+                    levelStack[levelStack.length - 1].lastElementChild.appendChild(nestedUl);
+                } else {
+                    levelStack[levelStack.length - 1].appendChild(nestedUl);
+                }
+                levelStack.push(nestedUl);
+                currentUl = nestedUl;
+            } else if (level < currentLevel) {
+                while (levelStack.length > level && levelStack.length > 1) {
+                    levelStack.pop();
+                }
+                currentUl = levelStack[levelStack.length - 1];
+            }
+
+            currentLevel = level;
+            li.appendChild(a);
+            currentUl.appendChild(li);
+        });
+    };
+
+    createToc(desktopTocList);
+    createToc(mobileTocList);
+});
+</script>
+
+<style>
+/* Additional TOC styling specific to different heading levels */
+.toc-h1 { font-weight: bold; color: #e6edf3 !important; }
+.toc-h2 { font-weight: normal; color: #c478ff !important; }
+.toc-h3 { font-weight: normal; color: #8b949e !important; }
+.toc-h4, .toc-h5, .toc-h6 { font-weight: normal; color: #7d8590 !important; }
+</style>
 {% endblock content %}

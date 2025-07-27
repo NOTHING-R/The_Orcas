@@ -1,12 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="back-nav">
-    <a href="javascript:history.back()" class="back-link">../</a>
-</div>
-
 <div class="section-header">
-    <h1>{{ section.title | default(value=section.components | last) }}</h1>
+    <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>{{ section.title | default(value=section.components | last) }}</h1>
     {% if section.description %}
     <p class="section-description">{{ section.description }}</p>
     {% endif %}
