@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title>The_Orcas</title>
+    <title>THE SILENT ORCAS</title>
     <subtitle>Thoughts, tutorials, and insights on technology and cybersecurity</subtitle>
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-07-27T00:00:00+00:00</updated>
+    <updated>2025-07-28T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
     <entry xml:lang="en">
-        <title>Emacs Installation Guide: Linux, macOS, and Windows</title>
-        <published>2025-07-27T00:00:00+00:00</published>
-        <updated>2025-07-27T00:00:00+00:00</updated>
+        <title>whoami</title>
+        <published>2025-07-28T00:00:00+00:00</published>
+        <updated>2025-07-28T00:00:00+00:00</updated>
         
         <author>
           <name>
@@ -20,139 +20,12 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/install/"/>
-        <id>https://nothing-r.github.io/The_Orcas/blog/install/</id>
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/whoami/whoami/"/>
+        <id>https://nothing-r.github.io/The_Orcas/whoami/whoami/</id>
         
-        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/install/">&lt;h1 id=&quot;emacs-installation-guide&quot;&gt;Emacs Installation Guide&lt;&#x2F;h1&gt;
-&lt;p&gt;{{ toc }}&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;linux&quot;&gt;Linux&lt;&#x2F;h2&gt;
-&lt;p&gt;Emacs can be installed easily using your distribution’s package manager.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;debian-ubuntu&quot;&gt;Debian&#x2F;Ubuntu&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; apt update
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; apt install emacs
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Welcome to The_Orcas Blog</title>
-        <published>2025-01-25T00:00:00+00:00</published>
-        <updated>2025-01-25T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/welcome/"/>
-        <id>https://nothing-r.github.io/The_Orcas/blog/welcome/</id>
-        
-        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/welcome/">&lt;h1 id=&quot;welcome-to-the-orcas-blog&quot;&gt;Welcome to The_Orcas Blog&lt;&#x2F;h1&gt;
-&lt;p&gt;Hi there! Welcome to my corner of the internet. I’m The_Orcas, and this is where I share my thoughts, discoveries, and experiences in the world of technology and cybersecurity.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;what-you-ll-find-here&quot;&gt;What You’ll Find Here&lt;&#x2F;h2&gt;
-&lt;p&gt;This blog is divided into several sections:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Technical Writing&lt;&#x2F;strong&gt;: Deep dives into Linux, programming, web security, cryptography, and various technical topics&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Writeups&lt;&#x2F;strong&gt;: CTF solutions, vulnerability research, and security challenge walkthroughs&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Blog&lt;&#x2F;strong&gt;: General thoughts, tutorials, and insights on technology and life&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;about-me&quot;&gt;About Me&lt;&#x2F;h2&gt;
-&lt;p&gt;I’m passionate about cybersecurity, programming, and continuous learning. When I’m not exploring the latest security vulnerabilities or writing code, I enjoy sharing knowledge with the community.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;&#x2F;h2&gt;
-&lt;p&gt;Feel free to explore the different sections of the blog. If you’re interested in a particular topic, you can use the navigation menu to jump to specific sections.&lt;&#x2F;p&gt;
-&lt;p&gt;Thanks for visiting, and I hope you find the content useful!&lt;&#x2F;p&gt;
-&lt;hr &#x2F;&gt;
-&lt;p&gt;&lt;em&gt;“I don’t speak, I operate a machine called language. It creaks and groans, but is mine own.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Linux Command Line Essentials</title>
-        <published>2025-01-20T00:00:00+00:00</published>
-        <updated>2025-01-20T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/tech/linux-basic/"/>
-        <id>https://nothing-r.github.io/The_Orcas/tech/linux-basic/</id>
-        
-        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/tech/linux-basic/">&lt;h1 id=&quot;linux-command-line-essentials&quot;&gt;Linux Command Line Essentials&lt;&#x2F;h1&gt;
-&lt;p&gt;The Linux command line is a powerful tool that every developer and cybersecurity professional should master. Here are some essential commands that will make your life easier.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;file-and-directory-operations&quot;&gt;File and Directory Operations&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;navigation&quot;&gt;Navigation&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Change directory
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;path&#x2F;to&#x2F;directory
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# List files and directories
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ls -la
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Print working directory
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;pwd
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;file-management&quot;&gt;File Management&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Copy files
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cp&lt;&#x2F;span&gt;&lt;span&gt; source.txt destination.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Move&#x2F;rename files
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;mv&lt;&#x2F;span&gt;&lt;span&gt; oldname.txt newname.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Remove files
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;rm&lt;&#x2F;span&gt;&lt;span&gt; filename.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Remove directories
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;rm -rf&lt;&#x2F;span&gt;&lt;span&gt; directory_name
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;text-processing&quot;&gt;Text Processing&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;viewing-files&quot;&gt;Viewing Files&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Display file content
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cat&lt;&#x2F;span&gt;&lt;span&gt; filename.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# View file with pagination
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;less&lt;&#x2F;span&gt;&lt;span&gt; filename.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Show first&#x2F;last lines
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;head -n&lt;&#x2F;span&gt;&lt;span&gt; 10 filename.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tail -n&lt;&#x2F;span&gt;&lt;span&gt; 10 filename.txt
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;searching&quot;&gt;Searching&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Search for text in files
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;grep &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;pattern&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; filename.txt
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Search recursively in directories
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;grep -r &lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;pattern&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &#x2F;path&#x2F;to&#x2F;search
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;system-information&quot;&gt;System Information&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Display running processes
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ps&lt;&#x2F;span&gt;&lt;span&gt; aux
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Show system resource usage
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;top
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Display disk usage
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;df -h
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Show memory usage
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;free -h
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;permissions&quot;&gt;Permissions&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Change file permissions
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;chmod&lt;&#x2F;span&gt;&lt;span&gt; 755 script.sh
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# Change file ownership
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;chown&lt;&#x2F;span&gt;&lt;span&gt; user:group filename.txt
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;These commands form the foundation of Linux system administration and are essential for anyone working with Linux systems. Practice them regularly to build muscle memory!&lt;&#x2F;p&gt;
-&lt;p&gt;Remember: with great power comes great responsibility. Always double-check your commands, especially when using &lt;code&gt;rm&lt;&#x2F;code&gt; or &lt;code&gt;chmod&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/whoami/whoami/">&lt;h1 id=&quot;whoami&quot;&gt;WHOAMI&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;ridowan&quot;&gt;RIDOWAN&lt;&#x2F;h2&gt;
+&lt;p&gt;Akta e issa life a ja ja caicilam tar upor jeno tike thakte pari nijer sorobocco diye cesta korte pari abong khodar kace sahajjo caite pari sob smy. R amr sristikorta amr khoda amr jonno ja korben tar jonno sob smy e ALHAMDULILLAH.&lt;&#x2F;p&gt;
 </content>
         
     </entry>

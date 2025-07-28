@@ -7,12 +7,16 @@
         <loc>https://nothing-r.github.io/The_Orcas/blog/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/blog/install/</loc>
-        <lastmod>2025-07-27</lastmod>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/CYBERSECURITY/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/blog/welcome/</loc>
-        <lastmod>2025-01-25</lastmod>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/EMACS/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/LINUX/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/The_Orcas/blog/TECH/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/categories/</loc>
@@ -39,11 +43,17 @@
         <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/page/1/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tech/</loc>
+        <loc>https://nothing-r.github.io/The_Orcas/whoami/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tech/linux-basic/</loc>
-        <lastmod>2025-01-20</lastmod>
+        <loc>https://nothing-r.github.io/The_Orcas/whoami/BANGLA/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/The_Orcas/whoami/ENGLISH/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/The_Orcas/whoami/whoami/</loc>
+        <lastmod>2025-07-28</lastmod>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/writeups/</loc>
