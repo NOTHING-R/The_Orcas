@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SILENT ORCAS</title>
+    <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+            <!-- TOC will be injected here from page.html -->
+            
+        </div>
+        
+        <header>
+            <nav>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   THE SILENT ORCAS
+                </a>
+                <div class="nav-links">
+		  <!-- THIS IS FOR MAIN FOLDERS  -->
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="active">BLOG</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/whoami" class="">WHOAMI</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">WRITEUPS</a>
+		    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;" target="_blank">GITHUB</a>
+                    
+                </div>
+            </nav>
+        </header>
+        
+
+        <main>
+            
+<div class="section-header">
+    <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>CYBERSECURITY</h1>
+    
+    <p class="section-description">ALL THE WORK ON CYBER WILL BE HERE</p>
+    
+</div>
+
+
+
+
+
+
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

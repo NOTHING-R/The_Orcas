@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>THE SILENT ORCAS</title>
+    <subtitle>Thoughts, tutorials, and insights on technology and cybersecurity</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-07-28T00:00:00+00:00</updated>
+    <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>whoami</title>
+        <published>2025-07-28T00:00:00+00:00</published>
+        <updated>2025-07-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/whoami/whoami/"/>
+        <id>https://nothing-r.github.io/The_Orcas/whoami/whoami/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/whoami/whoami/">&lt;h1 id=&quot;whoami&quot;&gt;WHOAMI&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;ridowan&quot;&gt;RIDOWAN&lt;&#x2F;h2&gt;
+&lt;p&gt;Akta e issa life a ja ja caicilam tar upor jeno tike thakte pari nijer sorobocco diye cesta korte pari abong khodar kace sahajjo caite pari sob smy. R amr sristikorta amr khoda amr jonno ja korben tar jonno sob smy e ALHAMDULILLAH.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CTF Challenge: Web Exploitation Basics</title>
+        <published>2025-01-15T00:00:00+00:00</published>
+        <updated>2025-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/"/>
+        <id>https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/">&lt;h1 id=&quot;ctf-challenge-web-exploitation-basics&quot;&gt;CTF Challenge: Web Exploitation Basics&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;challenge-description&quot;&gt;Challenge Description&lt;&#x2F;h2&gt;
+&lt;p&gt;The challenge presented a simple login form with the following message:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Can you find a way to log in as admin without knowing the password?”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;URL: &lt;code&gt;http:&#x2F;&#x2F;challenge.example.com:8080&#x2F;login&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;initial-reconnaissance&quot;&gt;Initial Reconnaissance&lt;&#x2F;h2&gt;
+&lt;p&gt;When visiting the login page, I found a basic HTML form:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;form &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;method&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;POST&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;action&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&#x2F;login&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;input &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;username&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;placeholder&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Username&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;input &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;placeholder&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Password&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;input &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;submit&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Login&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;form&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;testing-for-sql-injection&quot;&gt;Testing for SQL Injection&lt;&#x2F;h2&gt;
+&lt;p&gt;Given the nature of the challenge, I suspected SQL injection. I started with basic payloads:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;test-1-basic-or-condition&quot;&gt;Test 1: Basic OR condition&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;sql&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-sql &quot;&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span&gt;Username: admin&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; OR &lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;Password: anything
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This didn’t work, suggesting some filtering might be in place.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;test-2-comment-based-injection&quot;&gt;Test 2: Comment-based injection&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;sql&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-sql &quot;&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span&gt;Username: admin&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;--
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Password: (empty)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Success! The application returned: “Welcome, admin!”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;&#x2F;h2&gt;
+&lt;p&gt;The vulnerable query was likely something like:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;sql&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-sql &quot;&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;SELECT &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; users &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;WHERE&lt;&#x2F;span&gt;&lt;span&gt; username=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$username&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39; AND password=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$password&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;By injecting &lt;code&gt;admin&#x27;--&lt;&#x2F;code&gt;, the query became:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;sql&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-sql &quot;&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;SELECT &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; users &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;WHERE&lt;&#x2F;span&gt;&lt;span&gt; username=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;admin&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;-- AND password=&amp;#39;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;--&lt;&#x2F;code&gt; comments out the password check, allowing us to log in as admin.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;flag&quot;&gt;Flag&lt;&#x2F;h2&gt;
+&lt;p&gt;After successful login, the flag was displayed: &lt;code&gt;flag{sql_1nj3ct10n_b4s1cs}&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mitigation&quot;&gt;Mitigation&lt;&#x2F;h2&gt;
+&lt;p&gt;To prevent this vulnerability:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Use prepared statements&lt;&#x2F;strong&gt;: This is the most effective defense&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;cursor.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;execute&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;SELECT &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; users &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;WHERE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; username&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;? &lt;&#x2F;span&gt;&lt;span&gt;AND&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; password&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;?&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, (username, password))
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;Input validation&lt;&#x2F;strong&gt;: Sanitize user inputs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Least privilege&lt;&#x2F;strong&gt;: Database users should have minimal necessary permissions&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This was a straightforward SQL injection challenge that demonstrates the importance of properly handling user input in web applications. Always use parameterized queries to prevent such vulnerabilities!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
