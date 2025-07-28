@@ -1,6 +1,6 @@
 # Basic site configuration
 base_url = "https://nothing-r.github.io/The_Orcas/"
-title = "The_Orcas"
+title = "THE SILENT ORCAS"
 description = "Thoughts, tutorials, and insights on technology and cybersecurity"
 
 # Language and timezone
@@ -24,13 +24,13 @@ smart_punctuation = true
 # Extra configuration for your site
 [extra]
 # Your username/handle that appears in the header
-username = "The_Orcas"
+username = "THE SILENT ORCAS"
 
 # Your bio text that appears on the homepage
-bio = "I don't speak, I operate a machine called language. It creaks and groans, but is mine own."
+bio = "Just a curious person who want to know about the digital world."
 
 # Social links
-github_url = "https://github.com/yourusername"  # Optional: add your GitHub URL
+github_url = "https://github.com/NOTHING-R/"  # Optional: add your GitHub URL
 
 # Taxonomy configuration
 # Taxonomy configuration

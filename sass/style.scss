@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0e1f39;
+    background-color: #d4d0ca;
     color: #e6edf3;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 14px;
@@ -36,11 +36,11 @@ header {
 
                             
             &:hover {
-                color: #a53131; // Changed to white
+                color: #2c5c22; // Changed to white
             }
             
             &.active {
-                color: #483faf !important; /* Active home link - green */
+                color: #2c5c22 !important; /* Active home link - green */
                 font-weight: bold;
             }
         }
@@ -55,11 +55,11 @@ header {
                 transition: color 0.3s ease;
                 
                 &:hover {
-                    color: #7172da; // Changed to white
+                    color: #2c5c22; // Changed to white
                 }
                 
                 &.active {
-                    color: #483faf !important; /* Active nav links - green */
+                    color: #2c5c22 !important; /* Active nav links - green */
                     font-weight: bold;
                 }
             }
@@ -154,7 +154,7 @@ header {
         font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
         
         &:hover {
-            color: #7762e9; // CHANGE THIS for hover color
+            color: #b2ffb8; // CHANGE THIS for hover color
         }
     }
 }
@@ -164,7 +164,7 @@ header {
     margin-bottom: 40px;
     
     h1 {
-        color: #58a6ff;
+        color: #2c5c22;
         font-size: 32px;
         margin-bottom: 10px;
         text-transform: lowercase;
@@ -218,7 +218,7 @@ header {
         }
         
         .post-title {
-            color: #58a6ff;
+            color: #2c5c22;
             text-decoration: none;
             
             &:hover {
@@ -256,7 +256,7 @@ header {
         line-height: 1.8;
         
         h1, h2, h3, h4, h5, h6 {
-            color: #58a6ff;
+            color: #2c5c22;
             margin: 30px 0 15px 0;
         }
         
@@ -395,7 +395,7 @@ header {
     }
     
     h3 {
-        color: #c478ff;
+        color: #2c5c22;
         font-size: 14px;
         margin: 0 0 10px 0;
         font-weight: normal;
@@ -423,7 +423,7 @@ header {
                 text-overflow: ellipsis;
                 
                 &:hover {
-                    color: #c478ff;
+                    color: #2c5c22;
                 }
             }
             
@@ -554,5 +554,94 @@ header {
 
     .toc-sidebar {
         display: block !important; // Ensure TOC is visible inside drawer
+    }
+}
+// ... (all your existing CSS from the beginning of the file)
+
+// Navigation drawer
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -300px; // Start off-screen
+    width: 280px;
+    height: 100%;
+    background-color: #0d1117;
+    border-left: 1px solid #21262d;
+    padding: 60px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+
+    &.is-open {
+        right: 0; // Slide in
+    }
+
+    .toc-sidebar {
+        display: block !important; // Ensure TOC is visible inside drawer
+    }
+}
+
+// ADD THE NEW SUBSECTIONS CSS HERE:
+
+// Subsections (folders) styling
+.subsections {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #21262d;
+    
+    h2 {
+        color: #e6edf3;
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    
+    .subsection-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-family: monospace;
+        
+        .folder-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        a {
+            color: #2c5c22;
+            text-decoration: none;
+            font-weight: bold;
+            
+            &:hover {
+                color: #ffffff;
+                text-decoration: underline;
+            }
+        }
+        
+        .subsection-description {
+            color: #7d8590;
+            font-size: 13px;
+            margin-left: 5px;
+        }
+    }
+}
+
+// Responsive adjustments for subsections
+@media (max-width: 768px) {
+    .subsections {
+        .subsection-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            margin-bottom: 15px;
+            
+            .folder-icon {
+                margin-right: 5px;
+            }
+            
+            .subsection-description {
+                margin-left: 20px; // Align with the folder content
+            }
+        }
     }
 }
