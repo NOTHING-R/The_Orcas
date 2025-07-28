@@ -1,0 +1,23 @@
++++
+title = "EMACS"
+date = "2025-07-28"
+author = ""
++++
+
+
+# EMACS
+
+
+## what is emacs
+
+emacs akta gnu project ja tmi ay [website](https://www.gnu.org/software/emacs/) a gele dekhte paba. Ayta khub e sundor akta tool ja tmr onk besi kaj a asbe jdi tmi sikhte paro. 
+
+
+# emacs er main concepts
+
+emacs er mainly 3 ta jinis bojha lage first a jate kore tmi bujhte paro j asole emacs kivabe kaj kore.
+
+1.  FRMAE
+2.  WINDOW
+3.  BUFFER
+

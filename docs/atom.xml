@@ -8,6 +8,35 @@
     <updated>2025-07-28T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
     <entry xml:lang="en">
+        <title>EMACS</title>
+        <published>2025-07-28T00:00:00+00:00</published>
+        <updated>2025-07-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/EMACS/emacs/"/>
+        <id>https://nothing-r.github.io/The_Orcas/blog/EMACS/emacs/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/EMACS/emacs/">&lt;h1 id=&quot;emacs&quot;&gt;EMACS&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;what-is-emacs&quot;&gt;what is emacs&lt;&#x2F;h2&gt;
+&lt;p&gt;emacs akta gnu project ja tmi ay &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;emacs&#x2F;&quot;&gt;website&lt;&#x2F;a&gt; a gele dekhte paba. Ayta khub e sundor akta tool ja tmr onk besi kaj a asbe jdi tmi sikhte paro.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;emacs-er-main-concepts&quot;&gt;emacs er main concepts&lt;&#x2F;h1&gt;
+&lt;p&gt;emacs er mainly 3 ta jinis bojha lage first a jate kore tmi bujhte paro j asole emacs kivabe kaj kore.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;FRMAE&lt;&#x2F;li&gt;
+&lt;li&gt;WINDOW&lt;&#x2F;li&gt;
+&lt;li&gt;BUFFER&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>whoami</title>
         <published>2025-07-28T00:00:00+00:00</published>
         <updated>2025-07-28T00:00:00+00:00</updated>
