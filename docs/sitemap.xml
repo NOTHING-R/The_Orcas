@@ -13,10 +13,6 @@
         <loc>https://nothing-r.github.io/The_Orcas/blog/EMACS/</loc>
     </url>
     <url>
-        <loc>https://nothing-r.github.io/The_Orcas/blog/EMACS/emacs/</loc>
-        <lastmod>2025-07-28</lastmod>
-    </url>
-    <url>
         <loc>https://nothing-r.github.io/The_Orcas/blog/LINUX/</loc>
     </url>
     <url>
@@ -26,25 +22,14 @@
         <loc>https://nothing-r.github.io/The_Orcas/categories/</loc>
     </url>
     <url>
+        <loc>https://nothing-r.github.io/The_Orcas/system/</loc>
+    </url>
+    <url>
+        <loc>https://nothing-r.github.io/The_Orcas/system/what-i-use/</loc>
+        <lastmod>2025-07-29</lastmod>
+    </url>
+    <url>
         <loc>https://nothing-r.github.io/The_Orcas/tags/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/ctf/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/sql-injection/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/tags/web-security/page/1/</loc>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/whoami/</loc>
@@ -57,13 +42,9 @@
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/whoami/whoami/</loc>
-        <lastmod>2025-07-28</lastmod>
+        <lastmod>2025-07-29</lastmod>
     </url>
     <url>
         <loc>https://nothing-r.github.io/The_Orcas/writeups/</loc>
-    </url>
-    <url>
-        <loc>https://nothing-r.github.io/The_Orcas/writeups/sample-ctf/</loc>
-        <lastmod>2025-01-15</lastmod>
     </url>
 </urlset>

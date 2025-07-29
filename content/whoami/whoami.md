@@ -1,14 +1,13 @@
 +++
 title = "whoami"
-date = "2025-07-28"
+date = "2025-07-29"
 author = ""
 +++
 
 
 # WHOAMI
 
+That&rsquo;s a question! Who am I. Acctually I am just a curious person who have a dream. A dream to be someone oneday! All of this are the step towards the goal.
 
-## RIDOWAN
-
-Akta e issa life a ja ja caicilam tar upor jeno tike thakte pari nijer sorobocco diye cesta korte pari abong khodar kace sahajjo caite pari sob smy. R amr sristikorta amr khoda amr jonno ja korben tar jonno sob smy e ALHAMDULILLAH.
+My Name is Ridowan. And I am just a curious learner who want to know about the digital world.
 

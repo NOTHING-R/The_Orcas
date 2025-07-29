@@ -6,6 +6,6 @@ template = "section.html"
 page_template = "page.html"
 
 [extra]
-intro = "Writeups for CTF challenges, security research, and vulnerability analysis."
-posts_title = "Challenge writeups"
+intro = ""
+posts_title = ""
 +++
