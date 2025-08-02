@@ -5,8 +5,103 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-07-29T00:00:00+00:00</updated>
+    <updated>2025-08-02T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>HOW TO INSTALL AND CONFIGURE EMACS</title>
+        <published>2025-08-02T00:00:00+00:00</published>
+        <updated>2025-08-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/EMACS/how-to-install-and-configure-emacs/"/>
+        <id>https://nothing-r.github.io/The_Orcas/blog/EMACS/how-to-install-and-configure-emacs/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/EMACS/how-to-install-and-configure-emacs/">&lt;h1 id=&quot;emacs-ki&quot;&gt;EMACS KI&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;emacs&#x2F;&quot;&gt;EMACS&lt;&#x2F;a&gt; akta open source gnu software. Ja ak sathe &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ftp.gnu.org&#x2F;gnu&#x2F;emacs&#x2F;windows&#x2F;emacs-30&#x2F;emacs-30.1-installer.exe&quot;&gt;windows&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;emacs&#x2F;download.html#gnu-linux&quot;&gt;linux&lt;&#x2F;a&gt; abong &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;repo&#x2F;com.termux_1022.apk&quot;&gt;android&lt;&#x2F;a&gt; a use kora jai. Emacs ami first dekhcilam &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;@hexdump1337&quot;&gt;hexdump1337&lt;&#x2F;a&gt; er video te. To onar workflow dekhar pore r onar system use kora dekhe ami onk impressed hoi. R tkhn theke e emacs er upor agroho jonmai abong ami sekhar try kora suru kori. To ay prai 1 bocor er moto ghataghati korar pore ami amr personal emacs customize korci. Nijer moto kore nijer proyojon onujai. Ami ja ja sikhci sob e just nijer interest abong Internet theke. Youtube a emacs er jonno 2 jon k follow korci, onader tutorial dekhe e emacs customize korci abong emacs er basic jinis gula sikhci.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=48JlgiBpw_I&amp;amp;list=PLEoMzSkcN8oPZvSdewHG8uApD7THlLLCV&quot;&gt;System Crafters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=d1fgypEiQkE&amp;amp;list=PL5--8gKSku15e8lXf7aLICFmAHQVo0KXX&quot;&gt;Distro Tube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;So ay youtube channel dui ta amk onk help korce jdio jinis gula onk purano…tobuo besh helpfull…r j jinis gula nia amr confusion cilo oi gula &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;chatgpt.com&#x2F;&quot;&gt;ChatGpt&lt;&#x2F;a&gt; er kace question kore kore sikhci. ay vabe e mainly amr emacs sekha.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;emacs-e-kno&quot;&gt;Emacs e kno?&lt;&#x2F;h1&gt;
+&lt;p&gt;Asole Emacs amon akta software j ta jdi akbar bojha jai tahole ayta k sob kaj er jonno use kora jai sob kicur jonno. R workflow next level, hexdump er video dekhle bojha jai j emacs k kon level porjonto nea jai. Ayta amr personal opinion. Karon ami hexdump1337 er theke inspired. R onk ta emacs er upor obsessed o bola jai. Ami asole akta proper environment banaite cacci jate kore ay software tar somporke r o onk manus jante pare. Amr mone hoi ayta onk help korbe bises kore notun der jader kace device nai. Jate tara phone diao emacs sikhte pare abong poroborti te jkhn laptop ba pc te shift hobe tara same jinis ta dia e kaj korte pare. Ami nijeo akhono sikhci to amr vhul thakte pare ay jonno please nijera aktu jacai kore niben sob jinis gula.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;emacs-setup&quot;&gt;Emacs setup&lt;&#x2F;h1&gt;
+&lt;p&gt;Ami first a e bolci j emacs amr use kora 3 ta os a e kaj kore thik vabe. Kintu ami use kori Linux abong Android a. To step by step akta guide dear try korci j kivabe Linux abong Android a Emacs use kora jai.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;linux-arch-linux&quot;&gt;LINUX (ARCH LINUX)&lt;&#x2F;h2&gt;
+&lt;p&gt;Linux distro gular vitore sob theke customizable hocce arch linux abong arch k nijer moto kore control kora jai ay jonno e Amr first dia e issa cilo arch linux use korar, kintu arch aktu advance to first a ami arch install korte pari nai kintu sob smy e amr issa cilo akta minimum setup er r amr dream setup sudhu matro arch linux dia e somvob, r amk arch linux use korar jonno r o besi motivate korce &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;leonardotamiano.xyz&#x2F;&quot;&gt;Leonardo Tamiano&lt;&#x2F;a&gt;, unio  &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archlinux.org&#x2F;&quot;&gt;Arch Linux&lt;&#x2F;a&gt; k nijer main os hisabe use kore. Ay jonno amr first task cilo arch linux install kora main os hisabe to ami first a vm a practice kora suru kori ay vido ta dekhe:-&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;350&quot; height=&quot;200&quot;
+  src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;AYxaNjbC1wg&quot;
+  title=&quot;YouTube video player&quot;
+  frameborder=&quot;0&quot;
+  allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+  allowfullscreen&gt;
+  &lt;&#x2F;iframe&gt;
+&lt;p&gt;Arch setup er smy &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Desktop_environment&quot;&gt;Desktop Environment&lt;&#x2F;a&gt; hisabe &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;GNOME&quot;&gt;Gnome&lt;&#x2F;a&gt; rakha ucit. Ayta ami recently figure out korci j gnome install korle font rendering ta mainly bangla font gula arch linux a thik thak install hoi. R ayta carao amio amr second &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Desktop_environment&quot;&gt;DE&lt;&#x2F;a&gt; hisabe &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;i3wm.org&#x2F;&quot;&gt;i3wm&lt;&#x2F;a&gt; bebohar kori. Asole ami jkhn first exwm somporke jani abong chatgpt k ask kori j ay jinis ta ki tkhn amk bolcilo ayta k window manager bole. To oitar por dia ami window manager ki abong kivabe kaj kore oita sekha suru kori. To first a amr samne 2 ta name ascilo i3wm abong &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;qtile.org&#x2F;&quot;&gt;qtile&lt;&#x2F;a&gt; ami tkhn python sekharo try kortacilam r jehetu qtile mainly python based to qtile try korcilam kicu din. Asole oi smy ami just explore kortacilam j konta workout kore amr jonno. To ami kicu e jantam na akbare notun tkhn….to kicu din aktu ghataghati korar pore ami i3wm ta e chooce kori abong oi ta k bojhar try kori. Tarpore prai 6 mas er moto i3wm abong arch linux as a main os hisabe use korci. Abong i3wm er sathe sathe ami emacs ta o explore kora suru kori. First suru korcilam Distro Tube er video diye to onar video ta amr jonno tkhn bolte gele aktu besi advance cilo. To oi jonno ami tkhn system crafters er video mane playlist ta dekha suru kori emacs from scratch. Oikhan theke asole bojha suru kori j kivabe emacs kaj kore buffer, window abong frame ki, kivabe kaj kore, keybindings basic jinis gula. To kew jdi emacs a suru korte cai to ami joto dur khuje peyeci tader ay playlist dui ta dekha ucit jdi amr explanation diye tara na bujhte pare tahole. Content gula purano hoile basic cover korce abong basic ta always same.&lt;&#x2F;p&gt;
+&lt;p&gt;[[][]]&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;basic-setup-of-arch-linux&quot;&gt;BASIC SETUP OF ARCH LINUX&lt;&#x2F;h2&gt;
+&lt;p&gt;Ami Arch linux amr nijer moto kore setup korci. Ami jkhn arch somporke jana suru kori to Arch kivabe asole kaj kore kernel er theke suru kore Application run korar jonno ki ki jinis er proyojon abong ki ki dorkar. Ami abro boli j ami sob kicui Internet theke janci to amr janai vhul thakte pare, vhul thakle please amk jinis ta janaben jate ami improve korte pari. So First a arch install korar pore amader kicu jinis er proyojon hoi system ta k thik vabe use korar jonno akta &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Xorg&quot;&gt;display server&lt;&#x2F;a&gt; ja keyboard, mouse abong onno sob hardware abong onno sob driver gulo theke asa signal k kaj a lagano jate kore user j &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Display_manager&quot;&gt;display manager&lt;&#x2F;a&gt; use korce oi display manger jeno user k thik vabe graphical interface provide korte pare. Emacs akta x11 based software to amader x11 releted package gulo amader system a install kora lagbe. Ami amr display manager hisabe &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;SDDM&quot;&gt;sddm&lt;&#x2F;a&gt; bebohar kori. Karon ayta amr kace easy mone hoi abong besh customizable. Akta system ta k valo vabe beobhar korar jonno just r 2 ta jinis er dorkar hoi akta &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Session_lock&quot;&gt;session lock&lt;&#x2F;a&gt; r akta power menu. To ami ay gular picone tmn smy dei nai just aktu khuje khub simple 2 ta tool paici oi duita e use kori…..screen lock korar jonno &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;betterlockscreen&#x2F;betterlockscreen&quot;&gt;betterlockscreen&lt;&#x2F;a&gt; r power menu hisabe &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ArtsyMacaw&#x2F;wlogout&quot;&gt;wlogout&lt;&#x2F;a&gt;. R main akta jinis ace oita hocce systemd, systemd hocche Linux system er ekta init system and service manager. Ami systemd niya akhono pori nai kicu future a jananor try korbo. To arch use korar jonno amader mainly 4 ta jinis configure kora lagbe:-&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Xorg&quot;&gt;DISPLAY SERVER&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Display_manager&quot;&gt;DISPLAY MANAGER&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;betterlockscreen&#x2F;betterlockscreen&quot;&gt;LOCK SCREEN&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ArtsyMacaw&#x2F;wlogout&quot;&gt;POWER MENU&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Ay 4 ta jinis configure already kora ace amr ami cotto akta bash script use kori arch configure korar jonno. Command gula just terminal a paste kore dile e puro arch setup hoye jabe:-&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -S git
+&lt;&#x2F;span&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;INSTALL_SCRIPT.git
+&lt;&#x2F;span&gt;&lt;span&gt;cd INSTALL_SCRIPT
+&lt;&#x2F;span&gt;&lt;span&gt;.&#x2F;install.sh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Akhn just permission abong password gula dite hobe tyle e setup done.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setup-of-emacs-on-arch&quot;&gt;SETUP OF EMACS ON ARCH&lt;&#x2F;h2&gt;
+&lt;p&gt;Emacs mainly akta text editor kintu ayta k thik thak vabe customize korle tmi ayta k akta window manager hisabe use kora possible. Jmn ta ami kori amr window manager hocce &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;EXWM&quot;&gt;EXWM&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;EMACS&#x2F;exwm.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
+&lt;h3 id=&quot;two-simple-task&quot;&gt;TWO SIMPLE TASK&lt;&#x2F;h3&gt;
+&lt;p&gt;ami amr emacs setup a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;progfolio&#x2F;elpaca&quot;&gt;elpaca&lt;&#x2F;a&gt;, melpa, elpa abong orgmode repo use korci. Abong amr sob packge gulo ay repo theke e add kora.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(require &amp;#39;package)
+&lt;&#x2F;span&gt;&lt;span&gt;(setq package-archives
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;#39;((&amp;quot;gnu&amp;quot; . &amp;quot;https:&#x2F;&#x2F;elpa.gnu.org&#x2F;packages&#x2F;&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span&gt;        (&amp;quot;melpa&amp;quot; . &amp;quot;https:&#x2F;&#x2F;melpa.org&#x2F;packages&#x2F;&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span&gt;        (&amp;quot;org&amp;quot; . &amp;quot;https:&#x2F;&#x2F;orgmode.org&#x2F;elpa&#x2F;&amp;quot;)))
+&lt;&#x2F;span&gt;&lt;span&gt;(package-initialize)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Kintu ami 2 ta jinis solve korte pari nai first hocce exwm package ta ami use-package command diye download korte pari nai oita amr emacs er defult repo theke add kora lagbe require command use kore. To require command diye kicu add korte hoile oi package ta age M-x RET package-name RET diye download korte hoi. Tarpore oita use kora jai. To emacs open korar pore first sob kicu configure korar pore M-x RET package-install command diye emacs a 2 ta package download korte hobe 1st exwm r hooce vterm-toggle.&lt;&#x2F;p&gt;
+&lt;p&gt;M-x:&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;EMACS&#x2F;M-x.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
+&lt;p&gt;package-install RET:&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;EMACS&#x2F;package-install.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
+&lt;p&gt;Installing Exwm:&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;EMACS&#x2F;exwm-install.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
+&lt;p&gt;er pore e ay command ta kaj korbe&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(require &amp;#39;exwm)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;dotfiles&#x2F;blob&#x2F;main&#x2F;emacs&#x2F;.config&#x2F;emacs&#x2F;config.org&quot;&gt;EMACS CONFIG&lt;&#x2F;a&gt; ta te full emacs er config dea ace. Caile e dekhe nite paro.&lt;&#x2F;p&gt;
+&lt;p&gt;Ami ayvabe e amr arch a exwm setup kori.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;android&quot;&gt;ANDROID&lt;&#x2F;h2&gt;
+&lt;p&gt;Android a o sorasori emacs download kora jai kintu oita te ami keyboard ante pari nai. Ami onk age theke e android a termux use kortam tkhn mathai aslo j emacs er cli to termux a use kora jaite pare ay jonno ami &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;en&#x2F;packages&#x2F;com.termux&#x2F;&quot;&gt;termux&lt;&#x2F;a&gt; a emacs run korar try kori abong ses porjonto ayta te kaj o hoi. So android device a emacs use korar jonno termux lagbe. To first a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;repo&#x2F;com.termux_1022.apk&quot;&gt;termux apk&lt;&#x2F;a&gt; download korte hobe android device a. Tarpore termux open korar pore just ay command gula termux a paste kore dile e hobe:-&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;cd ~
+&lt;&#x2F;span&gt;&lt;span&gt;termux-setup-storage
+&lt;&#x2F;span&gt;&lt;span&gt;pkg update &amp;amp;&amp;amp; pkg upgrade -y
+&lt;&#x2F;span&gt;&lt;span&gt;pkg install git emacs
+&lt;&#x2F;span&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;Termux_emacs.git ~&#x2F;.emacs.d
+&lt;&#x2F;span&gt;&lt;span&gt;emacs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Er pore kicu smy emacs er sob package download hoya porjonto wait korte hobe. Tarpore emacs close kore abro open korte hobe&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;C-c C-x
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;emacs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Ayvabe e emacs install abong setup korte hoi linux abong android a. R jdi kew main os hisabe windows use koren tahole vmware ba virtualbox a arch linux install kore tarpore emacs use korte paren.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>WHAT I USE</title>
         <published>2025-07-29T00:00:00+00:00</published>
