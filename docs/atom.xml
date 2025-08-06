@@ -72,8 +72,8 @@
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(setq package-enable-at-startup nil)
 &lt;&#x2F;span&gt;&lt;span&gt;;; (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;quot;JetBrains Mono-11&amp;quot;))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h1 id=&quot;setting-up-emacs&quot;&gt;SETTING UP EMACS&lt;&#x2F;h1&gt;
-&lt;h2 id=&quot;all-the-repos&quot;&gt;ALL THE REPOS&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;config-org&quot;&gt;CONFIG.ORG&lt;&#x2F;h2&gt;
+&lt;p&gt;Aybar amra amader Emacs ta k configure kora suru korbo. Configuretion er jonno sobar e alada alada approch ace. Ami first a repo gulo setup kori. Elpaca er repo theke elpaca er code ta ane just ay jagai paste kore dile e elpaca setup hoye jabe.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;elpaca&quot;&gt;ELPACA&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(defvar elpaca-installer-version 0.11)
 &lt;&#x2F;span&gt;&lt;span&gt;(defvar elpaca-directory (expand-file-name &amp;quot;elpaca&#x2F;&amp;quot; user-emacs-directory))
@@ -113,13 +113,16 @@
 &lt;&#x2F;span&gt;&lt;span&gt;    (let ((load-source-file-function nil)) (load &amp;quot;.&#x2F;elpaca-autoloads&amp;quot;))))
 &lt;&#x2F;span&gt;&lt;span&gt;(add-hook &amp;#39;after-init-hook #&amp;#39;elpaca-process-queues)
 &lt;&#x2F;span&gt;&lt;span&gt;(elpaca `(,@elpaca-order))
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;;; Install use-package support
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;setting-up-use-package-support&quot;&gt;SETTING UP “use-package” support&lt;&#x2F;h3&gt;
+&lt;p&gt;Package install korar jonno nijer code tuku add korte hobe. Ayta elcapa er main code er ses a add kore dite hobe.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Install use-package support
 &lt;&#x2F;span&gt;&lt;span&gt;(elpaca elpaca-use-package
 &lt;&#x2F;span&gt;&lt;span&gt;  ;; Enable use-package :ensure support for Elpaca.
 &lt;&#x2F;span&gt;&lt;span&gt;  (elpaca-use-package-mode))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;some-repo&quot;&gt;SOME REPO&lt;&#x2F;h3&gt;
+&lt;p&gt;R o 3 ta repo add korte hobe, ay gula kicu package er jonno proyojon ja amra elpaca te pabo na.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(require &amp;#39;package)
 &lt;&#x2F;span&gt;&lt;span&gt;(setq package-archives
 &lt;&#x2F;span&gt;&lt;span&gt;      &amp;#39;((&amp;quot;gnu&amp;quot; . &amp;quot;https:&#x2F;&#x2F;elpa.gnu.org&#x2F;packages&#x2F;&amp;quot;)
@@ -127,7 +130,8 @@
 &lt;&#x2F;span&gt;&lt;span&gt;        (&amp;quot;org&amp;quot; . &amp;quot;https:&#x2F;&#x2F;orgmode.org&#x2F;elpa&#x2F;&amp;quot;)))
 &lt;&#x2F;span&gt;&lt;span&gt;(package-initialize)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;doom-modelime-and-doom-theme&quot;&gt;DOOM MODELIME AND DOOM THEME&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;doom-modelime-and-doom-theme&quot;&gt;DOOM MODELIME AND DOOM THEME&lt;&#x2F;h3&gt;
+&lt;p&gt;Emacs er defult theme r modeline ta change korar jonno amra doom modeline abong theme install korbo. Jate kore amra thik vabe emacs a kaj korte pari. Mainly cokher santi er jonno😌.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package doom-modeline
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :config
@@ -150,7 +154,8 @@
 &lt;&#x2F;span&gt;&lt;span&gt;      doom-themes-enable-italic t)
 &lt;&#x2F;span&gt;&lt;span&gt;(load-theme &amp;#39;doom-one t))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;fonts&quot;&gt;FONTS&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;fonts&quot;&gt;FONTS&lt;&#x2F;h3&gt;
+&lt;p&gt;Emacs er fonts change korar jonno font add korte hobe.&lt;&#x2F;p&gt;
 &lt;p&gt;If you are having trouble of loading the fonts please add those line in your early-init.el file&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;quot;JetBrains Mono-11&amp;quot;))
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -161,8 +166,11 @@
 &lt;&#x2F;span&gt;&lt;span&gt;;; (set-face-attribute &amp;#39;font-lock-keyword-face nil :slant &amp;#39;italic)
 &lt;&#x2F;span&gt;&lt;span&gt;;; (setq-default line-spacing 0.12)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;org-mode&quot;&gt;ORG MODE&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;org-main&quot;&gt;ORG MAIN&lt;&#x2F;h3&gt;
+&lt;h3 id=&quot;org-mode&quot;&gt;ORG MODE&lt;&#x2F;h3&gt;
+&lt;p&gt;Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ORG MAIN&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package toc-org
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :commands toc-org-enable
@@ -175,69 +183,47 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;(require &amp;#39;org-tempo)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;markdown-converter-for-zola&quot;&gt;MARKDOWN CONVERTER FOR ZOLA&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;org-file-to-markdwon&quot;&gt;ORG FILE TO MARKDWON&lt;&#x2F;h3&gt;
-&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(defun my&#x2F;org-md-export-to-markdown-with-header ()
-&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;Export current Org file to markdown with a custom TOML-style header at the top.&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;  (interactive)
-&lt;&#x2F;span&gt;&lt;span&gt;  (let* ((org-md-headline-style &amp;#39;atx)
-&lt;&#x2F;span&gt;&lt;span&gt;         (org-export-with-toc nil)
-&lt;&#x2F;span&gt;&lt;span&gt;         (org-export-with-section-numbers nil)
-&lt;&#x2F;span&gt;&lt;span&gt;         (org-export-with-smart-quotes t)
-&lt;&#x2F;span&gt;&lt;span&gt;         (org-export-with-drawers nil)
-&lt;&#x2F;span&gt;&lt;span&gt;         (org-export-with-priority nil)
-&lt;&#x2F;span&gt;&lt;span&gt;         (outfile (org-md-export-to-markdown)))
-&lt;&#x2F;span&gt;&lt;span&gt;    (with-current-buffer (find-file-noselect outfile)
-&lt;&#x2F;span&gt;&lt;span&gt;      (goto-char (point-min))
-&lt;&#x2F;span&gt;&lt;span&gt;      (insert &amp;quot;+++\n&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;      (insert &amp;quot;title = \&amp;quot;&amp;quot; (file-name-base outfile) &amp;quot;\&amp;quot;\n&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;      (insert &amp;quot;date = \&amp;quot;&amp;quot; (format-time-string &amp;quot;%Y-%m-%d&amp;quot;) &amp;quot;\&amp;quot;\n&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;      (insert &amp;quot;author = \&amp;quot;&amp;quot; user-full-name &amp;quot;\&amp;quot;\n&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;      (insert &amp;quot;+++\n\n&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;      (save-buffer))))
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;org-tempo-shortcut-for-laoding-youtube-video-and-normal-video&quot;&gt;ORG TEMPO SHORTCUT FOR LAODING YOUTUBE VIDEO AND NORMAL VIDEO&lt;&#x2F;h3&gt;
-&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;youtube template&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;
-&lt;&#x2F;span&gt;&lt;span&gt;(add-to-list &amp;#39;org-structure-template-alist
-&lt;&#x2F;span&gt;&lt;span&gt;             &amp;#39;(&amp;quot;y&amp;quot; . &amp;quot;EXPORT html\n&amp;lt;iframe width=\&amp;quot;560\&amp;quot; height=\&amp;quot;315\&amp;quot;\n  src=\&amp;quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;\&amp;quot;\n  title=\&amp;quot;YouTube video player\&amp;quot;\n  frameborder=\&amp;quot;0\&amp;quot;\n  allow=\&amp;quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\&amp;quot;\n  allowfullscreen&amp;gt;\n&amp;lt;&#x2F;iframe&amp;gt;&amp;quot;))
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;;;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;video template&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;
-&lt;&#x2F;span&gt;&lt;span&gt;(add-to-list &amp;#39;org-structure-template-alist
-&lt;&#x2F;span&gt;&lt;span&gt;             &amp;#39;(&amp;quot;z&amp;quot; . &amp;quot;EXPORT html\n&amp;lt;video controls width=\&amp;quot;100%\&amp;quot;&amp;gt;\n  &amp;lt;source src=\&amp;quot;&#x2F;videos&#x2F;.mp4\&amp;quot; type=\&amp;quot;video&#x2F;mp4\&amp;quot;&amp;gt;\n  Your browser does not support the video tag.\n&amp;lt;&#x2F;video&amp;gt;&amp;quot;))
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;;;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;Image template&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;
-&lt;&#x2F;span&gt;&lt;span&gt;(tempo-define-template
-&lt;&#x2F;span&gt;&lt;span&gt; &amp;quot;j&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt; &amp;#39;(&amp;quot;#+CAPTION: IMAGE&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;[[]]&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt; &amp;quot;&amp;lt;j&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt; &amp;quot;Insert image caption and link placeholder in Org-mode&amp;quot;)
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;org-mode-graphical-tweaks&quot;&gt;ORG MODE GRAphical TWeaks&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;ORG MODE GRAphical TWeaks&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(setq org-edit-src-content-indentation 0) ;; set src block automatic indent to 0 instead of 2.
 &lt;&#x2F;span&gt;&lt;span&gt;(delete-selection-mode 1)    ;; you can select text and delete it by typing.
 &lt;&#x2F;span&gt;&lt;span&gt;(electric-indent-mode -1)    ;; turn off the weird indenting that emacs does by default.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;graphical-user-interface-tweaks&quot;&gt;GRAPHICAL USER INTERFACE TWEAKS&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;default-bip-sound-disable&quot;&gt;DEFAULT BIP SOUND DISABLE&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;graphical-user-interface-tweaks&quot;&gt;GRAPHICAL USER INTERFACE TWEAKS&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DEFAULT BIP SOUND DISABLE&lt;&#x2F;p&gt;
+&lt;p&gt;Emacs a defult vabe akta beep sound kore jdi kno line er first a jeye backspace click kora hoi ba kno vhul command dea hoi j ta sunte onk besi osojjo lage ay jonno defult beep sound ta off kora dorkar.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package emacs
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure nil
 &lt;&#x2F;span&gt;&lt;span&gt;  :config
 &lt;&#x2F;span&gt;&lt;span&gt;  (setq ring-bell-function #&amp;#39;ignore))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;disable-menubar-toolbars-and-scrollbars&quot;&gt;Disable Menubar, Toolbars and Scrollbars&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Disable Menubar, Toolbars and Scrollbars&lt;&#x2F;p&gt;
+&lt;p&gt;Minimul look er jonno menu-bar, scroll-bar abong tool-bar off kore dea.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(menu-bar-mode -1)           ;; Disable the menu bar 
 &lt;&#x2F;span&gt;&lt;span&gt;(scroll-bar-mode -1)         ;; disable the scroll bar
 &lt;&#x2F;span&gt;&lt;span&gt;(tool-bar-mode -1)           ;; Disable the tool bar
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;display-line-numbers-and-truncated-lines&quot;&gt;Display Line Numbers and Truncated Lines&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Display Line Numbers and Truncated Lines&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 &lt;&#x2F;span&gt;&lt;span&gt;(global-visual-line-mode t)  ;; Enable truncated lines
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;display-line-number-mode&quot;&gt;DISPLAY LINE NUMBER MODE&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;DISPLAY LINE NUMBER MODE&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(global-display-line-numbers-mode 1) ;; Display line numbers
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;for-pair-mode-like&quot;&gt;FOR PAIR MODE: LIKE()&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;FOR PAIR MODE: LIKE(){}&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(electric-pair-mode 1)       ;; Turns on automatic parens pairing
 &lt;&#x2F;span&gt;&lt;span&gt;;; The following prevents &amp;lt;&amp;gt; from auto-pairing when electric-pair-mode is on.
 &lt;&#x2F;span&gt;&lt;span&gt;;; Otherwise, org-tempo is broken when you try to &amp;lt;s TAB...
@@ -246,7 +232,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;                       `(lambda (c)
 &lt;&#x2F;span&gt;&lt;span&gt;                      (if (char-equal c ?&amp;lt;) t (,electric-pair-inhibit-predicate c))))))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;zooming-in-and-out&quot;&gt;ZOOMING IN AND OUT&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;ZOOMING IN AND OUT&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;;========= ZOOMING IN AND OUT ==========
 &lt;&#x2F;span&gt;&lt;span&gt;(global-set-key (kbd &amp;quot;C-=&amp;quot;) &amp;#39;text-scale-increase)
 &lt;&#x2F;span&gt;&lt;span&gt;(global-set-key (kbd &amp;quot;C--&amp;quot;) &amp;#39;text-scale-decrease)
@@ -256,10 +244,14 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(setq inhibit-startup-message t)
 &lt;&#x2F;span&gt;&lt;span&gt;(setq initial-scratch-message nil)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;minibuffer-escape&quot;&gt;MINIBUFFER ESCAPE&lt;&#x2F;h2&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;minibuffer-escape&quot;&gt;MINIBUFFER ESCAPE&lt;&#x2F;h3&gt;
+&lt;p&gt;jkhn minibuffer a focus jai tkhn minibuffer theke focus sorarnor jonno jhamela hoi onk bar esc press kora lage to ay problem ta solve korar jonno, one click a minibuffer theke escape korar jonno.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(global-set-key [escape] &amp;#39;keyboard-escape-quit);;MInibuffer escape
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;evil-mode&quot;&gt;EVIL MODE&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;evil-mode&quot;&gt;EVIL MODE&lt;&#x2F;h3&gt;
+&lt;p&gt;Vim like keybinding er jonno Evil Mode.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package evil
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :init
@@ -287,12 +279,13 @@
 &lt;&#x2F;span&gt;&lt;span&gt;;; Setting RETURN key in org-mode to follow links
 &lt;&#x2F;span&gt;&lt;span&gt;(setq org-return-follows-link  t)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;vterm&quot;&gt;VTERM&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vterm&quot;&gt;VTERM&lt;&#x2F;h3&gt;
+&lt;p&gt;Emacs er jonno best terminal emulator vterm setup korar jonno.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package vterm
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t)
 &lt;&#x2F;span&gt;&lt;span&gt;(add-hook &amp;#39;vterm-mode-hook (lambda () (display-line-numbers-mode -1)))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;counsel-and-ivy&quot;&gt;COUNSEL AND IVY&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;counsel-and-ivy&quot;&gt;COUNSEL AND IVY&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package counsel
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :after ivy
@@ -327,7 +320,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;  (ivy-set-display-transformer &amp;#39;ivy-switch-buffer
 &lt;&#x2F;span&gt;&lt;span&gt;                               &amp;#39;ivy-rich-switch-buffer-transformer))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;general-keybinding&quot;&gt;GENERAL KEYBINDING&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;general-keybinding&quot;&gt;GENERAL KEYBINDING&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package general
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :config
@@ -532,7 +525,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;w L&amp;quot; &amp;#39;(buf-move-right :wk &amp;quot;Buffer move right&amp;quot;))
 &lt;&#x2F;span&gt;&lt;span&gt;  )
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;sudo-edit&quot;&gt;SUDO EDIT&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sudo-edit&quot;&gt;SUDO EDIT&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package sudo-edit
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :config
@@ -540,7 +533,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;fu&amp;quot; &amp;#39;(sudo-edit-find-file :wk &amp;quot;Sudo find file&amp;quot;)
 &lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;fU&amp;quot; &amp;#39;(sudo-edit :wk &amp;quot;Sudo edit file&amp;quot;)))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;emacs-keybinding&quot;&gt;EMACS KEYBINDING&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;emacs-keybinding&quot;&gt;EMACS KEYBINDING&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Bookmarks and Buffers keybindings
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key global-map (kbd &amp;quot;M-b&amp;quot;) nil)  ;; Start defining a prefix for M-b
 &lt;&#x2F;span&gt;&lt;span&gt;;;(define-key global-map (kbd &amp;quot;M-b b&amp;quot;) &amp;#39;switch-to-buffer)
@@ -602,7 +595,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key global-map (kbd &amp;quot;M-m L&amp;quot;) #&amp;#39;Update-lockscreen-bg)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key global-map (kbd &amp;quot;M-m s&amp;quot;) #&amp;#39;Update-sddm-wallpaper)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;which-key&quot;&gt;WHICH KEY&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;which-key&quot;&gt;WHICH KEY&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package which-key
 &lt;&#x2F;span&gt;&lt;span&gt;:ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;:init
@@ -621,7 +614,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;        which-key-allow-imprecise-window-fit nil
 &lt;&#x2F;span&gt;&lt;span&gt;        which-key-separator &amp;quot; → &amp;quot; ))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;blank-buffer&quot;&gt;BLANK BUFFER&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;blank-buffer&quot;&gt;BLANK BUFFER&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; create a completely blank buffer
 &lt;&#x2F;span&gt;&lt;span&gt;(defun my&#x2F;blank-buffer ()
 &lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;create a new completely blank buffer with no ui elements.&amp;quot;
@@ -641,7 +634,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;    ;; Clear message area
 &lt;&#x2F;span&gt;&lt;span&gt;    (message nil)))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;transperency&quot;&gt;TRANSPERENCY&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;transperency&quot;&gt;TRANSPERENCY&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; START picom for transparency
 &lt;&#x2F;span&gt;&lt;span&gt;(start-process &amp;quot;picom&amp;quot; nil &amp;quot;picom&amp;quot;)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -661,7 +654,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;;; Update transparency whenever buffer changes
 &lt;&#x2F;span&gt;&lt;span&gt;(add-hook &amp;#39;buffer-list-update-hook #&amp;#39;my&#x2F;update-transparency-based-on-buffer)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;transperency-for-exwm-workspace&quot;&gt;TRANSPERENCY FOR EXWM WORKSPACE&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;transperency-for-exwm-workspace&quot;&gt;TRANSPERENCY FOR EXWM WORKSPACE&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
 &lt;&#x2F;span&gt;&lt;span&gt;(defun my&#x2F;blank-buffer-in-first-workspace-only ()
 &lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;Open blank buffer only in EXWM workspace 0.&amp;quot;
@@ -686,7 +679,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;(add-hook &amp;#39;exwm-workspace-switch-hook #&amp;#39;my&#x2F;show-blank-if-no-buffer)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;mouse-battery-and-background-setup&quot;&gt;MOUSE, BATTERY AND BACKGROUND SETUP&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;mouse-battery-and-background-setup&quot;&gt;MOUSE, BATTERY AND BACKGROUND SETUP&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(setq mouse-autoselect-window t
 &lt;&#x2F;span&gt;&lt;span&gt;      focus-follows-mouse t)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -703,7 +696,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;            (run-at-time &amp;quot;3 sec&amp;quot; nil (lambda ()
 &lt;&#x2F;span&gt;&lt;span&gt;              (start-process &amp;quot;flameshot&amp;quot; nil &amp;quot;flameshot&amp;quot;)))))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;ide&quot;&gt;IDE&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;ide&quot;&gt;IDE&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; ========== Neotree Mode ==========
 &lt;&#x2F;span&gt;&lt;span&gt;(use-package neotree
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t)
@@ -745,8 +738,10 @@
 &lt;&#x2F;span&gt;&lt;span&gt;  (lsp-enable-symbol-highlighting t)
 &lt;&#x2F;span&gt;&lt;span&gt;  (lsp-prefer-flymake nil))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;language-support-for-ide&quot;&gt;LANGUAGE SUPPORT FOR IDE&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;python&quot;&gt;PYTHON&lt;&#x2F;h3&gt;
+&lt;h3 id=&quot;language-support-for-ide&quot;&gt;LANGUAGE SUPPORT FOR IDE&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PYTHON&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package python-mode
 &lt;&#x2F;span&gt;&lt;span&gt;  :hook (python-mode . lsp)
 &lt;&#x2F;span&gt;&lt;span&gt;  :custom
@@ -759,7 +754,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;                         (require &amp;#39;lsp-pyright)
 &lt;&#x2F;span&gt;&lt;span&gt;                         (lsp))))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;dart-mode&quot;&gt;DART MODE&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;DART MODE&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Dart + Flutter setup
 &lt;&#x2F;span&gt;&lt;span&gt;(use-package dart-mode
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
@@ -783,7 +780,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;  :bind (:map dart-mode-map
 &lt;&#x2F;span&gt;&lt;span&gt;              (&amp;quot;C-M-x&amp;quot; . flutter-run-or-hot-reload)))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;dashboard&quot;&gt;DASHBOARD&lt;&#x2F;h2&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;dashboard&quot;&gt;DASHBOARD&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package dashboard
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :init
@@ -805,7 +804,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;;; :config
 &lt;&#x2F;span&gt;&lt;span&gt;;; (dashboard-setup-startup-hook))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;dired&quot;&gt;DIRED&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;dired&quot;&gt;DIRED&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(use-package dired-open
 &lt;&#x2F;span&gt;&lt;span&gt;  :ensure t
 &lt;&#x2F;span&gt;&lt;span&gt;  :config
@@ -830,10 +829,10 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;(setq dired-listing-switches &amp;quot;-lha&amp;quot;)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;backups&quot;&gt;BACKUPS&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;backups&quot;&gt;BACKUPS&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(setq backup-directory-alist &amp;#39;((&amp;quot;.*&amp;quot; . &amp;quot;~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&amp;quot;)))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;buffer-move&quot;&gt;BUFFER MOVE&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;buffer-move&quot;&gt;BUFFER MOVE&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(require &amp;#39;windmove)
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;;;;###autoload
@@ -903,8 +902,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;      (set-window-buffer other-win buf-this-buf)
 &lt;&#x2F;span&gt;&lt;span&gt;      (select-window other-win))))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h1 id=&quot;setting-up-exwm&quot;&gt;SETTING UP EXWM&lt;&#x2F;h1&gt;
-&lt;h2 id=&quot;exwm&quot;&gt;EXWM&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;setting-up-exwm&quot;&gt;SETTING UP EXWM&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;exwm-main&quot;&gt;EXWM MAIN&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(require &amp;#39;exwm)
 &lt;&#x2F;span&gt;&lt;span&gt;;; Set the initial workspace number.
@@ -1050,11 +1048,15 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(global-set-key (kbd &amp;quot;M-l&amp;quot;) #&amp;#39;my&#x2F;lock-screen) ;; FOR EMACS
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map [?\M-l] #&amp;#39;my&#x2F;lock-screen) ;; FOR EXWM
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;exwem-notification&quot;&gt;EXWEM NOTIFICATION&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;starting-dunst&quot;&gt;STARTING DUNST&lt;&#x2F;h3&gt;
+&lt;h3 id=&quot;exwem-notification&quot;&gt;EXWEM NOTIFICATION&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;STARTING DUNST&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(start-process &amp;quot;dunst&amp;quot; nil &amp;quot;dunst&amp;quot;) ;; Starting Wireless conncetion 
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;volume-control&quot;&gt;VOLUME CONTROL&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;VOLUME CONTROL&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(defun volume-increase ()
 &lt;&#x2F;span&gt;&lt;span&gt;  (interactive)
 &lt;&#x2F;span&gt;&lt;span&gt;  (start-process-shell-command &amp;quot;volume up&amp;quot; nil
@@ -1080,7 +1082,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map(kbd &amp;quot;&amp;lt;XF86AudioLowerVolume&amp;gt;&amp;quot;) &amp;#39;volume-decrease)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map(kbd &amp;quot;&amp;lt;XF86AudioMute&amp;gt;&amp;quot;) &amp;#39;volume-mute-toggle)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;brightness-control&quot;&gt;BRIGHTNESS CONTROL&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;BRIGHTNESS CONTROL&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(defun brightness-increase ()
 &lt;&#x2F;span&gt;&lt;span&gt;  (interactive)
 &lt;&#x2F;span&gt;&lt;span&gt;  (start-process-shell-command &amp;quot;brightness up&amp;quot; nil
@@ -1101,6 +1105,8 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;&amp;lt;XF86MonBrightnessUp&amp;gt;&amp;quot;) &amp;#39;brightness-increase)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;&amp;lt;XF86MonBrightnessDown&amp;gt;&amp;quot;) &amp;#39;brightness-decrease)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;sddm-background-update&quot;&gt;SDDM BACKGROUND UPDATE&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;(defun my&#x2F;update-sddm-wallpaper ()
 &lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;Update SDDM wallpaper using external script in alacritty and notify via dunst.&amp;quot;
@@ -1129,7 +1135,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;           (start-process-shell-command &amp;quot;notify-sddm-fail&amp;quot; nil
 &lt;&#x2F;span&gt;&lt;span&gt;                                        &amp;quot;notify-send &amp;#39;SDDM&amp;#39; &amp;#39;❌ SDDM wallpaper update failed!&amp;#39; -u critical&amp;quot;)))))))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;shortcut-for-lunching-application&quot;&gt;SHORTCUT FOR LUNCHING APPLICATION&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;shortcut-for-lunching-application&quot;&gt;SHORTCUT FOR LUNCHING APPLICATION&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt; (defun my&#x2F;launch-firefox ()
 &lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;launch firefox browser.&amp;quot;
 &lt;&#x2F;span&gt;&lt;span&gt;  (interactive)
@@ -1211,7 +1217,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(global-set-key (kbd &amp;quot;M-m x&amp;quot;) #&amp;#39;my&#x2F;toggle-fullscreen)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-m x&amp;quot;) #&amp;#39;my&#x2F;toggle-fullscreen)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;customized-function-name&quot;&gt;CUSTOMIZED FUNCTION NAME&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;customized-function-name&quot;&gt;CUSTOMIZED FUNCTION NAME&lt;&#x2F;h3&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Power Menu
 &lt;&#x2F;span&gt;&lt;span&gt;(defalias &amp;#39;Power-menu #&amp;#39;my&#x2F;power-menu)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -1226,8 +1232,10 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;(defalias &amp;#39;ORG-TO-MD-CONVERT #&amp;#39;my&#x2F;org-md-export-to-markdown-with-header)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;exwm-keybindings&quot;&gt;EXWM KEYBINDINGS&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;buffer&quot;&gt;BUFFER&lt;&#x2F;h3&gt;
+&lt;h3 id=&quot;exwm-keybindings&quot;&gt;EXWM KEYBINDINGS&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BUFFER&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Unbind M-b from any previous behavior (like backward-word)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-b&amp;quot;) nil)  ;; Start defining a prefix for M-b in EXWM
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -1244,7 +1252,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-b m&amp;quot;) &amp;#39;exwm-layout-toggle-mode-line) ;; Toggle mode-line visibility
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-b q&amp;quot;) &amp;#39;exwm-input-release-keyboard) ;; Release EXWM keyboard Release
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;window-1&quot;&gt;WINDOW&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;WINDOW&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Define M-w as a prefix key for EXWM
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-w&amp;quot;) nil)  ;; Start defining a prefix for M-w in EXWM
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -1269,7 +1279,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-w L&amp;quot;) &amp;#39;buf-move-right)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-w m&amp;quot;) &amp;#39;save-buffers-kill-emacs)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;dired-and-menu&quot;&gt;DIRED AND MENU&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;DIRED AND MENU&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; Define M-d as a prefix key in EXWM mode
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-d&amp;quot;) nil)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -1281,7 +1293,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-d n&amp;quot;) &amp;#39;neotree-dir) ;; Open directory in Neotree
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-d p&amp;quot;) &amp;#39;peep-dired) ;; Peep Dired preview
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;personal-keybindings&quot;&gt;PERSONAL KEYBINDINGS&lt;&#x2F;h3&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;PERSONAL KEYBINDINGS&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;;; ===== personal keybinding for menus =====
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-m&amp;quot;) nil)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -1291,6 +1305,8 @@
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-m p&amp;quot;) #&amp;#39;Update-sddm-wallpaper)
 &lt;&#x2F;span&gt;&lt;span&gt;(define-key exwm-mode-map (kbd &amp;quot;M-m x&amp;quot;) &amp;#39;exwm-layout-toggle-fullscreen)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>

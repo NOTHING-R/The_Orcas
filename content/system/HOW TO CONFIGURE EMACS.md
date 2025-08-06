@@ -90,10 +90,9 @@ File ta te ay line ta add kore dite hobe:-
     ;; (add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
 
 
-# SETTING UP EMACS
+## CONFIG.ORG
 
-
-## ALL THE REPOS
+Aybar amra amader Emacs ta k configure kora suru korbo. Configuretion er jonno sobar e alada alada approch ace. Ami first a repo gulo setup kori. Elpaca er repo theke elpaca er code ta ane just ay jagai paste kore dile e elpaca setup hoye jabe. 
 
 
 ### ELPACA
@@ -136,7 +135,12 @@ File ta te ay line ta add kore dite hobe:-
         (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
     (add-hook 'after-init-hook #'elpaca-process-queues)
     (elpaca `(,@elpaca-order))
-    
+
+
+### SETTING UP &ldquo;use-package&rdquo; support
+
+Package install korar jonno nijer code tuku add korte hobe. Ayta elcapa er main code er ses a add kore dite hobe.
+
     ;; Install use-package support
     (elpaca elpaca-use-package
       ;; Enable use-package :ensure support for Elpaca.
@@ -144,6 +148,8 @@ File ta te ay line ta add kore dite hobe:-
 
 
 ### SOME REPO
+
+R o 3 ta repo add korte hobe, ay gula kicu package er jonno proyojon ja amra elpaca te pabo na.
 
     (require 'package)
     (setq package-archives
@@ -153,7 +159,9 @@ File ta te ay line ta add kore dite hobe:-
     (package-initialize)
 
 
-## DOOM MODELIME AND DOOM THEME
+### DOOM MODELIME AND DOOM THEME
+
+Emacs er defult theme r modeline ta change korar jonno amra doom modeline abong theme install korbo. Jate kore amra thik vabe emacs a kaj korte pari. Mainly cokher santi er jonno😌. 
 
     (use-package doom-modeline
       :ensure t
@@ -178,7 +186,9 @@ File ta te ay line ta add kore dite hobe:-
     (load-theme 'doom-one t))
 
 
-## FONTS
+### FONTS
+
+Emacs er fonts change korar jonno font add korte hobe.
 
 If you are having trouble of loading the fonts please add those line in your early-init.el file
 
@@ -192,133 +202,91 @@ If you are having trouble of loading the fonts please add those line in your ear
     ;; (setq-default line-spacing 0.12)
 
 
-## ORG MODE
+### ORG MODE
+
+Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.
+
+-   ORG MAIN
+
+        (use-package toc-org
+          :ensure t
+          :commands toc-org-enable
+          :init (add-hook 'org-mode-hook 'toc-org-enable))
+        (add-hook 'org-mode-hook 'org-indent-mode)
+        
+        (use-package org-bullets
+          :ensure t)
+        (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+        
+        (require 'org-tempo)
+
+-   ORG MODE GRAphical TWeaks
+
+        (setq org-edit-src-content-indentation 0) ;; set src block automatic indent to 0 instead of 2.
+        (delete-selection-mode 1)    ;; you can select text and delete it by typing.
+        (electric-indent-mode -1)    ;; turn off the weird indenting that emacs does by default.
 
 
-### ORG MAIN
+### GRAPHICAL USER INTERFACE TWEAKS
 
-    (use-package toc-org
-      :ensure t
-      :commands toc-org-enable
-      :init (add-hook 'org-mode-hook 'toc-org-enable))
-    (add-hook 'org-mode-hook 'org-indent-mode)
+-   DEFAULT BIP SOUND DISABLE
+
+    Emacs a defult vabe akta beep sound kore jdi kno line er first a jeye backspace click kora hoi ba kno vhul command dea hoi j ta sunte onk besi osojjo lage ay jonno defult beep sound ta off kora dorkar.
     
-    (use-package org-bullets
-      :ensure t)
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+        (use-package emacs
+          :ensure nil
+          :config
+          (setq ring-bell-function #'ignore))
+
+-   Disable Menubar, Toolbars and Scrollbars
+
+    Minimul look er jonno menu-bar, scroll-bar abong tool-bar off kore dea.
     
-    (require 'org-tempo)
+        (menu-bar-mode -1)           ;; Disable the menu bar 
+        (scroll-bar-mode -1)         ;; disable the scroll bar
+        (tool-bar-mode -1)           ;; Disable the tool bar
+
+-   Display Line Numbers and Truncated Lines
+
+        (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
+        (global-visual-line-mode t)  ;; Enable truncated lines
+
+-   DISPLAY LINE NUMBER MODE
+
+        (global-display-line-numbers-mode 1) ;; Display line numbers
+
+-   FOR PAIR MODE: LIKE(){}
+
+        (electric-pair-mode 1)       ;; Turns on automatic parens pairing
+        ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
+        ;; Otherwise, org-tempo is broken when you try to <s TAB...
+        (add-hook 'org-mode-hook (lambda ()
+                                   (setq-local electric-pair-inhibit-predicate
+                               `(lambda (c)
+                              (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
+
+-   ZOOMING IN AND OUT
+
+        ;;========= ZOOMING IN AND OUT ==========
+        (global-set-key (kbd "C-=") 'text-scale-increase)
+        (global-set-key (kbd "C--") 'text-scale-decrease)
+        (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+        (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+        ;;=========TRANSPARENT STARTUP==========
+        (setq inhibit-startup-message t)
+        (setq initial-scratch-message nil)
 
 
-## MARKDOWN CONVERTER FOR ZOLA
+### MINIBUFFER ESCAPE
 
-
-### ORG FILE TO MARKDWON
-
-    (defun my/org-md-export-to-markdown-with-header ()
-      "Export current Org file to markdown with a custom TOML-style header at the top."
-      (interactive)
-      (let* ((org-md-headline-style 'atx)
-             (org-export-with-toc nil)
-             (org-export-with-section-numbers nil)
-             (org-export-with-smart-quotes t)
-             (org-export-with-drawers nil)
-             (org-export-with-priority nil)
-             (outfile (org-md-export-to-markdown)))
-        (with-current-buffer (find-file-noselect outfile)
-          (goto-char (point-min))
-          (insert "+++\n")
-          (insert "title = \"" (file-name-base outfile) "\"\n")
-          (insert "date = \"" (format-time-string "%Y-%m-%d") "\"\n")
-          (insert "author = \"" user-full-name "\"\n")
-          (insert "+++\n\n")
-          (save-buffer))))
-
-
-### ORG TEMPO SHORTCUT FOR LAODING YOUTUBE VIDEO AND NORMAL VIDEO
-
-    ;;>>>>>>youtube template<<<<<<<<
-    (add-to-list 'org-structure-template-alist
-                 '("y" . "EXPORT html\n<iframe width=\"560\" height=\"315\"\n  src=\"https://www.youtube.com/embed/\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen>\n</iframe>"))
-    
-    ;;>>>>>>video template<<<<<<<<
-    (add-to-list 'org-structure-template-alist
-                 '("z" . "EXPORT html\n<video controls width=\"100%\">\n  <source src=\"/videos/.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>"))
-    
-    ;;>>>>>>Image template<<<<<<<<
-    (tempo-define-template
-     "j"
-     '("#+CAPTION: IMAGE"
-       "[[]]")
-     "<j"
-     "Insert image caption and link placeholder in Org-mode")
-
-
-### ORG MODE GRAphical TWeaks
-
-    (setq org-edit-src-content-indentation 0) ;; set src block automatic indent to 0 instead of 2.
-    (delete-selection-mode 1)    ;; you can select text and delete it by typing.
-    (electric-indent-mode -1)    ;; turn off the weird indenting that emacs does by default.
-
-
-## GRAPHICAL USER INTERFACE TWEAKS
-
-
-### DEFAULT BIP SOUND DISABLE
-
-    (use-package emacs
-      :ensure nil
-      :config
-      (setq ring-bell-function #'ignore))
-
-
-### Disable Menubar, Toolbars and Scrollbars
-
-    (menu-bar-mode -1)           ;; Disable the menu bar 
-    (scroll-bar-mode -1)         ;; disable the scroll bar
-    (tool-bar-mode -1)           ;; Disable the tool bar
-
-
-### Display Line Numbers and Truncated Lines
-
-    (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
-    (global-visual-line-mode t)  ;; Enable truncated lines
-
-
-### DISPLAY LINE NUMBER MODE
-
-    (global-display-line-numbers-mode 1) ;; Display line numbers
-
-
-### FOR PAIR MODE: LIKE(){}
-
-    (electric-pair-mode 1)       ;; Turns on automatic parens pairing
-    ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
-    ;; Otherwise, org-tempo is broken when you try to <s TAB...
-    (add-hook 'org-mode-hook (lambda ()
-                               (setq-local electric-pair-inhibit-predicate
-                           `(lambda (c)
-                          (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
-
-
-### ZOOMING IN AND OUT
-
-    ;;========= ZOOMING IN AND OUT ==========
-    (global-set-key (kbd "C-=") 'text-scale-increase)
-    (global-set-key (kbd "C--") 'text-scale-decrease)
-    (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
-    (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
-    ;;=========TRANSPARENT STARTUP==========
-    (setq inhibit-startup-message t)
-    (setq initial-scratch-message nil)
-
-
-## MINIBUFFER ESCAPE
+jkhn minibuffer a focus jai tkhn minibuffer theke focus sorarnor jonno jhamela hoi onk bar esc press kora lage to ay problem ta solve korar jonno, one click a minibuffer theke escape korar jonno.
 
     (global-set-key [escape] 'keyboard-escape-quit);;MInibuffer escape
 
 
-## EVIL MODE
+### EVIL MODE
+
+Vim like keybinding er jonno Evil Mode.
 
     (use-package evil
       :ensure t
@@ -348,14 +316,16 @@ If you are having trouble of loading the fonts please add those line in your ear
     (setq org-return-follows-link  t)
 
 
-## VTERM
+### VTERM
+
+Emacs er jonno best terminal emulator vterm setup korar jonno.
 
     (use-package vterm
       :ensure t)
     (add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 
-## COUNSEL AND IVY
+### COUNSEL AND IVY
 
     (use-package counsel
       :ensure t
@@ -392,7 +362,7 @@ If you are having trouble of loading the fonts please add those line in your ear
                                    'ivy-rich-switch-buffer-transformer))
 
 
-## GENERAL KEYBINDING
+### GENERAL KEYBINDING
 
     (use-package general
       :ensure t
@@ -599,7 +569,7 @@ If you are having trouble of loading the fonts please add those line in your ear
       )
 
 
-## SUDO EDIT
+### SUDO EDIT
 
     (use-package sudo-edit
       :ensure t
@@ -609,7 +579,7 @@ If you are having trouble of loading the fonts please add those line in your ear
           "fU" '(sudo-edit :wk "Sudo edit file")))
 
 
-## EMACS KEYBINDING
+### EMACS KEYBINDING
 
     ;; Bookmarks and Buffers keybindings
     (define-key global-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b
@@ -673,7 +643,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     (define-key global-map (kbd "M-m s") #'Update-sddm-wallpaper)
 
 
-## WHICH KEY
+### WHICH KEY
 
     (use-package which-key
     :ensure t
@@ -694,7 +664,7 @@ If you are having trouble of loading the fonts please add those line in your ear
             which-key-separator " → " ))
 
 
-## BLANK BUFFER
+### BLANK BUFFER
 
     ;; create a completely blank buffer
     (defun my/blank-buffer ()
@@ -716,7 +686,7 @@ If you are having trouble of loading the fonts please add those line in your ear
         (message nil)))
 
 
-## TRANSPERENCY
+### TRANSPERENCY
 
     ;; START picom for transparency
     (start-process "picom" nil "picom")
@@ -738,7 +708,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     (add-hook 'buffer-list-update-hook #'my/update-transparency-based-on-buffer)
 
 
-## TRANSPERENCY FOR EXWM WORKSPACE
+### TRANSPERENCY FOR EXWM WORKSPACE
 
     ;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
     (defun my/blank-buffer-in-first-workspace-only ()
@@ -765,7 +735,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     (add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
 
 
-## MOUSE, BATTERY AND BACKGROUND SETUP
+### MOUSE, BATTERY AND BACKGROUND SETUP
 
     (setq mouse-autoselect-window t
           focus-follows-mouse t)
@@ -784,7 +754,7 @@ If you are having trouble of loading the fonts please add those line in your ear
                   (start-process "flameshot" nil "flameshot")))))
 
 
-## IDE
+### IDE
 
     ;; ========== Neotree Mode ==========
     (use-package neotree
@@ -828,51 +798,49 @@ If you are having trouble of loading the fonts please add those line in your ear
       (lsp-prefer-flymake nil))
 
 
-## LANGUAGE SUPPORT FOR IDE
+### LANGUAGE SUPPORT FOR IDE
+
+-   PYTHON
+
+        (use-package python-mode
+          :hook (python-mode . lsp)
+          :custom
+          (python-shell-interpreter "python3"))
+        
+        (use-package lsp-pyright
+          :ensure t
+          :after lsp-mode
+          :hook (python-mode . (lambda ()
+                                 (require 'lsp-pyright)
+                                 (lsp))))
+
+-   DART MODE
+
+        ;; Dart + Flutter setup
+        (use-package dart-mode
+          :ensure t
+          :hook (dart-mode . lsp)
+          :custom
+          (dart-format-on-save t))
+        
+        (use-package lsp-dart
+          :ensure t
+          :after dart-mode
+          :hook (dart-mode . lsp)
+          :custom
+          (lsp-dart-flutter-widget-guides t)
+          (lsp-dart-sdk-dir "/home/aresr/flutter/bin/cache/dart-sdk/")
+          (lsp-dart-flutter-sdk-dir "/home/aresr/flutter/"))
+        (use-package flutter
+          :ensure t
+          :after dart-mode
+          :custom
+          (flutter-sdk-path "/home/aresr/flutter") ;; change this to your flutter path
+          :bind (:map dart-mode-map
+                      ("C-M-x" . flutter-run-or-hot-reload)))
 
 
-### PYTHON
-
-    (use-package python-mode
-      :hook (python-mode . lsp)
-      :custom
-      (python-shell-interpreter "python3"))
-    
-    (use-package lsp-pyright
-      :ensure t
-      :after lsp-mode
-      :hook (python-mode . (lambda ()
-                             (require 'lsp-pyright)
-                             (lsp))))
-
-
-### DART MODE
-
-    ;; Dart + Flutter setup
-    (use-package dart-mode
-      :ensure t
-      :hook (dart-mode . lsp)
-      :custom
-      (dart-format-on-save t))
-    
-    (use-package lsp-dart
-      :ensure t
-      :after dart-mode
-      :hook (dart-mode . lsp)
-      :custom
-      (lsp-dart-flutter-widget-guides t)
-      (lsp-dart-sdk-dir "/home/aresr/flutter/bin/cache/dart-sdk/")
-      (lsp-dart-flutter-sdk-dir "/home/aresr/flutter/"))
-    (use-package flutter
-      :ensure t
-      :after dart-mode
-      :custom
-      (flutter-sdk-path "/home/aresr/flutter") ;; change this to your flutter path
-      :bind (:map dart-mode-map
-                  ("C-M-x" . flutter-run-or-hot-reload)))
-
-
-## DASHBOARD
+### DASHBOARD
 
     (use-package dashboard
       :ensure t
@@ -896,7 +864,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     ;; (dashboard-setup-startup-hook))
 
 
-## DIRED
+### DIRED
 
     (use-package dired-open
       :ensure t
@@ -923,12 +891,12 @@ If you are having trouble of loading the fonts please add those line in your ear
     (setq dired-listing-switches "-lha")
 
 
-## BACKUPS
+### BACKUPS
 
     (setq backup-directory-alist '((".*" . "~/.local/share/Trash/files")))
 
 
-## BUFFER MOVE
+### BUFFER MOVE
 
     (require 'windmove)
     
@@ -1000,10 +968,7 @@ If you are having trouble of loading the fonts please add those line in your ear
           (select-window other-win))))
 
 
-# SETTING UP EXWM
-
-
-## EXWM
+## SETTING UP EXWM
 
 
 ### EXWM MAIN
@@ -1165,63 +1130,60 @@ If you are having trouble of loading the fonts please add those line in your ear
     (define-key exwm-mode-map [?\M-l] #'my/lock-screen) ;; FOR EXWM
 
 
-## EXWEM NOTIFICATION
+### EXWEM NOTIFICATION
 
+-   STARTING DUNST
 
-### STARTING DUNST
+        (start-process "dunst" nil "dunst") ;; Starting Wireless conncetion 
 
-    (start-process "dunst" nil "dunst") ;; Starting Wireless conncetion 
+-   VOLUME CONTROL
 
+        (defun volume-increase ()
+          (interactive)
+          (start-process-shell-command "volume up" nil
+           "pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send 'Volume ↑' \"$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+%' | head -1)\""))
+        
+        (defun volume-decrease ()
+          (interactive)
+          (start-process-shell-command "volume down" nil
+           "pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send 'Volume ↓' \"$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+%' | head -1)\""))
+        
+        (defun volume-mute-toggle ()
+          (interactive)
+          (start-process-shell-command "volume mute" nil
+           "pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send 'Mute Toggled'"))
+        
+        ;; ====== KEYBINDING FOR EMACS =====
+        (global-set-key (kbd "<XF86AudioRaiseVolume>") 'volume-increase)
+        (global-set-key (kbd "<XF86AudioLowerVolume>") 'volume-decrease)
+        (global-set-key (kbd "<XF86AudioMute>") 'volume-mute-toggle)
+        
+        ;; ====== KEYBINDING FOR EXWM =====
+        (define-key exwm-mode-map(kbd "<XF86AudioRaiseVolume>") 'volume-increase)
+        (define-key exwm-mode-map(kbd "<XF86AudioLowerVolume>") 'volume-decrease)
+        (define-key exwm-mode-map(kbd "<XF86AudioMute>") 'volume-mute-toggle)
 
-### VOLUME CONTROL
+-   BRIGHTNESS CONTROL
 
-    (defun volume-increase ()
-      (interactive)
-      (start-process-shell-command "volume up" nil
-       "pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send 'Volume ↑' \"$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+%' | head -1)\""))
-    
-    (defun volume-decrease ()
-      (interactive)
-      (start-process-shell-command "volume down" nil
-       "pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send 'Volume ↓' \"$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+%' | head -1)\""))
-    
-    (defun volume-mute-toggle ()
-      (interactive)
-      (start-process-shell-command "volume mute" nil
-       "pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send 'Mute Toggled'"))
-    
-    ;; ====== KEYBINDING FOR EMACS =====
-    (global-set-key (kbd "<XF86AudioRaiseVolume>") 'volume-increase)
-    (global-set-key (kbd "<XF86AudioLowerVolume>") 'volume-decrease)
-    (global-set-key (kbd "<XF86AudioMute>") 'volume-mute-toggle)
-    
-    ;; ====== KEYBINDING FOR EXWM =====
-    (define-key exwm-mode-map(kbd "<XF86AudioRaiseVolume>") 'volume-increase)
-    (define-key exwm-mode-map(kbd "<XF86AudioLowerVolume>") 'volume-decrease)
-    (define-key exwm-mode-map(kbd "<XF86AudioMute>") 'volume-mute-toggle)
-
-
-### BRIGHTNESS CONTROL
-
-    (defun brightness-increase ()
-      (interactive)
-      (start-process-shell-command "brightness up" nil
-       "brightnessctl set +3% && notify-send 'Brightness ↑' \"$(brightnessctl g | awk '{print int($1/10)*10 \"%\"}')\""))
-    
-    (defun brightness-decrease ()
-      (interactive)
-      (start-process-shell-command "brightness down" nil
-       "brightnessctl set 3%- && notify-send 'Brightness ↓' \"$(brightnessctl g | awk '{print int($1/10)*10 \"%\"}')\""))
-    
-    
-    ;; ====== KEYBINDING FOR EMACS =====
-    (global-set-key (kbd "<XF86MonBrightnessUp>") 'brightness-increase)
-    (global-set-key (kbd "<XF86MonBrightnessDown>") 'brightness-decrease)
-    
-    
-    ;; ====== KEYBINDING FOR EXWM =====
-    (define-key exwm-mode-map (kbd "<XF86MonBrightnessUp>") 'brightness-increase)
-    (define-key exwm-mode-map (kbd "<XF86MonBrightnessDown>") 'brightness-decrease)
+        (defun brightness-increase ()
+          (interactive)
+          (start-process-shell-command "brightness up" nil
+           "brightnessctl set +3% && notify-send 'Brightness ↑' \"$(brightnessctl g | awk '{print int($1/10)*10 \"%\"}')\""))
+        
+        (defun brightness-decrease ()
+          (interactive)
+          (start-process-shell-command "brightness down" nil
+           "brightnessctl set 3%- && notify-send 'Brightness ↓' \"$(brightnessctl g | awk '{print int($1/10)*10 \"%\"}')\""))
+        
+        
+        ;; ====== KEYBINDING FOR EMACS =====
+        (global-set-key (kbd "<XF86MonBrightnessUp>") 'brightness-increase)
+        (global-set-key (kbd "<XF86MonBrightnessDown>") 'brightness-decrease)
+        
+        
+        ;; ====== KEYBINDING FOR EXWM =====
+        (define-key exwm-mode-map (kbd "<XF86MonBrightnessUp>") 'brightness-increase)
+        (define-key exwm-mode-map (kbd "<XF86MonBrightnessDown>") 'brightness-decrease)
 
 
 ### SDDM BACKGROUND UPDATE
@@ -1254,7 +1216,7 @@ If you are having trouble of loading the fonts please add those line in your ear
                                             "notify-send 'SDDM' '❌ SDDM wallpaper update failed!' -u critical")))))))
 
 
-## SHORTCUT FOR LUNCHING APPLICATION
+### SHORTCUT FOR LUNCHING APPLICATION
 
      (defun my/launch-firefox ()
       "launch firefox browser."
@@ -1338,7 +1300,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     (define-key exwm-mode-map (kbd "M-m x") #'my/toggle-fullscreen)
 
 
-## CUSTOMIZED FUNCTION NAME
+### CUSTOMIZED FUNCTION NAME
 
     ;; Power Menu
     (defalias 'Power-menu #'my/power-menu)
@@ -1355,77 +1317,73 @@ If you are having trouble of loading the fonts please add those line in your ear
     (defalias 'ORG-TO-MD-CONVERT #'my/org-md-export-to-markdown-with-header)
 
 
-## EXWM KEYBINDINGS
+### EXWM KEYBINDINGS
 
+-   BUFFER
 
-### BUFFER
+        ;; Unbind M-b from any previous behavior (like backward-word)
+        (define-key exwm-mode-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b in EXWM
+        
+        ;; EXWM controls under M-b
+        (define-key exwm-mode-map (kbd "M-b r") 'exwm-reset) ;; Reset EXWM
+        (define-key exwm-mode-map (kbd "M-b w") 'exwm-workspace-switch) ;; Switch workspace
+        (define-key exwm-mode-map (kbd "M-b i") 'exwm-workspace-switch-to-buffer) ;; Uncomment if needed
+        (define-key exwm-mode-map (kbd "M-b d") 'exwm-workspace-delete) ;; Delete workspace
+        (define-key exwm-mode-map (kbd "M-b h") 'windmove-left)  ;; Move focus left
+        (define-key exwm-mode-map (kbd "M-b j") 'windmove-down)  ;; Move focus down
+        (define-key exwm-mode-map (kbd "M-b l") 'windmove-right)  ;; Move focus right
+        (define-key exwm-mode-map (kbd "M-b k") 'kill-buffer-and-window)  ;; Kill buffer + window
+        (define-key exwm-mode-map (kbd "M-b f") 'exwm-floating-toggle-floating) ;; Toggle floating mode
+        (define-key exwm-mode-map (kbd "M-b m") 'exwm-layout-toggle-mode-line) ;; Toggle mode-line visibility
+        (define-key exwm-mode-map (kbd "M-b q") 'exwm-input-release-keyboard) ;; Release EXWM keyboard Release
 
-    ;; Unbind M-b from any previous behavior (like backward-word)
-    (define-key exwm-mode-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b in EXWM
-    
-    ;; EXWM controls under M-b
-    (define-key exwm-mode-map (kbd "M-b r") 'exwm-reset) ;; Reset EXWM
-    (define-key exwm-mode-map (kbd "M-b w") 'exwm-workspace-switch) ;; Switch workspace
-    (define-key exwm-mode-map (kbd "M-b i") 'exwm-workspace-switch-to-buffer) ;; Uncomment if needed
-    (define-key exwm-mode-map (kbd "M-b d") 'exwm-workspace-delete) ;; Delete workspace
-    (define-key exwm-mode-map (kbd "M-b h") 'windmove-left)  ;; Move focus left
-    (define-key exwm-mode-map (kbd "M-b j") 'windmove-down)  ;; Move focus down
-    (define-key exwm-mode-map (kbd "M-b l") 'windmove-right)  ;; Move focus right
-    (define-key exwm-mode-map (kbd "M-b k") 'kill-buffer-and-window)  ;; Kill buffer + window
-    (define-key exwm-mode-map (kbd "M-b f") 'exwm-floating-toggle-floating) ;; Toggle floating mode
-    (define-key exwm-mode-map (kbd "M-b m") 'exwm-layout-toggle-mode-line) ;; Toggle mode-line visibility
-    (define-key exwm-mode-map (kbd "M-b q") 'exwm-input-release-keyboard) ;; Release EXWM keyboard Release
+-   WINDOW
 
+        ;; Define M-w as a prefix key for EXWM
+        (define-key exwm-mode-map (kbd "M-w") nil)  ;; Start defining a prefix for M-w in EXWM
+        
+        ;; Window management keybindings
+        (define-key exwm-mode-map (kbd "M-w c") 'evil-window-delete)
+        (define-key exwm-mode-map (kbd "M-w n") 'evil-window-new)
+        (define-key exwm-mode-map (kbd "M-w s") 'evil-window-split)
+        (define-key exwm-mode-map (kbd "M-w v") 'evil-window-vsplit)
+        (define-key exwm-mode-map (kbd "M-w W") 'exwm-workspace-move-window)
+        
+        ;; Window motions
+        (define-key exwm-mode-map (kbd "M-w h") 'evil-window-left)
+        (define-key exwm-mode-map (kbd "M-w j") 'evil-window-down)
+        (define-key exwm-mode-map (kbd "M-w k") 'evil-window-up)
+        (define-key exwm-mode-map (kbd "M-w l") 'evil-window-right)
+        (define-key exwm-mode-map (kbd "M-w w") 'evil-window-next)
+        
+        ;; Move windows
+        (define-key exwm-mode-map (kbd "M-w H") 'buf-move-left)
+        (define-key exwm-mode-map (kbd "M-w J") 'buf-move-down)
+        (define-key exwm-mode-map (kbd "M-w K") 'buf-move-up)
+        (define-key exwm-mode-map (kbd "M-w L") 'buf-move-right)
+        (define-key exwm-mode-map (kbd "M-w m") 'save-buffers-kill-emacs)
 
-### WINDOW
+-   DIRED AND MENU
 
-    ;; Define M-w as a prefix key for EXWM
-    (define-key exwm-mode-map (kbd "M-w") nil)  ;; Start defining a prefix for M-w in EXWM
-    
-    ;; Window management keybindings
-    (define-key exwm-mode-map (kbd "M-w c") 'evil-window-delete)
-    (define-key exwm-mode-map (kbd "M-w n") 'evil-window-new)
-    (define-key exwm-mode-map (kbd "M-w s") 'evil-window-split)
-    (define-key exwm-mode-map (kbd "M-w v") 'evil-window-vsplit)
-    (define-key exwm-mode-map (kbd "M-w W") 'exwm-workspace-move-window)
-    
-    ;; Window motions
-    (define-key exwm-mode-map (kbd "M-w h") 'evil-window-left)
-    (define-key exwm-mode-map (kbd "M-w j") 'evil-window-down)
-    (define-key exwm-mode-map (kbd "M-w k") 'evil-window-up)
-    (define-key exwm-mode-map (kbd "M-w l") 'evil-window-right)
-    (define-key exwm-mode-map (kbd "M-w w") 'evil-window-next)
-    
-    ;; Move windows
-    (define-key exwm-mode-map (kbd "M-w H") 'buf-move-left)
-    (define-key exwm-mode-map (kbd "M-w J") 'buf-move-down)
-    (define-key exwm-mode-map (kbd "M-w K") 'buf-move-up)
-    (define-key exwm-mode-map (kbd "M-w L") 'buf-move-right)
-    (define-key exwm-mode-map (kbd "M-w m") 'save-buffers-kill-emacs)
+        ;; Define M-d as a prefix key in EXWM mode
+        (define-key exwm-mode-map (kbd "M-d") nil)
+        
+        ;; Dired keybindings under M-d for exwm
+        ;; (define-key exwm-mode-map (kbd "M-d D") 'dired) ;; Open dired
+        (define-key exwm-mode-map (kbd "M-d D") 'counsel-linux-app) ;; Open dired
+        (define-key exwm-mode-map (kbd "M-d d") 'app-launcher-run-app)
+        (define-key exwm-mode-map (kbd "M-d j") 'dired-jump) ;; Jump to current directory in Dired
+        (define-key exwm-mode-map (kbd "M-d n") 'neotree-dir) ;; Open directory in Neotree
+        (define-key exwm-mode-map (kbd "M-d p") 'peep-dired) ;; Peep Dired preview
 
+-   PERSONAL KEYBINDINGS
 
-### DIRED AND MENU
-
-    ;; Define M-d as a prefix key in EXWM mode
-    (define-key exwm-mode-map (kbd "M-d") nil)
-    
-    ;; Dired keybindings under M-d for exwm
-    ;; (define-key exwm-mode-map (kbd "M-d D") 'dired) ;; Open dired
-    (define-key exwm-mode-map (kbd "M-d D") 'counsel-linux-app) ;; Open dired
-    (define-key exwm-mode-map (kbd "M-d d") 'app-launcher-run-app)
-    (define-key exwm-mode-map (kbd "M-d j") 'dired-jump) ;; Jump to current directory in Dired
-    (define-key exwm-mode-map (kbd "M-d n") 'neotree-dir) ;; Open directory in Neotree
-    (define-key exwm-mode-map (kbd "M-d p") 'peep-dired) ;; Peep Dired preview
-
-
-### PERSONAL KEYBINDINGS
-
-    ;; ===== personal keybinding for menus =====
-    (define-key exwm-mode-map (kbd "M-m") nil)
-    
-    (define-key exwm-mode-map (kbd "M-m m") #'ORG-TO-MD-CONVERT)
-    (define-key exwm-mode-map (kbd "M-m l") #'Lock-screen)
-    (define-key exwm-mode-map (kbd "M-m b") #'Update-lockscreen-bg)
-    (define-key exwm-mode-map (kbd "M-m p") #'Update-sddm-wallpaper)
-    (define-key exwm-mode-map (kbd "M-m x") 'exwm-layout-toggle-fullscreen)
+        ;; ===== personal keybinding for menus =====
+        (define-key exwm-mode-map (kbd "M-m") nil)
+        
+        (define-key exwm-mode-map (kbd "M-m m") #'ORG-TO-MD-CONVERT)
+        (define-key exwm-mode-map (kbd "M-m l") #'Lock-screen)
+        (define-key exwm-mode-map (kbd "M-m b") #'Update-lockscreen-bg)
+        (define-key exwm-mode-map (kbd "M-m p") #'Update-sddm-wallpaper)
+        (define-key exwm-mode-map (kbd "M-m x") 'exwm-layout-toggle-fullscreen)
 
