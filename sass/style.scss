@@ -255,11 +255,17 @@ header {
         color: #e6edf3;
         line-height: 1.8;
         
-        h1, h2, h3, h4, h5, h6 {
+        h1{
+            color: #101eb4;
+            margin: 30px 0 15px 0;
+        }
+       
+
+        h2, h3, h4, h5, h6 {
             color: #2c5c22;
             margin: 30px 0 15px 0;
         }
-        
+ 
         h1 { font-size: 24px; }
         h2 { font-size: 20px; }
         h3 { font-size: 18px; }
