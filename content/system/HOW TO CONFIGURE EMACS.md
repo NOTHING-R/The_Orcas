@@ -1,6 +1,6 @@
 +++
 title = "HOW TO CONFIGURE EMACS"
-date = "2025-08-06"
+date = "2025-08-10"
 author = ""
 +++
 
@@ -168,10 +168,6 @@ Emacs er defult theme r modeline ta change korar jonno amra doom modeline abong 
       :config
       (doom-modeline-mode 1))
     
-    (set-face-attribute 'mode-line nil
-                        :font "FiraCode Nerd Font"
-                        :height 140)
-    
     ;;======= DOOM THEMES ======= 
     ;; :>>>>> FIRST INSTALL ER SMY AY LINE GULO UNCOMMENT RAKHA LAGBE SECOND BOOT ER SMY ABR COMMENT KORE DITE HOBE <<<<<:
     ;; (elpaca
@@ -204,7 +200,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 
 ### ORG MODE
 
-Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.
+Org mode er configuretion er jonno amader ay package abong variable o hook gula edit korte hobe.
 
 -   ORG MAIN
 
@@ -253,10 +249,14 @@ Org mode er configuretion er jonno amader ay package abong variable o hook gula 
 
 -   DISPLAY LINE NUMBER MODE
 
+    Line number gula show korar jonno ay mode gula on korte hobe
+    
         (global-display-line-numbers-mode 1) ;; Display line numbers
 
 -   FOR PAIR MODE: LIKE(){}
 
+    Coding korar smy pair mode mane single parenthesis ba bracket dile onno akta autmetically add hoye jai&#x2026;ay support er jonno pair mode use kora hoi. Abr org mode er shortcut gula <s ba <e ayvabe kaj kore to &ldquo;<&rdquo; aytar jonno pair mode ta off rakhte hobe na hoile org file edit korte jhamela hobe ay jonno e pair mode er config ta amon vabe kora. 
+    
         (electric-pair-mode 1)       ;; Turns on automatic parens pairing
         ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
         ;; Otherwise, org-tempo is broken when you try to <s TAB...
@@ -327,6 +327,12 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### COUNSEL AND IVY
 
+Ivy → Emacs-এর ডিফল্ট completion সিস্টেমকে replace করে, যাতে command, file, buffer ইত্যাদি search ও select করা অনেক fast আর smart হয়।
+
+Counsel → Ivy-এর extension, যা default Emacs command (যেমন M-x, find-file) গুলোকে extra feature দিয়ে আরও powerful করে।
+
+Short summary: Ivy completion system সামলায়, Counsel command গুলো upgrade করে — একসাথে Emacs-কে অনেক বেশি smooth আর feature-rich বানায়।
+
     (use-package counsel
       :ensure t
       :after ivy
@@ -363,6 +369,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 ### GENERAL KEYBINDING
+
+Doom emacs a jmn SPC diye keybindings gulo kaj kore same keybindings gulo add korar jonno general package ta add kore ayta k customize korci. abong ay customization ta distro tube er emacs config theke nea ay jonno e dt/leader key dea sob jaiga te.
 
     (use-package general
       :ensure t
@@ -571,6 +579,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### SUDO EDIT
 
+Majhe majhe emacs diye amon kicu file edit korte hoi j gula sudo permission cai. kintu emacs defult vabe ay jinis ta support kore na ay jonno sudo permission diye file edit korar jonno amader ay package ta lagbe.
+
     (use-package sudo-edit
       :ensure t
       :config
@@ -580,6 +590,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 ### EMACS KEYBINDING
+
+Ay gula amr nijer keybinding J gula Alt diye kaj kore. R tmi nije caileo nijer moto kore nijer keybinding add kore nite paro.
 
     ;; Bookmarks and Buffers keybindings
     (define-key global-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b
@@ -645,6 +657,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### WHICH KEY
 
+Which key emacs er akta package j package ta keybinding gula show kore abong kon keybinding er kaj ki oita minibuffer a show kore. Jemon just spc press korle minibuffer a sob keybinding gula show korbe.
+
     (use-package which-key
     :ensure t
     :init
@@ -665,6 +679,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 ### BLANK BUFFER
+
+Blank Buffer ayta asole amr nijer add kora jate kore amon akta buffer create kore j buffer a kno kicu e thakbe na ay buffer ta create korar karon holo jate kore exwm a amra amader wallpaper ta dekhte pari. Na hoile amr asole full akta window manager er vibe ase na.
 
     ;; create a completely blank buffer
     (defun my/blank-buffer ()
@@ -688,6 +704,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### TRANSPERENCY
 
+Transparency er setting gula mainly background show korar jonno.
+
     ;; START picom for transparency
     (start-process "picom" nil "picom")
     
@@ -708,34 +726,9 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
     (add-hook 'buffer-list-update-hook #'my/update-transparency-based-on-buffer)
 
 
-### TRANSPERENCY FOR EXWM WORKSPACE
-
-    ;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
-    (defun my/blank-buffer-in-first-workspace-only ()
-      "Open blank buffer only in EXWM workspace 0."
-      (when (and (featurep 'exwm)
-                 (eq exwm-workspace-current-index 0)
-                 (not (get-buffer "*blank*"))) ;; only if it doesn't exist yet
-        (my/blank-buffer)))
-    
-    (add-hook 'emacs-startup-hook #'my/blank-buffer-in-first-workspace-only)
-    
-    
-    ;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
-    (defun my/show-blank-if-no-buffer ()
-      "Show *blank* buffer if current buffer is *scratch* or unnamed."
-      (let ((curr (buffer-name)))
-        (when (or (string= curr "*scratch*")
-                  (string= curr "")
-                  (string-match-p "^\\*.*\\*$" curr)) ;; if it's just *Messages*, *Help*, etc.
-          (unless (get-buffer "*blank*")
-            (my/blank-buffer))
-          (switch-to-buffer "*blank*"))))
-    
-    (add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
-
-
 ### MOUSE, BATTERY AND BACKGROUND SETUP
+
+Sob window manger er bar gula te jemon, polybar ba i3bar a kicu information show kore abong kno software run hoile tar applet ta show kore. To same jinis tar jonno e ay config gula. nm-applet j ta linux er network maintain korar jonno help kore oita abong ami screenshoot er jonno flameshot use kori ay dui ta k emacs er modeline a show korar jonno ami ay config gula use kori.
 
     (setq mouse-autoselect-window t
           focus-follows-mouse t)
@@ -755,6 +748,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 ### IDE
+
+Amr issa ace j ami emacs k e amr main coding IDE hisabe use korbo to emacs diye coding korar jonno ja ja proyojon oi hisabe akta ide build korar try kortaci.
 
     ;; ========== Neotree Mode ==========
     (use-package neotree
@@ -842,6 +837,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### DASHBOARD
 
+Dashboard hocce akta emacs package j ta recent file abong onno kicu important option show kore. jdi kew exwm use na kore just emacs use kore tar jonno ay package ta startup page hisabe onk valo kaj korbe.
+
     (use-package dashboard
       :ensure t
       :init
@@ -865,6 +862,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 ### DIRED
+
+Emacs er defult file manger `DIRED` er fiture increase korar jonno configuretion.
 
     (use-package dired-open
       :ensure t
@@ -893,10 +892,14 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### BACKUPS
 
+Emacs j backup file gula toiri kore oi gula k autmetically trash folder a move kore dea. ami ay config ta o dt er theke copy korci to ayta akhn koto ta kaj kore ami sure na..future a er upgraded version nia asbo insa&rsquo;allah.
+
     (setq backup-directory-alist '((".*" . "~/.local/share/Trash/files")))
 
 
 ### BUFFER MOVE
+
+Buffer gula same workspace er vitore window to window move korar jonno ay code tuku jmn jdi akta workspace a 2 ta window thake abong akta te right side a firefox o left side a thunar, to thunar abong firefox k move korarnor jonno ay code tuku proyojon. Aytao dt er config er copy.😜 
 
     (require 'windmove)
     
@@ -967,53 +970,56 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
           (set-window-buffer other-win buf-this-buf)
           (select-window other-win))))
 
+Aybar hocce main window manger setup. Exwm.
 
-## SETTING UP EXWM
 
+### setting up exwm
 
-### EXWM MAIN
+-   exwm main
 
-    (require 'exwm)
-    ;; Set the initial workspace number.
-    (setq exwm-workspace-number 10)
-    ;;/ Make class name the buffer name.
-    (add-hook 'exwm-update-class-hook
-              (lambda () (exwm-workspace-rename-buffer exwm-class-name)))
-    (add-hook 'exwm-init-hook
-              (lambda ()
-                (exwm-workspace-switch 1)))  ;; Auto switch to workspace 1
-    ;; Global keybindings.
-    (setq exwm-input-global-keys
-          `(([?\M-r] . exwm-reset) ;; s-r: Reset (to line-mode).
-            ([?\M-n] . exwm-workspace-switch) ;; s-w: Switch workspace.
-            ([?\M-k] . kill-buffer-and-window)
-            ([?\M-&] . (lambda (cmd) ;; s-&: Launch application.
-                         (interactive (list (read-shell-command "$ ")))
-                         (start-process-shell-command cmd nil cmd)))
-            ;; s-N: Switch to certain workspace.
-            ,@(mapcar (lambda (i)
-                        `(,(kbd (format "M-%d" i)) .
-                          (lambda ()
-                            (interactive)
-                            (exwm-workspace-switch-create ,i))))
-                      (number-sequence 0 9))))
+    [EXWM WIKI](https://github.com/emacs-exwm/exwm/wiki) dekhle exwm kivabe setup korte hobe sob bujhte parba. Ami amr config a nijer moto kore kicu changes korci. Exwm a defult vabe leader key hisabe Windows ba Super key dea thake, kintu amr personally Alt key ta besi posondo. Amr personal preference hocce j keyboard a 2 ta Alt key thake to to control korte subidha hoi. 
     
-    
-    ;; For copy like normal keybinding C-c
-    (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
-    
-    ;; Enable EXWM
-    (exwm-enable)
-    ()
-    (add-hook 'exwm-manage-finish-hook
-              (lambda ()
-                (when (and exwm-class-name
-                           (string= exwm-class-name "Firefox"))
-                  (exwm-input-set-local-simulation-keys nil))))
-    (require 'exwm-systemtray)
-    (exwm-systemtray-mode 1)
-    (require 'exwm-randr)
-    (exwm-randr-mode 1)
+        (require 'exwm)
+        ;; Set the initial workspace number.
+        (setq exwm-workspace-number 10)
+        ;;/ Make class name the buffer name.
+        (add-hook 'exwm-update-class-hook
+                  (lambda () (exwm-workspace-rename-buffer exwm-class-name)))
+        (add-hook 'exwm-init-hook
+                  (lambda ()
+                    (exwm-workspace-switch 1)))  ;; Auto switch to workspace 1
+        ;; Global keybindings.
+        (setq exwm-input-global-keys
+              `(([?\M-r] . exwm-reset) ;; s-r: Reset (to line-mode).
+                ([?\M-n] . exwm-workspace-switch) ;; s-w: Switch workspace.
+                ([?\M-k] . kill-buffer-and-window)
+                ([?\M-&] . (lambda (cmd) ;; s-&: Launch application.
+                             (interactive (list (read-shell-command "$ ")))
+                             (start-process-shell-command cmd nil cmd)))
+                ;; s-N: Switch to certain workspace.
+                ,@(mapcar (lambda (i)
+                            `(,(kbd (format "M-%d" i)) .
+                              (lambda ()
+                                (interactive)
+                                (exwm-workspace-switch-create ,i))))
+                          (number-sequence 0 9))))
+        
+        
+        ;; For copy like normal keybinding C-c
+        (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
+        
+        ;; Enable EXWM
+        (exwm-enable)
+        ()
+        (add-hook 'exwm-manage-finish-hook
+                  (lambda ()
+                    (when (and exwm-class-name
+                               (string= exwm-class-name "Firefox"))
+                      (exwm-input-set-local-simulation-keys nil))))
+        (require 'exwm-systemtray)
+        (exwm-systemtray-mode 1)
+        (require 'exwm-randr)
+        (exwm-randr-mode 1)
 
 
 ### EXWM DISPLAY
@@ -1055,7 +1061,38 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
     ;; (setq EXWM_WORKSPACE_LIST '((1 . "DP-3") (3 . "DP-3")))
 
 
+### TRANSPERENCY FOR EXWM WORKSPACE
+
+Exwm a er workspace gula te background show korar jonno jkhn amra kno workspace a switch korbo tkhn jate kore background ta dekha jai ay jonno jkhni amra kno workspaces a switch korbo tkhn jeno amader blank buffer ta show kore oi jonno ay config tuku add korte hobe.
+
+    ;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
+    (defun my/blank-buffer-in-first-workspace-only ()
+      "Open blank buffer only in EXWM workspace 0."
+      (when (and (featurep 'exwm)
+                 (eq exwm-workspace-current-index 0)
+                 (not (get-buffer "*blank*"))) ;; only if it doesn't exist yet
+        (my/blank-buffer)))
+    
+    (add-hook 'emacs-startup-hook #'my/blank-buffer-in-first-workspace-only)
+    
+    
+    ;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
+    (defun my/show-blank-if-no-buffer ()
+      "Show *blank* buffer if current buffer is *scratch* or unnamed."
+      (let ((curr (buffer-name)))
+        (when (or (string= curr "*scratch*")
+                  (string= curr "")
+                  (string-match-p "^\\*.*\\*$" curr)) ;; if it's just *Messages*, *Help*, etc.
+          (unless (get-buffer "*blank*")
+            (my/blank-buffer))
+          (switch-to-buffer "*blank*"))))
+    
+    (add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
+
+
 ### EXWM FONT SETTINGS
+
+Exwm a font rendering er smy error ascilo to oita k fix korar jonno ami ay code ta use korcilam.
 
     (defun my/apply-font-settings (frame)
       (with-selected-frame frame
@@ -1070,6 +1107,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### EXWM EXTRA SETTING
 
+Exwm use korar smy amr touchpad a kaj kortacilo na to oitar jonno ami akta bash script configi er sathe add kore diyeci. R exwm a joto buffer open kora hoyece, mane mone koro tmi 1st workspace a aco kintu tmr firefox open kora 3rd workspace a to tmi jdi M-b-i press koro to tmr sob buffer show korbe abong tmi j kno buffer a switch korte parbe se j workspace a e thakuk na kno.
+
     (add-to-list 'default-frame-alist '(fullscreen . maximized))
     (setq exwm-workspace-show-all-buffers t)
     (setq exwm-workspace-warp-cursor t)
@@ -1080,8 +1119,12 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 ### APP LUNCHER
 
+counsel-linux-app command diye app run korle j promt ta ase oitar theke ay app luncher ta besi interactive.
+
     (add-to-list 'load-path "~/.config/emacs/scripts/")
     (require 'app-launcher)
+
+To er porer theke j code gula ace sob e amr personal config er vitore pore. Ami nijer subidha moto cusotmize korci jate kore akta fullfill window manager er moto kore e exwm k use kora jai.
 
 
 ### EXWM POWER-MENU

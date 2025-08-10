@@ -140,10 +140,6 @@ Emacs er defult theme r modeline ta change korar jonno amra doom modeline abong 
   :config
   (doom-modeline-mode 1))
 
-(set-face-attribute 'mode-line nil
-                    :font "FiraCode Nerd Font"
-                    :height 140)
-
 ;;======= DOOM THEMES ======= 
 ;; :>>>>> FIRST INSTALL ER SMY AY LINE GULO UNCOMMENT RAKHA LAGBE SECOND BOOT ER SMY ABR COMMENT KORE DITE HOBE <<<<<:
 ;; (elpaca
@@ -176,7 +172,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 #+end_src
 
 *** ORG MODE
-Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.
+Org mode er configuretion er jonno amader ay package abong variable o hook gula edit korte hobe.
 **** ORG MAIN
 #+begin_src emacs-lisp
 (use-package toc-org
@@ -224,11 +220,13 @@ Minimul look er jonno menu-bar, scroll-bar abong tool-bar off kore dea.
 #+end_src
 
 **** DISPLAY LINE NUMBER MODE
+Line number gula show korar jonno ay mode gula on korte hobe
 #+begin_src emacs-lisp
 (global-display-line-numbers-mode 1) ;; Display line numbers
 #+end_src
 
 **** FOR PAIR MODE: LIKE(){}
+Coding korar smy pair mode mane single parenthesis ba bracket dile onno akta autmetically add hoye jai...ay support er jonno pair mode use kora hoi. Abr org mode er shortcut gula <s ba <e ayvabe kaj kore to "<" aytar jonno pair mode ta off rakhte hobe na hoile org file edit korte jhamela hobe ay jonno e pair mode er config ta amon vabe kora. 
 #+begin_src emacs-lisp
 (electric-pair-mode 1)       ;; Turns on automatic parens pairing
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
@@ -297,7 +295,11 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** COUNSEL AND IVY
+Ivy → Emacs-এর ডিফল্ট completion সিস্টেমকে replace করে, যাতে command, file, buffer ইত্যাদি search ও select করা অনেক fast আর smart হয়।
 
+Counsel → Ivy-এর extension, যা default Emacs command (যেমন M-x, find-file) গুলোকে extra feature দিয়ে আরও powerful করে।
+
+Short summary: Ivy completion system সামলায়, Counsel command গুলো upgrade করে — একসাথে Emacs-কে অনেক বেশি smooth আর feature-rich বানায়।
 #+begin_src emacs-lisp
 (use-package counsel
   :ensure t
@@ -336,6 +338,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 
 
 *** GENERAL KEYBINDING
+Doom emacs a jmn SPC diye keybindings gulo kaj kore same keybindings gulo add korar jonno general package ta add kore ayta k customize korci. abong ay customization ta distro tube er emacs config theke nea ay jonno e dt/leader key dea sob jaiga te.
 #+begin_src emacs-lisp
 (use-package general
   :ensure t
@@ -543,6 +546,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** SUDO EDIT
+Majhe majhe emacs diye amon kicu file edit korte hoi j gula sudo permission cai. kintu emacs defult vabe ay jinis ta support kore na ay jonno sudo permission diye file edit korar jonno amader ay package ta lagbe.
 #+begin_src emacs-lisp
 (use-package sudo-edit
   :ensure t
@@ -553,6 +557,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** EMACS KEYBINDING
+Ay gula amr nijer keybinding J gula Alt diye kaj kore. R tmi nije caileo nijer moto kore nijer keybinding add kore nite paro.
 #+begin_src emacs-lisp
 ;; Bookmarks and Buffers keybindings
 (define-key global-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b
@@ -617,6 +622,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** WHICH KEY
+Which key emacs er akta package j package ta keybinding gula show kore abong kon keybinding er kaj ki oita minibuffer a show kore. Jemon just spc press korle minibuffer a sob keybinding gula show korbe.
 #+begin_src emacs-lisp
 (use-package which-key
 :ensure t
@@ -638,6 +644,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** BLANK BUFFER
+Blank Buffer ayta asole amr nijer add kora jate kore amon akta buffer create kore j buffer a kno kicu e thakbe na ay buffer ta create korar karon holo jate kore exwm a amra amader wallpaper ta dekhte pari. Na hoile amr asole full akta window manager er vibe ase na.
 #+begin_src emacs-lisp
 ;; create a completely blank buffer
 (defun my/blank-buffer ()
@@ -660,6 +667,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** TRANSPERENCY
+Transparency er setting gula mainly background show korar jonno.
 #+begin_src emacs-lisp
 ;; START picom for transparency
 (start-process "picom" nil "picom")
@@ -681,34 +689,8 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 (add-hook 'buffer-list-update-hook #'my/update-transparency-based-on-buffer)
 #+end_src
 
-*** TRANSPERENCY FOR EXWM WORKSPACE
-#+begin_src emacs-lisp
-;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
-(defun my/blank-buffer-in-first-workspace-only ()
-  "Open blank buffer only in EXWM workspace 0."
-  (when (and (featurep 'exwm)
-             (eq exwm-workspace-current-index 0)
-             (not (get-buffer "*blank*"))) ;; only if it doesn't exist yet
-    (my/blank-buffer)))
-
-(add-hook 'emacs-startup-hook #'my/blank-buffer-in-first-workspace-only)
-
-
-;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
-(defun my/show-blank-if-no-buffer ()
-  "Show *blank* buffer if current buffer is *scratch* or unnamed."
-  (let ((curr (buffer-name)))
-    (when (or (string= curr "*scratch*")
-              (string= curr "")
-              (string-match-p "^\\*.*\\*$" curr)) ;; if it's just *Messages*, *Help*, etc.
-      (unless (get-buffer "*blank*")
-        (my/blank-buffer))
-      (switch-to-buffer "*blank*"))))
-
-(add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
-#+end_src
-
 *** MOUSE, BATTERY AND BACKGROUND SETUP
+Sob window manger er bar gula te jemon, polybar ba i3bar a kicu information show kore abong kno software run hoile tar applet ta show kore. To same jinis tar jonno e ay config gula. nm-applet j ta linux er network maintain korar jonno help kore oita abong ami screenshoot er jonno flameshot use kori ay dui ta k emacs er modeline a show korar jonno ami ay config gula use kori.
 #+begin_src emacs-lisp
 (setq mouse-autoselect-window t
       focus-follows-mouse t)
@@ -730,6 +712,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** IDE
+Amr issa ace j ami emacs k e amr main coding IDE hisabe use korbo to emacs diye coding korar jonno ja ja proyojon oi hisabe akta ide build korar try kortaci.
 #+begin_src emacs-lisp
 ;; ========== Neotree Mode ==========
 (use-package neotree
@@ -816,6 +799,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** DASHBOARD
+Dashboard hocce akta emacs package j ta recent file abong onno kicu important option show kore. jdi kew exwm use na kore just emacs use kore tar jonno ay package ta startup page hisabe onk valo kaj korbe.
 #+begin_src emacs-lisp
 (use-package dashboard
   :ensure t
@@ -840,6 +824,7 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** DIRED
+Emacs er defult file manger ~DIRED~ er fiture increase korar jonno configuretion.
 #+begin_src emacs-lisp
 (use-package dired-open
   :ensure t
@@ -867,11 +852,13 @@ Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+end_src
 
 *** BACKUPS
+Emacs j backup file gula toiri kore oi gula k autmetically trash folder a move kore dea. ami ay config ta o dt er theke copy korci to ayta akhn koto ta kaj kore ami sure na..future a er upgraded version nia asbo insa'allah.
 #+begin_src emacs-lisp
 (setq backup-directory-alist '((".*" . "~/.local/share/Trash/files")))
 #+end_src
 
 *** BUFFER MOVE
+Buffer gula same workspace er vitore window to window move korar jonno ay code tuku jmn jdi akta workspace a 2 ta window thake abong akta te right side a firefox o left side a thunar, to thunar abong firefox k move korarnor jonno ay code tuku proyojon. Aytao dt er config er copy.😜 
 #+begin_src emacs-lisp
 (require 'windmove)
 
@@ -944,8 +931,10 @@ one, an error is signaled."
 #+end_src
 
 
-** SETTING UP EXWM
-*** EXWM MAIN
+Aybar hocce main window manger setup. Exwm.
+*** setting up exwm
+**** exwm main
+[[https://github.com/emacs-exwm/exwm/wiki][EXWM WIKI]] dekhle exwm kivabe setup korte hobe sob bujhte parba. Ami amr config a nijer moto kore kicu changes korci. Exwm a defult vabe leader key hisabe Windows ba Super key dea thake, kintu amr personally Alt key ta besi posondo. Amr personal preference hocce j keyboard a 2 ta Alt key thake to to control korte subidha hoi. 
 #+begin_src emacs-lisp
 (require 'exwm)
 ;; Set the initial workspace number.
@@ -1029,7 +1018,38 @@ one, an error is signaled."
 ;; (setq EXWM_WORKSPACE_LIST '((1 . "DP-3") (3 . "DP-3")))
 #+end_src
 
+
+*** TRANSPERENCY FOR EXWM WORKSPACE
+Exwm a er workspace gula te background show korar jonno jkhn amra kno workspace a switch korbo tkhn jate kore background ta dekha jai ay jonno jkhni amra kno workspaces a switch korbo tkhn jeno amader blank buffer ta show kore oi jonno ay config tuku add korte hobe.
+#+begin_src emacs-lisp
+;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
+(defun my/blank-buffer-in-first-workspace-only ()
+  "Open blank buffer only in EXWM workspace 0."
+  (when (and (featurep 'exwm)
+             (eq exwm-workspace-current-index 0)
+             (not (get-buffer "*blank*"))) ;; only if it doesn't exist yet
+    (my/blank-buffer)))
+
+(add-hook 'emacs-startup-hook #'my/blank-buffer-in-first-workspace-only)
+
+
+;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
+(defun my/show-blank-if-no-buffer ()
+  "Show *blank* buffer if current buffer is *scratch* or unnamed."
+  (let ((curr (buffer-name)))
+    (when (or (string= curr "*scratch*")
+              (string= curr "")
+              (string-match-p "^\\*.*\\*$" curr)) ;; if it's just *Messages*, *Help*, etc.
+      (unless (get-buffer "*blank*")
+        (my/blank-buffer))
+      (switch-to-buffer "*blank*"))))
+
+(add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
+#+end_src
+
+
 *** EXWM FONT SETTINGS 
+Exwm a font rendering er smy error ascilo to oita k fix korar jonno ami ay code ta use korcilam.
 #+begin_src emacs-lisp
 (defun my/apply-font-settings (frame)
   (with-selected-frame frame
@@ -1043,6 +1063,7 @@ one, an error is signaled."
 #+end_src
 
 *** EXWM EXTRA SETTING
+Exwm use korar smy amr touchpad a kaj kortacilo na to oitar jonno ami akta bash script configi er sathe add kore diyeci. R exwm a joto buffer open kora hoyece, mane mone koro tmi 1st workspace a aco kintu tmr firefox open kora 3rd workspace a to tmi jdi M-b-i press koro to tmr sob buffer show korbe abong tmi j kno buffer a switch korte parbe se j workspace a e thakuk na kno.
 #+begin_src emacs-lisp
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq exwm-workspace-show-all-buffers t)
@@ -1053,11 +1074,14 @@ one, an error is signaled."
 #+end_src
 
 *** APP LUNCHER
+counsel-linux-app command diye app run korle j promt ta ase oitar theke ay app luncher ta besi interactive.
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/.config/emacs/scripts/")
 (require 'app-launcher)
 #+end_src
 
+
+To er porer theke j code gula ace sob e amr personal config er vitore pore. Ami nijer subidha moto cusotmize korci jate kore akta fullfill window manager er moto kore e exwm k use kora jai.
 *** EXWM POWER-MENU
 #+begin_src emacs-lisp
 (defun my/power-menu ()

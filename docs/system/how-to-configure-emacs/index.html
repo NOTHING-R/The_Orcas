@@ -56,7 +56,7 @@
         <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>HOW TO CONFIGURE EMACS</h1>
         
         <div class="page-meta">
-            <time datetime="2025-08-06">2025.08.06</time>
+            <time datetime="2025-08-10">2025.08.10</time>
         </div>
         
     </header>
@@ -176,10 +176,6 @@
 </span><span>  :config
 </span><span>  (doom-modeline-mode 1))
 </span><span>
-</span><span>(set-face-attribute &#39;mode-line nil
-</span><span>                    :font &quot;FiraCode Nerd Font&quot;
-</span><span>                    :height 140)
-</span><span>
 </span><span>;;======= DOOM THEMES ======= 
 </span><span>;; :&gt;&gt;&gt;&gt;&gt; FIRST INSTALL ER SMY AY LINE GULO UNCOMMENT RAKHA LAGBE SECOND BOOT ER SMY ABR COMMENT KORE DITE HOBE &lt;&lt;&lt;&lt;&lt;:
 </span><span>;; (elpaca
@@ -206,7 +202,7 @@
 </span><span>;; (setq-default line-spacing 0.12)
 </span></code></pre>
 <h3 id="org-mode">ORG MODE</h3>
-<p>Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.</p>
+<p>Org mode er configuretion er jonno amader ay package abong variable o hook gula edit korte hobe.</p>
 <ul>
 <li>
 <p>ORG MAIN</p>
@@ -258,11 +254,13 @@
 </li>
 <li>
 <p>DISPLAY LINE NUMBER MODE</p>
+<p>Line number gula show korar jonno ay mode gula on korte hobe</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(global-display-line-numbers-mode 1) ;; Display line numbers
 </span></code></pre>
 </li>
 <li>
 <p>FOR PAIR MODE: LIKE(){}</p>
+<p>Coding korar smy pair mode mane single parenthesis ba bracket dile onno akta autmetically add hoye jai…ay support er jonno pair mode use kora hoi. Abr org mode er shortcut gula &lt;s ba &lt;e ayvabe kaj kore to “&lt;” aytar jonno pair mode ta off rakhte hobe na hoile org file edit korte jhamela hobe ay jonno e pair mode er config ta amon vabe kora.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(electric-pair-mode 1)       ;; Turns on automatic parens pairing
 </span><span>;; The following prevents &lt;&gt; from auto-pairing when electric-pair-mode is on.
 </span><span>;; Otherwise, org-tempo is broken when you try to &lt;s TAB...
@@ -325,6 +323,9 @@
 </span><span>(add-hook &#39;vterm-mode-hook (lambda () (display-line-numbers-mode -1)))
 </span></code></pre>
 <h3 id="counsel-and-ivy">COUNSEL AND IVY</h3>
+<p>Ivy → Emacs-এর ডিফল্ট completion সিস্টেমকে replace করে, যাতে command, file, buffer ইত্যাদি search ও select করা অনেক fast আর smart হয়।</p>
+<p>Counsel → Ivy-এর extension, যা default Emacs command (যেমন M-x, find-file) গুলোকে extra feature দিয়ে আরও powerful করে।</p>
+<p>Short summary: Ivy completion system সামলায়, Counsel command গুলো upgrade করে — একসাথে Emacs-কে অনেক বেশি smooth আর feature-rich বানায়।</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package counsel
 </span><span>  :ensure t
 </span><span>  :after ivy
@@ -360,6 +361,7 @@
 </span><span>                               &#39;ivy-rich-switch-buffer-transformer))
 </span></code></pre>
 <h3 id="general-keybinding">GENERAL KEYBINDING</h3>
+<p>Doom emacs a jmn SPC diye keybindings gulo kaj kore same keybindings gulo add korar jonno general package ta add kore ayta k customize korci. abong ay customization ta distro tube er emacs config theke nea ay jonno e dt/leader key dea sob jaiga te.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package general
 </span><span>  :ensure t
 </span><span>  :config
@@ -565,6 +567,7 @@
 </span><span>  )
 </span></code></pre>
 <h3 id="sudo-edit">SUDO EDIT</h3>
+<p>Majhe majhe emacs diye amon kicu file edit korte hoi j gula sudo permission cai. kintu emacs defult vabe ay jinis ta support kore na ay jonno sudo permission diye file edit korar jonno amader ay package ta lagbe.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package sudo-edit
 </span><span>  :ensure t
 </span><span>  :config
@@ -573,6 +576,7 @@
 </span><span>      &quot;fU&quot; &#39;(sudo-edit :wk &quot;Sudo edit file&quot;)))
 </span></code></pre>
 <h3 id="emacs-keybinding">EMACS KEYBINDING</h3>
+<p>Ay gula amr nijer keybinding J gula Alt diye kaj kore. R tmi nije caileo nijer moto kore nijer keybinding add kore nite paro.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;; Bookmarks and Buffers keybindings
 </span><span>(define-key global-map (kbd &quot;M-b&quot;) nil)  ;; Start defining a prefix for M-b
 </span><span>;;(define-key global-map (kbd &quot;M-b b&quot;) &#39;switch-to-buffer)
@@ -635,6 +639,7 @@
 </span><span>(define-key global-map (kbd &quot;M-m s&quot;) #&#39;Update-sddm-wallpaper)
 </span></code></pre>
 <h3 id="which-key">WHICH KEY</h3>
+<p>Which key emacs er akta package j package ta keybinding gula show kore abong kon keybinding er kaj ki oita minibuffer a show kore. Jemon just spc press korle minibuffer a sob keybinding gula show korbe.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package which-key
 </span><span>:ensure t
 </span><span>:init
@@ -654,6 +659,7 @@
 </span><span>        which-key-separator &quot; → &quot; ))
 </span></code></pre>
 <h3 id="blank-buffer">BLANK BUFFER</h3>
+<p>Blank Buffer ayta asole amr nijer add kora jate kore amon akta buffer create kore j buffer a kno kicu e thakbe na ay buffer ta create korar karon holo jate kore exwm a amra amader wallpaper ta dekhte pari. Na hoile amr asole full akta window manager er vibe ase na.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;; create a completely blank buffer
 </span><span>(defun my/blank-buffer ()
 </span><span>  &quot;create a new completely blank buffer with no ui elements.&quot;
@@ -674,6 +680,7 @@
 </span><span>    (message nil)))
 </span></code></pre>
 <h3 id="transperency">TRANSPERENCY</h3>
+<p>Transparency er setting gula mainly background show korar jonno.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;; START picom for transparency
 </span><span>(start-process &quot;picom&quot; nil &quot;picom&quot;)
 </span><span>
@@ -693,32 +700,8 @@
 </span><span>;; Update transparency whenever buffer changes
 </span><span>(add-hook &#39;buffer-list-update-hook #&#39;my/update-transparency-based-on-buffer)
 </span></code></pre>
-<h3 id="transperency-for-exwm-workspace">TRANSPERENCY FOR EXWM WORKSPACE</h3>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
-</span><span>(defun my/blank-buffer-in-first-workspace-only ()
-</span><span>  &quot;Open blank buffer only in EXWM workspace 0.&quot;
-</span><span>  (when (and (featurep &#39;exwm)
-</span><span>             (eq exwm-workspace-current-index 0)
-</span><span>             (not (get-buffer &quot;*blank*&quot;))) ;; only if it doesn&#39;t exist yet
-</span><span>    (my/blank-buffer)))
-</span><span>
-</span><span>(add-hook &#39;emacs-startup-hook #&#39;my/blank-buffer-in-first-workspace-only)
-</span><span>
-</span><span>
-</span><span>;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
-</span><span>(defun my/show-blank-if-no-buffer ()
-</span><span>  &quot;Show *blank* buffer if current buffer is *scratch* or unnamed.&quot;
-</span><span>  (let ((curr (buffer-name)))
-</span><span>    (when (or (string= curr &quot;*scratch*&quot;)
-</span><span>              (string= curr &quot;&quot;)
-</span><span>              (string-match-p &quot;^\\*.*\\*$&quot; curr)) ;; if it&#39;s just *Messages*, *Help*, etc.
-</span><span>      (unless (get-buffer &quot;*blank*&quot;)
-</span><span>        (my/blank-buffer))
-</span><span>      (switch-to-buffer &quot;*blank*&quot;))))
-</span><span>
-</span><span>(add-hook &#39;exwm-workspace-switch-hook #&#39;my/show-blank-if-no-buffer)
-</span></code></pre>
 <h3 id="mouse-battery-and-background-setup">MOUSE, BATTERY AND BACKGROUND SETUP</h3>
+<p>Sob window manger er bar gula te jemon, polybar ba i3bar a kicu information show kore abong kno software run hoile tar applet ta show kore. To same jinis tar jonno e ay config gula. nm-applet j ta linux er network maintain korar jonno help kore oita abong ami screenshoot er jonno flameshot use kori ay dui ta k emacs er modeline a show korar jonno ami ay config gula use kori.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(setq mouse-autoselect-window t
 </span><span>      focus-follows-mouse t)
 </span><span>
@@ -736,6 +719,7 @@
 </span><span>              (start-process &quot;flameshot&quot; nil &quot;flameshot&quot;)))))
 </span></code></pre>
 <h3 id="ide">IDE</h3>
+<p>Amr issa ace j ami emacs k e amr main coding IDE hisabe use korbo to emacs diye coding korar jonno ja ja proyojon oi hisabe akta ide build korar try kortaci.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;; ========== Neotree Mode ==========
 </span><span>(use-package neotree
 </span><span>  :ensure t)
@@ -822,6 +806,7 @@
 </li>
 </ul>
 <h3 id="dashboard">DASHBOARD</h3>
+<p>Dashboard hocce akta emacs package j ta recent file abong onno kicu important option show kore. jdi kew exwm use na kore just emacs use kore tar jonno ay package ta startup page hisabe onk valo kaj korbe.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package dashboard
 </span><span>  :ensure t
 </span><span>  :init
@@ -844,6 +829,7 @@
 </span><span>;; (dashboard-setup-startup-hook))
 </span></code></pre>
 <h3 id="dired">DIRED</h3>
+<p>Emacs er defult file manger <code>DIRED</code> er fiture increase korar jonno configuretion.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(use-package dired-open
 </span><span>  :ensure t
 </span><span>  :config
@@ -869,9 +855,11 @@
 </span><span>(setq dired-listing-switches &quot;-lha&quot;)
 </span></code></pre>
 <h3 id="backups">BACKUPS</h3>
+<p>Emacs j backup file gula toiri kore oi gula k autmetically trash folder a move kore dea. ami ay config ta o dt er theke copy korci to ayta akhn koto ta kaj kore ami sure na..future a er upgraded version nia asbo insa’allah.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(setq backup-directory-alist &#39;((&quot;.*&quot; . &quot;~/.local/share/Trash/files&quot;)))
 </span></code></pre>
 <h3 id="buffer-move">BUFFER MOVE</h3>
+<p>Buffer gula same workspace er vitore window to window move korar jonno ay code tuku jmn jdi akta workspace a 2 ta window thake abong akta te right side a firefox o left side a thunar, to thunar abong firefox k move korarnor jonno ay code tuku proyojon. Aytao dt er config er copy.😜</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(require &#39;windmove)
 </span><span>
 </span><span>;;;###autoload
@@ -941,8 +929,12 @@
 </span><span>      (set-window-buffer other-win buf-this-buf)
 </span><span>      (select-window other-win))))
 </span></code></pre>
-<h2 id="setting-up-exwm">SETTING UP EXWM</h2>
-<h3 id="exwm-main">EXWM MAIN</h3>
+<p>Aybar hocce main window manger setup. Exwm.</p>
+<h3 id="setting-up-exwm">setting up exwm</h3>
+<ul>
+<li>
+<p>exwm main</p>
+<p><a rel="noopener nofollow noreferrer" target="_blank" href="https://github.com/emacs-exwm/exwm/wiki">EXWM WIKI</a> dekhle exwm kivabe setup korte hobe sob bujhte parba. Ami amr config a nijer moto kore kicu changes korci. Exwm a defult vabe leader key hisabe Windows ba Super key dea thake, kintu amr personally Alt key ta besi posondo. Amr personal preference hocce j keyboard a 2 ta Alt key thake to to control korte subidha hoi.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(require &#39;exwm)
 </span><span>;; Set the initial workspace number.
 </span><span>(setq exwm-workspace-number 10)
@@ -985,6 +977,8 @@
 </span><span>(require &#39;exwm-randr)
 </span><span>(exwm-randr-mode 1)
 </span></code></pre>
+</li>
+</ul>
 <h3 id="exwm-display">EXWM DISPLAY</h3>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(setq X11_SCREEN_LIST &#39;(&quot;eDP-1&quot; &quot;DP-3&quot;))
 </span><span>
@@ -1022,7 +1016,34 @@
 </span><span>(setq EXWM_WORKSPACE_LIST &#39;((1 . &quot;eDP-1&quot;) (3 . &quot;eDP-1&quot;)))
 </span><span>;; (setq EXWM_WORKSPACE_LIST &#39;((1 . &quot;DP-3&quot;) (3 . &quot;DP-3&quot;)))
 </span></code></pre>
+<h3 id="transperency-for-exwm-workspace">TRANSPERENCY FOR EXWM WORKSPACE</h3>
+<p>Exwm a er workspace gula te background show korar jonno jkhn amra kno workspace a switch korbo tkhn jate kore background ta dekha jai ay jonno jkhni amra kno workspaces a switch korbo tkhn jeno amader blank buffer ta show kore oi jonno ay config tuku add korte hobe.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
+</span><span>(defun my/blank-buffer-in-first-workspace-only ()
+</span><span>  &quot;Open blank buffer only in EXWM workspace 0.&quot;
+</span><span>  (when (and (featurep &#39;exwm)
+</span><span>             (eq exwm-workspace-current-index 0)
+</span><span>             (not (get-buffer &quot;*blank*&quot;))) ;; only if it doesn&#39;t exist yet
+</span><span>    (my/blank-buffer)))
+</span><span>
+</span><span>(add-hook &#39;emacs-startup-hook #&#39;my/blank-buffer-in-first-workspace-only)
+</span><span>
+</span><span>
+</span><span>;;; WHEN SWITCHING EXWM WORKSPACES, SHOW *blank* IF NOTHING ELSE
+</span><span>(defun my/show-blank-if-no-buffer ()
+</span><span>  &quot;Show *blank* buffer if current buffer is *scratch* or unnamed.&quot;
+</span><span>  (let ((curr (buffer-name)))
+</span><span>    (when (or (string= curr &quot;*scratch*&quot;)
+</span><span>              (string= curr &quot;&quot;)
+</span><span>              (string-match-p &quot;^\\*.*\\*$&quot; curr)) ;; if it&#39;s just *Messages*, *Help*, etc.
+</span><span>      (unless (get-buffer &quot;*blank*&quot;)
+</span><span>        (my/blank-buffer))
+</span><span>      (switch-to-buffer &quot;*blank*&quot;))))
+</span><span>
+</span><span>(add-hook &#39;exwm-workspace-switch-hook #&#39;my/show-blank-if-no-buffer)
+</span></code></pre>
 <h3 id="exwm-font-settings">EXWM FONT SETTINGS</h3>
+<p>Exwm a font rendering er smy error ascilo to oita k fix korar jonno ami ay code ta use korcilam.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(defun my/apply-font-settings (frame)
 </span><span>  (with-selected-frame frame
 </span><span>    (set-face-attribute &#39;default nil :font &quot;JetBrains Mono&quot; :height 160  :weight &#39;medium)))
@@ -1034,6 +1055,7 @@
 </span><span>(add-hook &#39;after-make-frame-functions #&#39;my/apply-font-settings)
 </span></code></pre>
 <h3 id="exwm-extra-setting">EXWM EXTRA SETTING</h3>
+<p>Exwm use korar smy amr touchpad a kaj kortacilo na to oitar jonno ami akta bash script configi er sathe add kore diyeci. R exwm a joto buffer open kora hoyece, mane mone koro tmi 1st workspace a aco kintu tmr firefox open kora 3rd workspace a to tmi jdi M-b-i press koro to tmr sob buffer show korbe abong tmi j kno buffer a switch korte parbe se j workspace a e thakuk na kno.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(add-to-list &#39;default-frame-alist &#39;(fullscreen . maximized))
 </span><span>(setq exwm-workspace-show-all-buffers t)
 </span><span>(setq exwm-workspace-warp-cursor t)
@@ -1042,9 +1064,11 @@
 </span><span>(start-process-shell-command &quot;touchpad-fix&quot; nil &quot;~/.config/emacs/scripts/exwm-touchpad-fix.sh&quot;)
 </span></code></pre>
 <h3 id="app-luncher">APP LUNCHER</h3>
+<p>counsel-linux-app command diye app run korle j promt ta ase oitar theke ay app luncher ta besi interactive.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(add-to-list &#39;load-path &quot;~/.config/emacs/scripts/&quot;)
 </span><span>(require &#39;app-launcher)
 </span></code></pre>
+<p>To er porer theke j code gula ace sob e amr personal config er vitore pore. Ami nijer subidha moto cusotmize korci jate kore akta fullfill window manager er moto kore e exwm k use kora jai.</p>
 <h3 id="exwm-power-menu">EXWM POWER-MENU</h3>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>(defun my/power-menu ()
 </span><span>  &quot;Launch the graphical power menu.&quot;

@@ -24,6 +24,7 @@ Emacs ta sekhar age vim ta k valo vabe sekha dorkar, karon amra emacs a evil mod
   allowfullscreen>
   </iframe>
 #+END_EXPORT
+
 * EMACS CONFIGURETION
 Emacs mainly package er upor kaj kore, jemon arch ba debian er package repo er theke package download kora jai thik temon emacs er repo er theke j j package dorkar oi gula download kore emacs customize korte hoi. Ami amr config a total 4 ta repo use kori [[https://github.com/progfolio/elpaca][elpaca]], [[https://melpa.org][melpa]], [[https://elpa.gnu.org/][elpa]] abong [[https://orgmode.org/][org]]. Ami sob package gulo ay repo theke e download kori. To emacs er main config file gula edit korar maddhome puro emacs ta k e customize kora jai. Emacs customize korar jonno mainly 2 ta file customize kora lage. init.el abong early-init.el.
 
@@ -66,10 +67,8 @@ File ta te ay line ta add kore dite hobe:-
 ;; (add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
 #+end_src
 
-* SETTING UP EMACS 
-
-
-** ALL THE REPOS
+** CONFIG.ORG
+Aybar amra amader Emacs ta k configure kora suru korbo. Configuretion er jonno sobar e alada alada approch ace. Ami first a repo gulo setup kori. Elpaca er repo theke elpaca er code ta ane just ay jagai paste kore dile e elpaca setup hoye jabe. 
 *** ELPACA
 #+begin_src emacs-lisp
 (defvar elpaca-installer-version 0.11)
@@ -110,7 +109,11 @@ File ta te ay line ta add kore dite hobe:-
     (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
+#+end_src
 
+*** SETTING UP "use-package" support
+Package install korar jonno nijer code tuku add korte hobe. Ayta elcapa er main code er ses a add kore dite hobe.
+#+begin_src emacs-lisp
 ;; Install use-package support
 (elpaca elpaca-use-package
   ;; Enable use-package :ensure support for Elpaca.
@@ -118,6 +121,7 @@ File ta te ay line ta add kore dite hobe:-
 #+end_src
 
 *** SOME REPO
+R o 3 ta repo add korte hobe, ay gula kicu package er jonno proyojon ja amra elpaca te pabo na.
 #+begin_src emacs-lisp
 (require 'package)
 (setq package-archives
@@ -127,7 +131,9 @@ File ta te ay line ta add kore dite hobe:-
 (package-initialize)
 #+end_src
 
-** DOOM MODELIME AND DOOM THEME
+*** DOOM MODELIME AND DOOM THEME
+Emacs er defult theme r modeline ta change korar jonno amra doom modeline abong theme install korbo. Jate kore amra thik vabe emacs a kaj korte pari. Mainly cokher santi er jonno😌. 
+
 #+begin_src emacs-lisp
 (use-package doom-modeline
   :ensure t
@@ -152,7 +158,9 @@ File ta te ay line ta add kore dite hobe:-
 (load-theme 'doom-one t))
 #+end_src
 
-** FONTS 
+*** FONTS 
+Emacs er fonts change korar jonno font add korte hobe.
+
 If you are having trouble of loading the fonts please add those line in your early-init.el file
 #+begin_example
 (add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
@@ -167,8 +175,9 @@ If you are having trouble of loading the fonts please add those line in your ear
 ;; (setq-default line-spacing 0.12)
 #+end_src
 
-** ORG MODE
-*** ORG MAIN
+*** ORG MODE
+Org mode er configuretion er jonno amader ay package abong variable o hook gula add korte hobe.
+**** ORG MAIN
 #+begin_src emacs-lisp
 (use-package toc-org
   :ensure t
@@ -183,58 +192,16 @@ If you are having trouble of loading the fonts please add those line in your ear
 (require 'org-tempo)
 #+end_src
 
-** MARKDOWN CONVERTER FOR ZOLA
-
-*** ORG FILE TO MARKDWON
-#+begin_src emacs-lisp
-(defun my/org-md-export-to-markdown-with-header ()
-  "Export current Org file to markdown with a custom TOML-style header at the top."
-  (interactive)
-  (let* ((org-md-headline-style 'atx)
-         (org-export-with-toc nil)
-         (org-export-with-section-numbers nil)
-         (org-export-with-smart-quotes t)
-         (org-export-with-drawers nil)
-         (org-export-with-priority nil)
-         (outfile (org-md-export-to-markdown)))
-    (with-current-buffer (find-file-noselect outfile)
-      (goto-char (point-min))
-      (insert "+++\n")
-      (insert "title = \"" (file-name-base outfile) "\"\n")
-      (insert "date = \"" (format-time-string "%Y-%m-%d") "\"\n")
-      (insert "author = \"" user-full-name "\"\n")
-      (insert "+++\n\n")
-      (save-buffer))))
-#+end_src
-
-*** ORG TEMPO SHORTCUT FOR LAODING YOUTUBE VIDEO AND NORMAL VIDEO
-#+begin_src emacs-lisp
-;;>>>>>>youtube template<<<<<<<<
-(add-to-list 'org-structure-template-alist
-             '("y" . "EXPORT html\n<iframe width=\"560\" height=\"315\"\n  src=\"https://www.youtube.com/embed/\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen>\n</iframe>"))
-
-;;>>>>>>video template<<<<<<<<
-(add-to-list 'org-structure-template-alist
-             '("z" . "EXPORT html\n<video controls width=\"100%\">\n  <source src=\"/videos/.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>"))
-
-;;>>>>>>Image template<<<<<<<<
-(tempo-define-template
- "j"
- '("#+CAPTION: IMAGE"
-   "[[]]")
- "<j"
- "Insert image caption and link placeholder in Org-mode")
-#+end_src
-
-*** ORG MODE GRAphical TWeaks
+**** ORG MODE GRAphical TWeaks
 #+begin_src emacs-lisp
 (setq org-edit-src-content-indentation 0) ;; set src block automatic indent to 0 instead of 2.
 (delete-selection-mode 1)    ;; you can select text and delete it by typing.
 (electric-indent-mode -1)    ;; turn off the weird indenting that emacs does by default.
 #+end_src
 
-** GRAPHICAL USER INTERFACE TWEAKS
-*** DEFAULT BIP SOUND DISABLE
+*** GRAPHICAL USER INTERFACE TWEAKS
+**** DEFAULT BIP SOUND DISABLE
+Emacs a defult vabe akta beep sound kore jdi kno line er first a jeye backspace click kora hoi ba kno vhul command dea hoi j ta sunte onk besi osojjo lage ay jonno defult beep sound ta off kora dorkar.
 #+begin_src emacs-lisp
 (use-package emacs
   :ensure nil
@@ -242,25 +209,26 @@ If you are having trouble of loading the fonts please add those line in your ear
   (setq ring-bell-function #'ignore))
 #+end_src
 
-*** Disable Menubar, Toolbars and Scrollbars
+**** Disable Menubar, Toolbars and Scrollbars
+Minimul look er jonno menu-bar, scroll-bar abong tool-bar off kore dea.
 #+begin_src emacs-lisp
 (menu-bar-mode -1)           ;; Disable the menu bar 
 (scroll-bar-mode -1)         ;; disable the scroll bar
 (tool-bar-mode -1)           ;; Disable the tool bar
 #+end_src
 
-*** Display Line Numbers and Truncated Lines
+**** Display Line Numbers and Truncated Lines
 #+begin_src emacs-lisp
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (global-visual-line-mode t)  ;; Enable truncated lines
 #+end_src
 
-*** DISPLAY LINE NUMBER MODE
+**** DISPLAY LINE NUMBER MODE
 #+begin_src emacs-lisp
 (global-display-line-numbers-mode 1) ;; Display line numbers
 #+end_src
 
-*** FOR PAIR MODE: LIKE(){}
+**** FOR PAIR MODE: LIKE(){}
 #+begin_src emacs-lisp
 (electric-pair-mode 1)       ;; Turns on automatic parens pairing
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
@@ -271,7 +239,7 @@ If you are having trouble of loading the fonts please add those line in your ear
                       (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 #+end_src
 
-*** ZOOMING IN AND OUT
+**** ZOOMING IN AND OUT
 #+begin_src emacs-lisp
 ;;========= ZOOMING IN AND OUT ==========
 (global-set-key (kbd "C-=") 'text-scale-increase)
@@ -283,12 +251,14 @@ If you are having trouble of loading the fonts please add those line in your ear
 (setq initial-scratch-message nil)
 #+end_src
 
-** MINIBUFFER ESCAPE
+*** MINIBUFFER ESCAPE
+jkhn minibuffer a focus jai tkhn minibuffer theke focus sorarnor jonno jhamela hoi onk bar esc press kora lage to ay problem ta solve korar jonno, one click a minibuffer theke escape korar jonno.
 #+begin_src emacs-lisp
 (global-set-key [escape] 'keyboard-escape-quit);;MInibuffer escape
 #+end_src
 
-** EVIL MODE 
+*** EVIL MODE 
+Vim like keybinding er jonno Evil Mode.
 #+begin_src emacs-lisp
 (use-package evil
   :ensure t
@@ -318,14 +288,16 @@ If you are having trouble of loading the fonts please add those line in your ear
 (setq org-return-follows-link  t)
 #+end_src
 
-** VTERM
+*** VTERM
+Emacs er jonno best terminal emulator vterm setup korar jonno.
 #+begin_src emacs-lisp
 (use-package vterm
   :ensure t)
 (add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode -1)))
 #+end_src
 
-** COUNSEL AND IVY
+*** COUNSEL AND IVY
+
 #+begin_src emacs-lisp
 (use-package counsel
   :ensure t
@@ -363,7 +335,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 #+end_src
 
 
-** GENERAL KEYBINDING
+*** GENERAL KEYBINDING
 #+begin_src emacs-lisp
 (use-package general
   :ensure t
@@ -570,7 +542,7 @@ If you are having trouble of loading the fonts please add those line in your ear
   )
 #+end_src
 
-** SUDO EDIT
+*** SUDO EDIT
 #+begin_src emacs-lisp
 (use-package sudo-edit
   :ensure t
@@ -580,7 +552,7 @@ If you are having trouble of loading the fonts please add those line in your ear
       "fU" '(sudo-edit :wk "Sudo edit file")))
 #+end_src
 
-** EMACS KEYBINDING
+*** EMACS KEYBINDING
 #+begin_src emacs-lisp
 ;; Bookmarks and Buffers keybindings
 (define-key global-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b
@@ -644,7 +616,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 (define-key global-map (kbd "M-m s") #'Update-sddm-wallpaper)
 #+end_src
 
-** WHICH KEY
+*** WHICH KEY
 #+begin_src emacs-lisp
 (use-package which-key
 :ensure t
@@ -665,7 +637,7 @@ If you are having trouble of loading the fonts please add those line in your ear
         which-key-separator " → " ))
 #+end_src
 
-** BLANK BUFFER
+*** BLANK BUFFER
 #+begin_src emacs-lisp
 ;; create a completely blank buffer
 (defun my/blank-buffer ()
@@ -687,7 +659,7 @@ If you are having trouble of loading the fonts please add those line in your ear
     (message nil)))
 #+end_src
 
-** TRANSPERENCY
+*** TRANSPERENCY
 #+begin_src emacs-lisp
 ;; START picom for transparency
 (start-process "picom" nil "picom")
@@ -709,7 +681,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 (add-hook 'buffer-list-update-hook #'my/update-transparency-based-on-buffer)
 #+end_src
 
-** TRANSPERENCY FOR EXWM WORKSPACE
+*** TRANSPERENCY FOR EXWM WORKSPACE
 #+begin_src emacs-lisp
 ;;; ONLY OPEN *blank* ON STARTUP IF EXWM WORKSPACE 0
 (defun my/blank-buffer-in-first-workspace-only ()
@@ -736,7 +708,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 (add-hook 'exwm-workspace-switch-hook #'my/show-blank-if-no-buffer)
 #+end_src
 
-** MOUSE, BATTERY AND BACKGROUND SETUP
+*** MOUSE, BATTERY AND BACKGROUND SETUP
 #+begin_src emacs-lisp
 (setq mouse-autoselect-window t
       focus-follows-mouse t)
@@ -757,7 +729,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 
 #+end_src
 
-** IDE
+*** IDE
 #+begin_src emacs-lisp
 ;; ========== Neotree Mode ==========
 (use-package neotree
@@ -801,8 +773,8 @@ If you are having trouble of loading the fonts please add those line in your ear
   (lsp-prefer-flymake nil))
 #+end_src
 
-** LANGUAGE SUPPORT FOR IDE
-*** PYTHON
+*** LANGUAGE SUPPORT FOR IDE
+**** PYTHON
 #+begin_src emacs-lisp
 (use-package python-mode
   :hook (python-mode . lsp)
@@ -817,7 +789,7 @@ If you are having trouble of loading the fonts please add those line in your ear
                          (lsp))))
 #+end_src
 
-*** DART MODE
+**** DART MODE
 #+begin_src emacs-lisp
 ;; Dart + Flutter setup
 (use-package dart-mode
@@ -843,7 +815,7 @@ If you are having trouble of loading the fonts please add those line in your ear
               ("C-M-x" . flutter-run-or-hot-reload)))
 #+end_src
 
-** DASHBOARD
+*** DASHBOARD
 #+begin_src emacs-lisp
 (use-package dashboard
   :ensure t
@@ -867,7 +839,7 @@ If you are having trouble of loading the fonts please add those line in your ear
 ;; (dashboard-setup-startup-hook))
 #+end_src
 
-** DIRED
+*** DIRED
 #+begin_src emacs-lisp
 (use-package dired-open
   :ensure t
@@ -894,12 +866,12 @@ If you are having trouble of loading the fonts please add those line in your ear
 (setq dired-listing-switches "-lha")
 #+end_src
 
-** BACKUPS
+*** BACKUPS
 #+begin_src emacs-lisp
 (setq backup-directory-alist '((".*" . "~/.local/share/Trash/files")))
 #+end_src
 
-** BUFFER MOVE
+*** BUFFER MOVE
 #+begin_src emacs-lisp
 (require 'windmove)
 
@@ -972,8 +944,7 @@ one, an error is signaled."
 #+end_src
 
 
-* SETTING UP EXWM
-** EXWM 
+** SETTING UP EXWM
 *** EXWM MAIN
 #+begin_src emacs-lisp
 (require 'exwm)
@@ -1133,13 +1104,13 @@ one, an error is signaled."
 (define-key exwm-mode-map [?\M-l] #'my/lock-screen) ;; FOR EXWM
 #+end_src
 
-** EXWEM NOTIFICATION
-*** STARTING DUNST
+*** EXWEM NOTIFICATION
+**** STARTING DUNST
 #+begin_src emacs-lisp
 (start-process "dunst" nil "dunst") ;; Starting Wireless conncetion 
 #+end_src
 
-*** VOLUME CONTROL
+**** VOLUME CONTROL
 #+begin_src emacs-lisp
 (defun volume-increase ()
   (interactive)
@@ -1167,7 +1138,7 @@ one, an error is signaled."
 (define-key exwm-mode-map(kbd "<XF86AudioMute>") 'volume-mute-toggle)
 #+end_src
 
-*** BRIGHTNESS CONTROL
+**** BRIGHTNESS CONTROL
 #+begin_src emacs-lisp
 (defun brightness-increase ()
   (interactive)
@@ -1221,7 +1192,7 @@ one, an error is signaled."
 
 #+end_src
 
-** SHORTCUT FOR LUNCHING APPLICATION 
+*** SHORTCUT FOR LUNCHING APPLICATION 
 #+begin_src emacs-lisp
  (defun my/launch-firefox ()
   "launch firefox browser."
@@ -1305,7 +1276,7 @@ one, an error is signaled."
 (define-key exwm-mode-map (kbd "M-m x") #'my/toggle-fullscreen)
 #+end_src
 
-** CUSTOMIZED FUNCTION NAME
+*** CUSTOMIZED FUNCTION NAME
 #+begin_src emacs-lisp
 ;; Power Menu
 (defalias 'Power-menu #'my/power-menu)
@@ -1322,8 +1293,8 @@ one, an error is signaled."
 (defalias 'ORG-TO-MD-CONVERT #'my/org-md-export-to-markdown-with-header)
 #+end_src
 
-** EXWM KEYBINDINGS
-*** BUFFER
+*** EXWM KEYBINDINGS
+**** BUFFER
 #+begin_src emacs-lisp
 ;; Unbind M-b from any previous behavior (like backward-word)
 (define-key exwm-mode-map (kbd "M-b") nil)  ;; Start defining a prefix for M-b in EXWM
@@ -1342,7 +1313,7 @@ one, an error is signaled."
 (define-key exwm-mode-map (kbd "M-b q") 'exwm-input-release-keyboard) ;; Release EXWM keyboard Release
 
 #+end_src
-*** WINDOW
+**** WINDOW
 #+begin_src emacs-lisp
 ;; Define M-w as a prefix key for EXWM
 (define-key exwm-mode-map (kbd "M-w") nil)  ;; Start defining a prefix for M-w in EXWM
@@ -1369,7 +1340,7 @@ one, an error is signaled."
 (define-key exwm-mode-map (kbd "M-w m") 'save-buffers-kill-emacs)
 #+end_src
 
-*** DIRED AND MENU
+**** DIRED AND MENU
 #+begin_src emacs-lisp
 ;; Define M-d as a prefix key in EXWM mode
 (define-key exwm-mode-map (kbd "M-d") nil)
@@ -1383,7 +1354,7 @@ one, an error is signaled."
 (define-key exwm-mode-map (kbd "M-d p") 'peep-dired) ;; Peep Dired preview
 #+end_src
 
-*** PERSONAL KEYBINDINGS
+**** PERSONAL KEYBINDINGS
 #+begin_src emacs-lisp
 ;; ===== personal keybinding for menus =====
 (define-key exwm-mode-map (kbd "M-m") nil)
