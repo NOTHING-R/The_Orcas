@@ -1,0 +1,16 @@
+* Download
+Cisco Packet Tracer donwload korar jonno first a [[https://www.netacad.com/][NETCAD.COM]] a jeye sign up korte hobe. Sign up korar pore [[https://www.netacad.com/resources/lab-downloads?courseLang=en-US][Download]] link a click kore download korte hobe. Er pore arch aur theke packettracer ta clone korte hobe:
+#+begin_src shell
+git clone https://aur.archlinux.org/packettracer.git
+cd packettracer
+#+end_src
+
+er pore amra j file ta download korci oita k packettracer directory te move ba copy korte hobe. 
+#+begin_src shell
+cp <name of the file> packettracer/ 
+#+end_src
+
+abong last command for install:
+#+begin_src shell
+makepkg -sri
+#+end_src

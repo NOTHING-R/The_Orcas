@@ -5,8 +5,38 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-08-10T00:00:00+00:00</updated>
+    <updated>2025-09-16T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>HOW TO INSTALL CISCO PACKET TRACER IN ARCH</title>
+        <published>2025-09-16T00:00:00+00:00</published>
+        <updated>2025-09-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/how-to-install-cisco-packet-tracer-in-arch/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/how-to-install-cisco-packet-tracer-in-arch/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/how-to-install-cisco-packet-tracer-in-arch/">&lt;h1 id=&quot;download&quot;&gt;Download&lt;&#x2F;h1&gt;
+&lt;p&gt;Cisco Packet Tracer donwload korar jonno first a &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&#x2F;&quot;&gt;NETCAD.COM&lt;&#x2F;a&gt; a jeye sign up korte hobe. Sign up korar pore &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&#x2F;resources&#x2F;lab-downloads?courseLang=en-US&quot;&gt;Download&lt;&#x2F;a&gt; link a click kore download korte hobe. Er pore arch aur theke packettracer ta clone korte hobe:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packettracer.git
+&lt;&#x2F;span&gt;&lt;span&gt;cd packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;er pore amra j file ta download korci oita k packettracer directory te move ba copy korte hobe.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;cp &amp;lt;name of the file&amp;gt; packettracer&#x2F; 
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;abong last command for install:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;makepkg -sri
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>HOW TO CONFIGURE EMACS</title>
         <published>2025-08-10T00:00:00+00:00</published>
