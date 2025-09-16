@@ -34,6 +34,194 @@
 &lt;p&gt;abong last command for install:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;makepkg -sri
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Cisco Networking Academy Account&lt;&#x2F;strong&gt;: You need an account with Cisco Networking Academy (NetAcad) or Skills for All to download the Packet Tracer &lt;code&gt;.deb&lt;&#x2F;code&gt; package. Sign up at &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&#x2F;&quot;&gt;netacad.com&lt;&#x2F;a&gt; or &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;skillsforall.com&#x2F;&quot;&gt;skillsforall.com&lt;&#x2F;a&gt; if you don’t have one.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Arch Linux AUR Access&lt;&#x2F;strong&gt;: Packet Tracer is available through the Arch User Repository (AUR), but it requires manual steps since the &lt;code&gt;.deb&lt;&#x2F;code&gt; file must be downloaded from Cisco’s official site.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Dependencies&lt;&#x2F;strong&gt;: Ensure you have &lt;code&gt;git&lt;&#x2F;code&gt;, &lt;code&gt;base-devel&lt;&#x2F;code&gt;, and an AUR helper (e.g., &lt;code&gt;yay&lt;&#x2F;code&gt; or &lt;code&gt;paru&lt;&#x2F;code&gt;) installed. You may also need &lt;code&gt;qt5-webkit&lt;&#x2F;code&gt; or other dependencies depending on the Packet Tracer version.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;installation-steps&quot;&gt;Installation Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Install Required Tools&lt;&#x2F;strong&gt;:
+Install &lt;code&gt;git&lt;&#x2F;code&gt; and &lt;code&gt;base-devel&lt;&#x2F;code&gt; if not already present:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; pacman&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; -S&lt;&#x2F;span&gt;&lt;span&gt; git base-devel
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Optionally, install an AUR helper like &lt;code&gt;yay&lt;&#x2F;code&gt; or &lt;code&gt;paru&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; pacman&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; -S&lt;&#x2F;span&gt;&lt;span&gt; yay
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;or&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; pacman&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; -S&lt;&#x2F;span&gt;&lt;span&gt; paru
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Download Cisco Packet Tracer&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Log in to your Cisco Networking Academy account at &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&#x2F;resources&#x2F;lab-downloads&quot;&gt;netacad.com&lt;&#x2F;a&gt; or &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;skillsforall.com&#x2F;resources&#x2F;lab-downloads&quot;&gt;skillsforall.com&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to the Resources section, find Packet Tracer, and download the Linux &lt;code&gt;.deb&lt;&#x2F;code&gt; package (e.g., &lt;code&gt;CiscoPacketTracer_822_amd64_signed.deb&lt;&#x2F;code&gt; for version 8.2.2 or &lt;code&gt;CiscoPacketTracer900_Open_Beta_July_Build700_linux_amd64_Exp20251231.deb&lt;&#x2F;code&gt; for version 9.0.0 beta).&lt;&#x2F;li&gt;
+&lt;li&gt;Save the &lt;code&gt;.deb&lt;&#x2F;code&gt; file to a known location, such as &lt;code&gt;~&#x2F;Downloads&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clone the Packet Tracer AUR Repository&lt;&#x2F;strong&gt;:
+Clone the &lt;code&gt;packettracer&lt;&#x2F;code&gt; package from the AUR:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packettracer.git
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Move and Rename the &lt;code&gt;.deb&lt;&#x2F;code&gt; File&lt;&#x2F;strong&gt;:
+The AUR package expects the &lt;code&gt;.deb&lt;&#x2F;code&gt; file to have a specific name matching the &lt;code&gt;PKGBUILD&lt;&#x2F;code&gt; file. For example, for Packet Tracer 8.2.2:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;mv ~&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;Downloads&#x2F;CiscoPacketTracer_822_amd64_signed.deb .&#x2F;CiscoPacketTracer822_amd64_signed.deb
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For version 9.0.0 beta, check the &lt;code&gt;PKGBUILD&lt;&#x2F;code&gt; file in the cloned directory to confirm the expected filename and rename accordingly:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;mv ~&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;Downloads&#x2F;CiscoPacketTracer900_Open_Beta_July_Build700_linux_amd64_Exp20251231.deb .&#x2F;CiscoPacketTracer900_amd64_signed.deb
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Ensure the &lt;code&gt;.deb&lt;&#x2F;code&gt; file is in the &lt;code&gt;packettracer&lt;&#x2F;code&gt; directory.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Build and Install the Package&lt;&#x2F;strong&gt;:
+Build the package using &lt;code&gt;makepkg&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;makepkg -sri
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;-s&lt;&#x2F;code&gt; flag installs missing dependencies.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;code&gt;-r&lt;&#x2F;code&gt; flag removes build dependencies after installation.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;code&gt;-i&lt;&#x2F;code&gt; flag installs the resulting package.
+If you use an AUR helper like &lt;code&gt;yay&lt;&#x2F;code&gt; or &lt;code&gt;paru&lt;&#x2F;code&gt;, you can alternatively run:&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;yay -S&lt;&#x2F;span&gt;&lt;span&gt; packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;or&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;paru -S&lt;&#x2F;span&gt;&lt;span&gt; packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Note: If the build fails due to missing dependencies, install them with &lt;code&gt;sudo pacman -S &amp;lt;package&amp;gt;&lt;&#x2F;code&gt; and retry.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Accept the EULA&lt;&#x2F;strong&gt;:
+During the installation, the Cisco End User License Agreement (EULA) will be displayed. Read it and accept the terms to proceed.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Launch Packet Tracer&lt;&#x2F;strong&gt;:
+After installation, start Packet Tracer from the terminal:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Or use the desktop environment’s application menu (a &lt;code&gt;.desktop&lt;&#x2F;code&gt; file is created in &lt;code&gt;&#x2F;usr&#x2F;share&#x2F;applications&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Log In&lt;&#x2F;strong&gt;:
+On first launch, log in with your Cisco Networking Academy or Skills for All credentials. If the in-app browser fails to load, select the “Skills for All” login option, which uses your system’s default browser.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;troubleshooting&quot;&gt;Troubleshooting&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Wayland Issues&lt;&#x2F;strong&gt;: If Packet Tracer crashes or the UI renders incorrectly on a Wayland session, run it with the &lt;code&gt;QT_QPA_PLATFORM=xcb&lt;&#x2F;code&gt; environment variable:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;QT_QPA_PLATFORM&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;xcb &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+Alternatively, add this to your &lt;code&gt;.config&#x2F;uwsm&#x2F;env&lt;&#x2F;code&gt; file for persistent use.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Packet_Tracer&quot;&gt;&lt;&#x2F;a&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packages&#x2F;packettracer&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Login Issues&lt;&#x2F;strong&gt;: If the NetAcad login gets stuck, use the “Skills for All” option to redirect to your system browser.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packages&#x2F;packettracer&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Missing Dependencies&lt;&#x2F;strong&gt;: If &lt;code&gt;makepkg&lt;&#x2F;code&gt; fails due to missing dependencies (e.g., &lt;code&gt;lib32-libpng&lt;&#x2F;code&gt;, &lt;code&gt;qt5-webkit&lt;&#x2F;code&gt;), install them manually:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; pacman&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; -S&lt;&#x2F;span&gt;&lt;span&gt; qt5-webkit
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+Check the &lt;code&gt;PKGBUILD&lt;&#x2F;code&gt; file for specific dependencies.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;bbs.archlinux.org&#x2F;viewtopic.php?id=150886&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;PTDIR Environment Variable&lt;&#x2F;strong&gt;: If assessments fail with a “directory not found” error, log out and back in to set the &lt;code&gt;PTDIR&lt;&#x2F;code&gt; environment variable, or run:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;source&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;profile.d&#x2F;packettracer.sh
+&lt;&#x2F;span&gt;&lt;span&gt;```&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;[]&lt;&#x2F;span&gt;&lt;span&gt;(https:&#x2F;&#x2F;github.com&#x2F;Aethalides&#x2F;archlinux-packet-tracer)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Beta Version Note&lt;&#x2F;strong&gt;: If using Packet Tracer 9.0.0 beta, note that it expires on December 31, 2025. Use version 8.2.2 for stability.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.packettracernetwork.com&#x2F;download-packet-tracer.html&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;alternative-packet-tracer-installer-script&quot;&gt;Alternative: Packet Tracer Installer Script&lt;&#x2F;h3&gt;
+&lt;p&gt;For a simpler approach, use the community-provided installer script from GitHub:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clone the repository:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;pr00x&#x2F;Cisco-Packet-Tracer-Arch-Linux-Installer.git
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; Cisco-Packet-Tracer-Arch-Linux-Installer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Make the script executable and run it with the &lt;code&gt;.deb&lt;&#x2F;code&gt; file:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;chmod&lt;&#x2F;span&gt;&lt;span&gt; +x packettracer_installer.sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; .&#x2F;packettracer_installer.sh &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;Downloads&#x2F;CiscoPacketTracer_822_amd64_signed.deb
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+This script automates extraction, dependency installation, and integration.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pr00x&#x2F;Cisco-Packet-Tracer-Arch-Linux-Installer&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;EULA Compliance&lt;&#x2F;strong&gt;: Ensure you have permission to use Packet Tracer, as it’s restricted to Cisco Networking Academy students, instructors, and alumni. Read the EULA at &lt;code&gt;&#x2F;usr&#x2F;share&#x2F;licenses&#x2F;packettracer&#x2F;COPYRIGHT&lt;&#x2F;code&gt;.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Packet_Tracer&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Avoid Unofficial Sources&lt;&#x2F;strong&gt;: Only download Packet Tracer from Cisco’s official website to ensure authenticity. Verify the SHA256 checksum if provided.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.packettracernetwork.com&#x2F;download-packet-tracer.html&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Alternatives&lt;&#x2F;strong&gt;: If Packet Tracer is not suitable, consider open-source alternatives like &lt;strong&gt;GNS3&lt;&#x2F;strong&gt; or &lt;strong&gt;Wireshark&lt;&#x2F;strong&gt; for network simulation and analysis.&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Packet_Tracer&quot;&gt;&lt;&#x2F;a&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.wireshark.org&#x2F;&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you meant a different tool (e.g., a packet analyzer like Wireshark), please clarify, and I can provide specific instructions for that. For further assistance, let me know your setup details or any errors you encounter!### Installing Cisco Packet Tracer on Arch Linux&lt;&#x2F;p&gt;
+&lt;p&gt;Cisco Packet Tracer is a network simulation tool provided by Cisco for educational purposes. It’s not natively available in the official Arch Linux repositories, but you can install it using the Arch User Repository (AUR) package &lt;code&gt;packettracer&lt;&#x2F;code&gt;, which adapts the official Ubuntu .deb package for Arch. Note that you must have a valid Cisco Networking Academy (NetAcad) account to download the official software, as it’s free only for students, instructors, and alumni. Always review the End-User License Agreement (EULA) after installation.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;prerequisites-1&quot;&gt;Prerequisites&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A Cisco Networking Academy account (sign up at &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&quot;&gt;netacad.com&lt;&#x2F;a&gt; if you don’t have one).&lt;&#x2F;li&gt;
+&lt;li&gt;Install the &lt;code&gt;base-devel&lt;&#x2F;code&gt; package group for building AUR packages:&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -S --needed base-devel git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure your system is up to date:&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -Syu
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The installation requires the Ubuntu 64-bit version of Packet Tracer (latest stable is typically 8.2.x as of recent updates).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;step-by-step-installation&quot;&gt;Step-by-Step Installation&lt;&#x2F;h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Download the Official Packet Tracer .deb File:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Log in to your NetAcad account at &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.netacad.com&quot;&gt;www.netacad.com&lt;&#x2F;a&gt;. Navigate to the “Resources” or “Downloads” section, and download the Ubuntu Desktop 64-bit .deb package (e.g., &lt;code&gt;CiscoPacketTracer_820_Ubuntu_64bit.deb&lt;&#x2F;code&gt;). Save it to a convenient location, like your Downloads folder.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clone the AUR Package:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Open a terminal and clone the &lt;code&gt;packettracer&lt;&#x2F;code&gt; AUR repository:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packettracer.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This creates a &lt;code&gt;packettracer&lt;&#x2F;code&gt; directory containing the &lt;code&gt;PKGBUILD&lt;&#x2F;code&gt; and other build files.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Prepare the Build Directory:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Move the downloaded .deb file into the &lt;code&gt;packettracer&lt;&#x2F;code&gt; directory:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;mv ~&#x2F;Downloads&#x2F;CiscoPacketTracer_*.deb packettracer&#x2F;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;(Adjust the path and filename as needed.) The AUR package will extract and repackage the contents from the .deb during the build process.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Build and Install the Package:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Navigate to the directory and build the package:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;cd packettracer
+&lt;&#x2F;span&gt;&lt;span&gt;makepkg -sirc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-s&lt;&#x2F;code&gt; installs any missing dependencies.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;-i&lt;&#x2F;code&gt; installs the built package automatically.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;-r&lt;&#x2F;code&gt; removes build-time dependencies after installation (optional but recommended).&lt;br &#x2F;&gt;
+This will create a &lt;code&gt;.pkg.tar.zst&lt;&#x2F;code&gt; file and install it via &lt;code&gt;pacman&lt;&#x2F;code&gt;. If you skip &lt;code&gt;-i&lt;&#x2F;code&gt;, manually install with:&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -U packettracer-*.pkg.tar.zst
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verify Installation:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+After installation, check the license files:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;cat &#x2F;usr&#x2F;share&#x2F;licenses&#x2F;packettracer&#x2F;COPYRIGHT
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Agree to the EULA and Supplemental EULA (SEULA) as prompted or by reviewing them online.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;launching-packet-tracer&quot;&gt;Launching Packet Tracer&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Run it from the terminal:&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+Or find it in your application menu (it may appear as “Packet Tracer”).&lt;&#x2F;li&gt;
+&lt;li&gt;The first launch may prompt for a username&#x2F;password (use your NetAcad credentials) and ask about multi-user mode—select “No” for single-user.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;troubleshooting-1&quot;&gt;Troubleshooting&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Crashes on Wayland:&lt;&#x2F;strong&gt; Set the environment variable before launching:&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;QT_QPA_PLATFORM=xcb packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+For more Qt&#x2F;Wayland issues, see the ArchWiki on Qt applications.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;UI Scaling Issues:&lt;&#x2F;strong&gt; If the interface looks wrong (e.g., blurry or oversized), try:&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;QT_DEVICE_PIXEL_RATIO=1 packettracer
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+Experiment with values like 0.5, 1, or 2, then log out and back in or reboot.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Doesn’t Launch or Errors:&lt;&#x2F;strong&gt; Kill any running instances (&lt;code&gt;pkill -9 PacketTracer&lt;&#x2F;code&gt;), check for missing Qt libraries (install &lt;code&gt;qt5-base&lt;&#x2F;code&gt; or &lt;code&gt;qt6-base&lt;&#x2F;code&gt; if needed via &lt;code&gt;sudo pacman -S&lt;&#x2F;code&gt;), and run from terminal to see error output.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build Fails:&lt;&#x2F;strong&gt; Ensure the .deb filename matches what the PKGBUILD expects (edit &lt;code&gt;PKGBUILD&lt;&#x2F;code&gt; if needed for version mismatches). Update the AUR package with &lt;code&gt;git pull&lt;&#x2F;code&gt; before building.&lt;&#x2F;li&gt;
+&lt;li&gt;If you’re on a derivative like Manjaro, the steps are identical since it uses AUR&#x2F;pacman.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you encounter issues, check the AUR comments at &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aur.archlinux.org&#x2F;packages&#x2F;packettracer&quot;&gt;aur.archlinux.org&#x2F;packages&#x2F;packettracer&lt;&#x2F;a&gt; or the ArchWiki page for updates. Alternatives like GNS3 are available in the official repos if Packet Tracer doesn’t suit your needs (&lt;code&gt;sudo pacman -S gns3-gui&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
 </content>
         
     </entry>
