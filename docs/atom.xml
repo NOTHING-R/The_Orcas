@@ -5,8 +5,29 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-09-16T00:00:00+00:00</updated>
+    <updated>2025-11-27T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>About 2025</title>
+        <published>2025-11-27T00:00:00+00:00</published>
+        <updated>2025-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/writeups/about-2025/"/>
+        <id>https://nothing-r.github.io/The_Orcas/writeups/about-2025/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/writeups/about-2025/">&lt;h1 id=&quot;2025&quot;&gt;2025!!!&lt;&#x2F;h1&gt;
+&lt;p&gt;Amr 2025 ta onk ta onno rokom hoyar kotha cilo kintu ta hoi nai…ami amr sob theke besi effort dea project ta te loss kori march a….r oitar dhakka katiye uthte na uthte e khub marattok vabe osusto hoye pori…akta pokar kamore….kan er infection, buke betha sob kicu nia obostha purai ses hoye gecilo amr…..tarpore ENT er final exam ta o thik vabe dite pari nai….as a result amr 6 ta subject a fail asce….j gula ami akhono portaci…..akhn abr nijeke thik kore near try kortaci….dekha jak ki hoi amr sathe ses porjonto&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>HOW TO INSTALL CISCO PACKET TRACER IN ARCH</title>
         <published>2025-09-16T00:00:00+00:00</published>
