@@ -1,0 +1,59 @@
++++
+title = "NITROGEN ISSUE"
+date = "2025-11-28"
+author = ""
++++
+
+
+# KI HOICE
+
+Ami onk din dhore e `nitrogen` use korteci amr wallpaper abong sddm r betterlockscreen er wallpaper manage korar jonno. Kintu recently ami kno vabe e nitrogen k download korte parteci na arch a so ami feh ta re select korci amr wallpaper manage korar jonno. Er jonno amr sddm abong betterlockscreen er bash script gula k update kora lagce ty jonno amr j ager script gula cilo oi gular backup rakhte cacci jate kore pore kno smossa hoile ami oita k abro fix korte pari
+
+
+## SDDM OLD BASH SCRIPT
+
+ayta hocce amr old script ta:
+
+    #!/bin/bash
+    
+    # Step 1: Read wallpaper path from nitrogen config
+    WALLPAPER=$(grep '^file=' ~/.config/nitrogen/bg-saved.cfg | cut -d= -f2)
+    
+    # Step 2: Get extension of the wallpaper (jpg/png/jpeg etc.)
+    # EXTENSION="${WALLPAPER##*.}"
+    
+    # Step 3: Define target path
+    TARGET="/usr/share/sddm/themes/tiger/default"
+    
+    # Step 4: Copy wallpaper as default
+    echo "Copying $WALLPAPER to $TARGET"
+    sudo cp "$WALLPAPER" "$TARGET"
+    
+    # Step 5 (optional): Confirm success
+    if [[ $? -eq 0 ]]; then
+        echo "✅ Wallpaper updated successfully for SDDM."
+    else
+        echo "❌ Failed to update wallpaper. Try checking permissions."
+    fi
+
+
+## BETTERLOCKSCREEN
+
+    #!/bin/bash
+    
+    # Step 1: Read wallpaper path from nitrogen config
+    WALLPAPER=$(grep '^file=' ~/.config/nitrogen/bg-saved.cfg | cut -d= -f2)
+    
+    # Step 2: Get extension of the wallpaper (jpg/png/jpeg etc.)
+    # EXTENSION="${WALLPAPER##*.}"
+    
+    # Step 3: Define target path
+    TARGET="/usr/share/sddm/themes/nothing_sddm_theme/backgrounds/default"
+    
+    # Step 4: Copy wallpaper as default
+    echo "Copying $WALLPAPER to $TARGET"
+    betterlockscreen -u $WALLPAPER
+    echo "Done"
+
+So ay duita hocce amr main config j gula k ami akhn update kore dicci jate kore mara na kahi ay jonno backup nia rakhlam
+

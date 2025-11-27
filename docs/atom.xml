@@ -5,8 +5,71 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-11-27T00:00:00+00:00</updated>
+    <updated>2025-11-28T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>NITROGEN ISSUE</title>
+        <published>2025-11-28T00:00:00+00:00</published>
+        <updated>2025-11-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/writeups/nitrogen-issue/"/>
+        <id>https://nothing-r.github.io/The_Orcas/writeups/nitrogen-issue/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/writeups/nitrogen-issue/">&lt;h1 id=&quot;ki-hoice&quot;&gt;KI HOICE&lt;&#x2F;h1&gt;
+&lt;p&gt;Ami onk din dhore e &lt;code&gt;nitrogen&lt;&#x2F;code&gt; use korteci amr wallpaper abong sddm r betterlockscreen er wallpaper manage korar jonno. Kintu recently ami kno vabe e nitrogen k download korte parteci na arch a so ami feh ta re select korci amr wallpaper manage korar jonno. Er jonno amr sddm abong betterlockscreen er bash script gula k update kora lagce ty jonno amr j ager script gula cilo oi gular backup rakhte cacci jate kore pore kno smossa hoile ami oita k abro fix korte pari&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;sddm-old-bash-script&quot;&gt;SDDM OLD BASH SCRIPT&lt;&#x2F;h2&gt;
+&lt;p&gt;ayta hocce amr old script ta:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 1: Read wallpaper path from nitrogen config
+&lt;&#x2F;span&gt;&lt;span&gt;WALLPAPER=$(grep &amp;#39;^file=&amp;#39; ~&#x2F;.config&#x2F;nitrogen&#x2F;bg-saved.cfg | cut -d= -f2)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 2: Get extension of the wallpaper (jpg&#x2F;png&#x2F;jpeg etc.)
+&lt;&#x2F;span&gt;&lt;span&gt;# EXTENSION=&amp;quot;${WALLPAPER##*.}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 3: Define target path
+&lt;&#x2F;span&gt;&lt;span&gt;TARGET=&amp;quot;&#x2F;usr&#x2F;share&#x2F;sddm&#x2F;themes&#x2F;tiger&#x2F;default&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 4: Copy wallpaper as default
+&lt;&#x2F;span&gt;&lt;span&gt;echo &amp;quot;Copying $WALLPAPER to $TARGET&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;sudo cp &amp;quot;$WALLPAPER&amp;quot; &amp;quot;$TARGET&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 5 (optional): Confirm success
+&lt;&#x2F;span&gt;&lt;span&gt;if [[ $? -eq 0 ]]; then
+&lt;&#x2F;span&gt;&lt;span&gt;    echo &amp;quot;✅ Wallpaper updated successfully for SDDM.&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;else
+&lt;&#x2F;span&gt;&lt;span&gt;    echo &amp;quot;❌ Failed to update wallpaper. Try checking permissions.&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;fi
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;betterlockscreen&quot;&gt;BETTERLOCKSCREEN&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 1: Read wallpaper path from nitrogen config
+&lt;&#x2F;span&gt;&lt;span&gt;WALLPAPER=$(grep &amp;#39;^file=&amp;#39; ~&#x2F;.config&#x2F;nitrogen&#x2F;bg-saved.cfg | cut -d= -f2)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 2: Get extension of the wallpaper (jpg&#x2F;png&#x2F;jpeg etc.)
+&lt;&#x2F;span&gt;&lt;span&gt;# EXTENSION=&amp;quot;${WALLPAPER##*.}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 3: Define target path
+&lt;&#x2F;span&gt;&lt;span&gt;TARGET=&amp;quot;&#x2F;usr&#x2F;share&#x2F;sddm&#x2F;themes&#x2F;nothing_sddm_theme&#x2F;backgrounds&#x2F;default&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Step 4: Copy wallpaper as default
+&lt;&#x2F;span&gt;&lt;span&gt;echo &amp;quot;Copying $WALLPAPER to $TARGET&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;betterlockscreen -u $WALLPAPER
+&lt;&#x2F;span&gt;&lt;span&gt;echo &amp;quot;Done&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So ay duita hocce amr main config j gula k ami akhn update kore dicci jate kore mara na kahi ay jonno backup nia rakhlam&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>About 2025</title>
         <published>2025-11-27T00:00:00+00:00</published>
