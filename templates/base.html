@@ -31,7 +31,7 @@
 		  <!-- THIS IS FOR MAIN FOLDERS  -->
                     <a href="{{ get_url(path="/blog/") }}" class="{% if current_path is starting_with("/blog/") %}active{% endif %}">BLOG</a>
                     <a href="{{ get_url(path="/whoami/") }}" class="{% if current_path is starting_with("/whoami/") %}active{% endif %}">WHOAMI</a>
-                    <a href="{{ get_url(path="/system/") }}" class="{% if current_path is starting_with("/system/") %}active{% endif %}">SYSTEM_SETUP</a>
+                    <a href="{{ get_url(path="/system/") }}" class="{% if current_path is starting_with("/system/") %}active{% endif %}">system</a>
                     <a href="{{ get_url(path="/writeups/") }}" class="{% if current_path is starting_with("/writeups/") %}active{% endif %}">writeups</a>
 		    
                     {% if config.extra.github_url %}
