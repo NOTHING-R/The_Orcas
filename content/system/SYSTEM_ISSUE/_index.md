@@ -1,6 +1,6 @@
 +++
-title = "system setup"
-description = "WHY HOW and WHAT // SYSTEM WHICH I OPARETE"
+title = "SYSTEM_ISSUE"
+description = "UPDATE OF THE FAKE SYSTEM"
 sort_by = "date"
 template = "section.html"
 page_template = "page.html"
