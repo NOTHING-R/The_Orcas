@@ -8,6 +8,33 @@
     <updated>2025-11-28T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
     <entry xml:lang="en">
+        <title>System update of November 2025</title>
+        <published>2025-11-28T00:00:00+00:00</published>
+        <updated>2025-11-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/SYSTEM_ISSUE/system-update-of-november-2025/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/SYSTEM_ISSUE/system-update-of-november-2025/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/SYSTEM_ISSUE/system-update-of-november-2025/">&lt;h1 id=&quot;about-the-system&quot;&gt;About the system&lt;&#x2F;h1&gt;
+&lt;p&gt;Ami majhe 2 din er jonno kali te switch korcilam🙂. To 2 din use korar pore ami amr main setup arch+exwm er sob kicu onk miss kortacilam. Asole amr ayta ovbas hoye gece arch ta k use kora ay jonno r ki…arch cara onno kicu use korte gele akhn uncomfortable feel hoi….r ami ay system er upore onk smy dici jinis gula k thik thak korar jonno…So it will always be ARCH THE FAKE SYSTEM.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;recent-issue&quot;&gt;Recent Issue&lt;&#x2F;h1&gt;
+&lt;p&gt;Majhe ami kicu din sob bad dicilam tkhno amr main system hisabe arch e dea cilo kintu ami prai 6 mas notun vabe setup korcilam na. To ami j script ta ready korcilam oita o check kora hoi nai. Kintu ami kicu din age jkhn amr arch setup korte jai amr script ta diye tkhn jhamela hoi amr script ta te kaj kortacilo na. Main issue cilo package gula te. &lt;code&gt;i3 dmenu nitrogen&lt;&#x2F;code&gt; ay package gula te problem er jonno kno package e install hoccilo na. Pore ami amr script diye ay package gula remove kore dei. Abong er por theke sob package gula thik thak e install hoice.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;issue-with-nitrogen&quot;&gt;ISSUE WITH NITROGEN&lt;&#x2F;h1&gt;
+&lt;p&gt;Sob theke kahini marka jinis cilo hocce &lt;code&gt;nitrogen&lt;&#x2F;code&gt; er issue ta. Karon ami amr wallpaper control korar jonno nitrogen use kortam. Amr sddm er background r betterlockscreen er  background sob kicur script e nitrogen er sathe add cilo ay jonno ami ay jinis gula control korte partecilam na. To er pore ami amr jindegir first wallpaper set kora tool &lt;code&gt;feh&lt;&#x2F;code&gt; te switch kori r chatgpt k dia amr script ta k thik thak kore nei karon ami code akhn porte pari kintu likhte pari na🙂. Ha to ay vabe e mainly apatato issue gula solve korci akhn sob thik thak kaj kortace.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;removed-tool-and-new-added-tools&quot;&gt;REMOVED TOOL AND NEW ADDED TOOLS&lt;&#x2F;h1&gt;
+&lt;p&gt;Remove kora hoice hocce 3 ta jinis ja age e bolci &lt;code&gt;i3 dmenu nitrogen&lt;&#x2F;code&gt;. R new add korci &lt;code&gt;feh&lt;&#x2F;code&gt; karon amr wallpaper set korte partaci naaaa😵😵😵.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>NITROGEN ISSUE</title>
         <published>2025-11-28T00:00:00+00:00</published>
         <updated>2025-11-28T00:00:00+00:00</updated>
