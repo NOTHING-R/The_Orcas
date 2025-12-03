@@ -5,8 +5,33 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-11-28T00:00:00+00:00</updated>
+    <updated>2025-12-03T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>WHY FAKE SYSTEM</title>
+        <published>2025-12-03T00:00:00+00:00</published>
+        <updated>2025-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/blog/LINUX/why-fake-system/"/>
+        <id>https://nothing-r.github.io/The_Orcas/blog/LINUX/why-fake-system/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/blog/LINUX/why-fake-system/">&lt;h1 id=&quot;fake-system-dia-ki-hobe&quot;&gt;FAKE SYSTEM DIA KI HOBE?&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;hudai-ato-kahini-kno&quot;&gt;Hudai ato kahini kno?&lt;&#x2F;h2&gt;
+&lt;p&gt;Sobar mathai just akta question e asbe duniyai windows 10 &amp;amp; 11, linux er best distro Ubuntu, kali, Debian r ay gular graphical best option gnome, kde abong window manager hisabe most stable i3 r best animation abong feel soho asa hyperland bad diya kno manus hudai &lt;code&gt;emacs&lt;&#x2F;code&gt; er upor build hoya akta window manager &lt;code&gt;exwm&lt;&#x2F;code&gt; use korbe jar name dia rakha hoice &lt;code&gt;FAKE SYSTEM&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To akhn ami amr kotha boli. ami first laptop kini 2023 october a.  To amr cybersecurity er upor onk besi jhok cilo. Ami laptop er age e linux r kali somporke jancilam. To laptop ta kenar pore e vmware dia kali use kora suru kori. Tkhn ami partition file system os somporke kiccu jantam na. Kintu mojar bepar hocce ami windows onk kom use korci. Ami first use kori kali linux. Ami mone hoi laptop kenar 2 mas pore e kali main os hisabe dei. Ami tkhn partam na onno akjon er help nia kaj ta kori. Er pore kali usa kora suru kori kintu tkhn kali onk break hoito akhn er obostha jani na karon onno onk karone use e kora hoi na. So akta stable distro er jonno ghata-ghati suru kori. Pore ak ak kore ubuntu, parrot, linux mint, debian sob use korci kintu sotti bolte kno ta e moner moto cilo na. Ubuntu r parrot hudai frezee hoye jaito. Mint ta re bot bot lagto r debian to raw, linux experience na thakar jonno ami oita use korte pari nai….debian er dos na ami e bot cilam tkhn. To ami 2024 er mid er dike youtube a &lt;code&gt;hexdump&lt;&#x2F;code&gt; er video dekhi oi hala j ki use korce ami bujhi e nai. To oi system ta dekhe ami pura obak hoye jai j ay jinis to ami age dekhi nai. To ghataghati korte korte bujhlam j o &lt;code&gt;emacs&lt;&#x2F;code&gt; name a kicu akta use koratce r or oi setup dekhe amio caiclam j amio same vabe amr system use korbo. R ami caccilam akta lightweight setup karon laptop windows dia just calu korle e fan a gan gaoya suru kore dito. R onno distro gulateo onk ta same e bola jai. To hexdump er system ta cilo arch er upore. To ami first kno cybersecurity person k dekhlam j tar main os hisabe arch use kore. Ay jinis ta amk bes motivate kore r o mojar jinis hocce amr jehetu akta lightweight setup dorkar cilo j ta system upor kom pressure dibe to amio same jinis ta setup korar dicision nei. Amr life er sob theke baje othoba sob theke valo decision hobe hocce ayta. Akhn dekha jak  j ki hoi.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ki-ki-use-hoi-fake-system-a&quot;&gt;Ki Ki use hoi FAKE-SYSTEM a?&lt;&#x2F;h2&gt;
+&lt;p&gt;Fake system ta ami mainly baniyeci &lt;code&gt;emacs&lt;&#x2F;code&gt; diye. Amr system a bolte gele emacs e sob kaj kore. File manager, window manager, text editor, majhe majhe code editor, terminal ak kothai bolte gele sob kicu e emacs diya hoye jai ay jonno e ay jinis ta just wow!…Emacs ta k ami onk din dhore e code editor banaite caccilam kintu ayta te onk jhamela pohano lagtace amr ay jonno coding er jonno &lt;code&gt;neovim&lt;&#x2F;code&gt; ta k choose korci. Jdio ami neovim akhono sikhtaci kintu ja hoice oita apatao enough bola jai. kaj calanor moto. Neovim er &lt;code&gt;lazyvim&lt;&#x2F;code&gt; ta use kortaci jar sathe amr kicu script add korci. R o kicu pungtami korci. karon jibone bohu mara kheyeci r khaite cai na. Ay jonno ami akta static site create korci &lt;code&gt;zola&lt;&#x2F;code&gt; static site genaretor dia. R oita k github page dia upload kore rakhci j kkhn ki kortaci na kortaci sob kicu e oita te dia rakhbo, jate kore ami kicu harai felleo mara na kahi. Abr akta personal git repo baniyeci j ta te ami amr recent kaj gula rakhi jate phone er termux diao kaj korte pari on the way. So mainly aida e apatao. Er pore jinis gula khub valo vabe details a likhe present korbo insa’allah.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>System update of November 2025</title>
         <published>2025-11-28T00:00:00+00:00</published>
