@@ -5,8 +5,106 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-12-03T00:00:00+00:00</updated>
+    <updated>2025-12-19T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>HOW TO ENABLE BLUETOOTH AND CONNECT IT TO DEVICES</title>
+        <published>2025-12-19T00:00:00+00:00</published>
+        <updated>2025-12-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/how-to-enable-bluetooth-and-connect-it-to-devices/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/how-to-enable-bluetooth-and-connect-it-to-devices/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/how-to-enable-bluetooth-and-connect-it-to-devices/">&lt;h1 id=&quot;enabling-bluetooth-on-arch-linux-with-i3wm&quot;&gt;Enabling Bluetooth on Arch Linux with i3wm&lt;&#x2F;h1&gt;
+&lt;p&gt;This tutorial is based on the official Arch Wiki and common setups for a minimal i3wm environment.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;install-the-required-packages&quot;&gt;Install the required packages&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -S bluez bluez-utils
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bluez&lt;&#x2F;code&gt; provides the Bluetooth stack.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;bluez-utils&lt;&#x2F;code&gt; includes &lt;code&gt;bluetoothctl&lt;&#x2F;code&gt; for management.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;enable-and-start-the-bluetooth-service&quot;&gt;Enable and start the Bluetooth service&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo systemctl enable --now bluetooth.service
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This starts the service now and enables it on boot.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Check status:&lt;&#x2F;p&gt;
+&lt;p&gt;systemctl status bluetooth.service&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;unblock-bluetooth-if-blocked-by-rfkill&quot;&gt;Unblock Bluetooth (if blocked by rfkill)&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;rfkill list
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If Bluetooth is soft-blocked:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;rfkill unblock bluetooth
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;basic-management-via-cli-using-bluetoothctl&quot;&gt;Basic management via CLI (using bluetoothctl)&lt;&#x2F;h2&gt;
+&lt;p&gt;Run:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;bluetoothctl
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Inside the interactive prompt:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;power on          # Turn Bluetooth on
+&lt;&#x2F;span&gt;&lt;span&gt;scan on           # Scan for devices (discoverable mode on your device)
+&lt;&#x2F;span&gt;&lt;span&gt;pair XX:XX:XX:XX:XX:XX   # Pair with device&amp;#39;s MAC (shown in scan)
+&lt;&#x2F;span&gt;&lt;span&gt;trust XX:XX:XX:XX:XX:XX  # Optional: auto-connect in future
+&lt;&#x2F;span&gt;&lt;span&gt;connect XX:XX:XX:XX:XX:XX
+&lt;&#x2F;span&gt;&lt;span&gt;exit
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This works perfectly in a terminal with i3wm—no GUI needed.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;recommended-gui-manager-for-i3wm-tray-applet&quot;&gt;Recommended GUI manager for i3wm (tray applet)&lt;&#x2F;h2&gt;
+&lt;p&gt;i3wm doesn’t have a built-in Bluetooth tray, so install &lt;strong&gt;&lt;strong&gt;Blueman&lt;&#x2F;strong&gt;&lt;&#x2F;strong&gt; (lightweight GTK-based manager with a system tray applet):&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -S blueman
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Start the tray applet:&lt;&#x2F;p&gt;
+&lt;p&gt;blueman-applet&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;(run in terminal or add to your i3 config for autostart).&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To autostart in i3: Add this line to &lt;code&gt;~&#x2F;.config&#x2F;i3&#x2F;config&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;exec –no-startup-id blueman-applet&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Then reload i3 (&lt;code&gt;Mod+Shift+R&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A tray icon will appear (assuming you have a status bar like i3status&#x2F;polybar that supports trays). Right-click it to manage devices, or run &lt;code&gt;blueman-manager&lt;&#x2F;code&gt; for the full GUI.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;alternative-lightweight-option-blueberry&quot;&gt;Alternative lightweight option: Blueberry&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;sudo pacman -S blueberry
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Run &lt;code&gt;blueberry&lt;&#x2F;code&gt; for the manager (no persistent tray).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;troubleshooting-tips&quot;&gt;Troubleshooting tips&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If no adapter is detected: Check &lt;code&gt;lsmod | grep btusb&lt;&#x2F;code&gt; (kernel module). Reload if needed:&lt;&#x2F;p&gt;
+&lt;p&gt;sudo modprobe btusb&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;For audio devices (headphones&#x2F;speakers): Ensure PipeWire or PulseAudio is set up with Bluetooth support (e.g., &lt;code&gt;pipewire-pulse&lt;&#x2F;code&gt; replaces &lt;code&gt;pulseaudio-bluetooth&lt;&#x2F;code&gt; in modern setups).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Dual-boot issues: See Arch Wiki for pairing key fixes if devices don’t reconnect properly.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For full details, refer to the &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Bluetooth&quot;&gt;Arch Wiki Bluetooth page&lt;&#x2F;a&gt;. This should get Bluetooth fully working in your i3wm setup!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>WHY FAKE SYSTEM</title>
         <published>2025-12-03T00:00:00+00:00</published>

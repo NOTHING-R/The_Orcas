@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOW TO ENABLE BLUETOOTH AND CONNECT IT TO DEVICES - THE SILENT ORCAS</title>
+    <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+<div class="toc-sidebar" id="mobile-toc">
+    <h3>Table of Contents</h3>
+    <ul id="mobile-toc-list"></ul>
+</div>
+
+        </div>
+        
+        <header>
+            <nav>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   THE SILENT ORCAS
+                </a>
+                <div class="nav-links">
+		  <!-- THIS IS FOR MAIN FOLDERS  -->
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="">BLOG</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/whoami" class="">WHOAMI</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/system" class="active">SYSTEM</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">writeups</a>
+		    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;" target="_blank">GITHUB</a>
+                    
+                </div>
+            </nav>
+        </header>
+        
+
+        <main>
+            
+<div class="toc-sidebar" id="desktop-toc">
+    <h3>Table of Contents</h3>
+    <ul id="desktop-toc-list"></ul>
+</div>
+
+<article class="page-content">
+    <header class="page-header">
+        <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>HOW TO ENABLE BLUETOOTH AND CONNECT IT TO DEVICES</h1>
+        
+        <div class="page-meta">
+            <time datetime="2025-12-19">2025.12.19</time>
+        </div>
+        
+    </header>
+
+    <div class="content">
+        <h1 id="enabling-bluetooth-on-arch-linux-with-i3wm">Enabling Bluetooth on Arch Linux with i3wm</h1>
+<p>This tutorial is based on the official Arch Wiki and common setups for a minimal i3wm environment.</p>
+<h2 id="install-the-required-packages">Install the required packages</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo pacman -S bluez bluez-utils
+</span></code></pre>
+<ul>
+<li><code>bluez</code> provides the Bluetooth stack.</li>
+<li><code>bluez-utils</code> includes <code>bluetoothctl</code> for management.</li>
+</ul>
+<h2 id="enable-and-start-the-bluetooth-service">Enable and start the Bluetooth service</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo systemctl enable --now bluetooth.service
+</span></code></pre>
+<ul>
+<li>
+<p>This starts the service now and enables it on boot.</p>
+</li>
+<li>
+<p>Check status:</p>
+<p>systemctl status bluetooth.service</p>
+</li>
+</ul>
+<h2 id="unblock-bluetooth-if-blocked-by-rfkill">Unblock Bluetooth (if blocked by rfkill)</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>rfkill list
+</span></code></pre>
+<p>If Bluetooth is soft-blocked:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>rfkill unblock bluetooth
+</span></code></pre>
+<h2 id="basic-management-via-cli-using-bluetoothctl">Basic management via CLI (using bluetoothctl)</h2>
+<p>Run:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>bluetoothctl
+</span></code></pre>
+<p>Inside the interactive prompt:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>power on          # Turn Bluetooth on
+</span><span>scan on           # Scan for devices (discoverable mode on your device)
+</span><span>pair XX:XX:XX:XX:XX:XX   # Pair with device&#39;s MAC (shown in scan)
+</span><span>trust XX:XX:XX:XX:XX:XX  # Optional: auto-connect in future
+</span><span>connect XX:XX:XX:XX:XX:XX
+</span><span>exit
+</span></code></pre>
+<p>This works perfectly in a terminal with i3wm—no GUI needed.</p>
+<h2 id="recommended-gui-manager-for-i3wm-tray-applet">Recommended GUI manager for i3wm (tray applet)</h2>
+<p>i3wm doesn’t have a built-in Bluetooth tray, so install <strong><strong>Blueman</strong></strong> (lightweight GTK-based manager with a system tray applet):</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo pacman -S blueman
+</span></code></pre>
+<ul>
+<li>
+<p>Start the tray applet:</p>
+<p>blueman-applet</p>
+</li>
+</ul>
+<p>(run in terminal or add to your i3 config for autostart).</p>
+<ul>
+<li>
+<p>To autostart in i3: Add this line to <code>~/.config/i3/config</code>:</p>
+<p>exec –no-startup-id blueman-applet</p>
+</li>
+<li>
+<p>Then reload i3 (<code>Mod+Shift+R</code>).</p>
+</li>
+</ul>
+<p>A tray icon will appear (assuming you have a status bar like i3status/polybar that supports trays). Right-click it to manage devices, or run <code>blueman-manager</code> for the full GUI.</p>
+<h3 id="alternative-lightweight-option-blueberry">Alternative lightweight option: Blueberry</h3>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo pacman -S blueberry
+</span></code></pre>
+<p>Run <code>blueberry</code> for the manager (no persistent tray).</p>
+<h2 id="troubleshooting-tips">Troubleshooting tips</h2>
+<ul>
+<li>
+<p>If no adapter is detected: Check <code>lsmod | grep btusb</code> (kernel module). Reload if needed:</p>
+<p>sudo modprobe btusb</p>
+</li>
+<li>
+<p>For audio devices (headphones/speakers): Ensure PipeWire or PulseAudio is set up with Bluetooth support (e.g., <code>pipewire-pulse</code> replaces <code>pulseaudio-bluetooth</code> in modern setups).</p>
+</li>
+<li>
+<p>Dual-boot issues: See Arch Wiki for pairing key fixes if devices don’t reconnect properly.</p>
+</li>
+</ul>
+<p>For full details, refer to the <a rel="noopener nofollow noreferrer" target="_blank" href="https://wiki.archlinux.org/title/Bluetooth">Arch Wiki Bluetooth page</a>. This should get Bluetooth fully working in your i3wm setup!</p>
+
+    </div>
+
+    
+</article>
+
+<script>
+// Auto-generate Table of Contents - LT Blog Style
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.content');
+    const desktopTocList = document.getElementById('desktop-toc-list');
+    const mobileTocList = document.getElementById('mobile-toc-list');
+    const desktopToc = document.getElementById('desktop-toc');
+    const mobileToc = document.getElementById('mobile-toc');
+
+    if (!content || !desktopTocList || !mobileTocList) return;
+
+    const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    if (headings.length === 0) {
+        if (desktopToc) desktopToc.style.display = 'none';
+        if (mobileToc) mobileToc.style.display = 'none';
+        return;
+    }
+
+    const createToc = (tocList) => {
+        let currentLevel = 0;
+        let currentUl = tocList;
+        let levelStack = [tocList];
+
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                heading.id = 'heading-' + index;
+            }
+
+            const level = parseInt(heading.tagName.charAt(1));
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.className = 'toc-' + heading.tagName.toLowerCase();
+
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                heading.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            if (level > currentLevel) {
+                const nestedUl = document.createElement('ul');
+                if (levelStack[levelStack.length - 1].lastElementChild) {
+                    levelStack[levelStack.length - 1].lastElementChild.appendChild(nestedUl);
+                } else {
+                    levelStack[levelStack.length - 1].appendChild(nestedUl);
+                }
+                levelStack.push(nestedUl);
+                currentUl = nestedUl;
+            } else if (level < currentLevel) {
+                while (levelStack.length > level && levelStack.length > 1) {
+                    levelStack.pop();
+                }
+                currentUl = levelStack[levelStack.length - 1];
+            }
+
+            currentLevel = level;
+            li.appendChild(a);
+            currentUl.appendChild(li);
+        });
+    };
+
+    createToc(desktopTocList);
+    createToc(mobileTocList);
+});
+</script>
+
+<style>
+/* Additional TOC styling specific to different heading levels */
+.toc-h1 { font-weight: bold; color: #e6edf3 !important; }
+.toc-h2 { font-weight: normal; color: #c478ff !important; }
+.toc-h3 { font-weight: normal; color: #8b949e !important; }
+.toc-h4, .toc-h5, .toc-h6 { font-weight: normal; color: #7d8590 !important; }
+</style>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
