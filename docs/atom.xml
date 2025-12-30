@@ -5,8 +5,161 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-12-19T00:00:00+00:00</updated>
+    <updated>2025-12-30T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Customizing vs code</title>
+        <published>2025-12-30T00:00:00+00:00</published>
+        <updated>2025-12-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/customizing-vs-code/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/customizing-vs-code/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/customizing-vs-code/">&lt;h1 id=&quot;neovim-vscode&quot;&gt;NEOVIM VSCODE&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;jj-for-normal-mode&quot;&gt;JJ FOR NORMAL MODE&lt;&#x2F;h2&gt;
+&lt;p&gt;ami neovim use kori karon keybindings. So amr sob theke usefull keybinding hocce &lt;code&gt;jj&lt;&#x2F;code&gt; j ta diye ami insert mode theke normal mode a switch kori. To ay same jinis ta vscode a apply korar jonno vs code er &lt;code&gt;Command Palatte&lt;&#x2F;code&gt; a jeye &lt;code&gt;settings.json&lt;&#x2F;code&gt; file ta open kore er pore ay snippet ta add korte hobe:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;vscode-neovim.compositeKeys&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;jj&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;command&amp;quot;: &amp;quot;vscode-neovim.escape&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;neovim-like-keybinding&quot;&gt;NEOVIM LIKE KEYBINDING&lt;&#x2F;h2&gt;
+&lt;p&gt;Keybinding use korte korte akhn keybinding cara kicu use korte osojjo lage. So ami to kicu jani e na ty chatgpt use kore kicu smy nia amr neovim er keybinding gula motamuti add korar try korci joto dur hoi. To ay keybinding gula rakhte hoi hocce &lt;code&gt;keybindings.json&lt;&#x2F;code&gt; ay file ta te&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;&#x2F;&#x2F; Place your key bindings in this file to override the defaults
+&lt;&#x2F;span&gt;&lt;span&gt;[
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; Window Management (SPC-w)
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusNextGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39; &amp;amp;&amp;amp; !sideBarVisible&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusSideBar&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39; &amp;amp;&amp;amp; sideBarVisible &amp;amp;&amp;amp; !sideBarFocus&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusActiveEditorGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39; &amp;amp;&amp;amp; sideBarVisible &amp;amp;&amp;amp; sideBarFocus&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w v&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.splitEditorRight&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w s&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.splitEditorDown&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w c&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.closeActiveEditor&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w h&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusLeftGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w l&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusRightGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w j&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusBelowGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space w k&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusAboveGroup&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; Buffer Management (SPC-b)
+&lt;&#x2F;span&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b p&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.previousEditor&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b n&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.nextEditor&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b k&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.closeActiveEditor&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;key&amp;quot;: &amp;quot;space e&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;command&amp;quot;: &amp;quot;workbench.action.toggleSidebarVisibility&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  },
+&lt;&#x2F;span&gt;&lt;span&gt;  {
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;key&amp;quot;: &amp;quot;space b b&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;command&amp;quot;: &amp;quot;multiCommand.toggleLastTwoEditors&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;when&amp;quot;: &amp;quot;neovim.mode != &amp;#39;insert&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;background-setup&quot;&gt;BACKGROUND SETUP&lt;&#x2F;h2&gt;
+&lt;p&gt;Background set korar jonno ami ay tutorial ta dekhci:&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;350&quot; height=&quot;200&quot;
+  src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;tII2WlWaehA&quot;
+  title=&quot;YouTube video player&quot;
+  frameborder=&quot;0&quot;
+  allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+  allowfullscreen&gt;
+  &lt;&#x2F;iframe&gt;
+&lt;p&gt;So ayta e akhn er jonno apatato notun kicu add korle add kore rakhbo insa’allah.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>INSTALLING BUMBLESTATUS</title>
+        <published>2025-12-30T00:00:00+00:00</published>
+        <updated>2025-12-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/installing-bumblestatus/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/installing-bumblestatus/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/installing-bumblestatus/">&lt;h1 id=&quot;bumblestatus&quot;&gt;BUMBLESTATUS&lt;&#x2F;h1&gt;
+&lt;p&gt;to kicu din age ami amr pc ta k khulna te rekhe asar por dia big screen a time waste kora ta miss kortacilam. To vablam j tyle hdmi diye laptop ta connect kore akam kori. Kinut exwm dia dual monitor alada vabe stup kora lagbe akhn ami ay jinis ta thik korte jeye dekhlam j amr config a permanently change kora lagbe r ami sob smy dual monitor use o kori na, that’s why ami i3 use kori jkhn dual monitor use kori. kintu kahini hocce &lt;code&gt;bumblestatus&lt;&#x2F;code&gt; niye j ta amr status bar onk age dia e i3wm a. Kintu ami hotat e oita install korte jeye pera kacchilam sob vabe install korar poreo kaj hoi nai. So last a jeye &lt;code&gt;gork&lt;&#x2F;code&gt; a jeye ami jiggasa kori j ki kore install korbo er pore o amk bollo j arch er aur theke manually git clone kore makepkg run korte r tarpore e kaj ta hoice. So ayta add kore rakhlam karon onk smy e amr bumblestatus use kora hoi na kintu jkhn dorkar pore ami vule jai j kmne ki korcilam. So command ta hocce ayta:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;aur.archlinux.org&#x2F;yay.git
+&lt;&#x2F;span&gt;&lt;span&gt;cd yay
+&lt;&#x2F;span&gt;&lt;span&gt;makepkg -si
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>HOW TO ENABLE BLUETOOTH AND CONNECT IT TO DEVICES</title>
         <published>2025-12-19T00:00:00+00:00</published>
