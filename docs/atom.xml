@@ -27,7 +27,7 @@
 &lt;h2 id=&quot;import-file&quot;&gt;IMPORT FILE&lt;&#x2F;h2&gt;
 &lt;p&gt;Bohut kahini kora lagce amr jibon da tejpata hoye gece ay korte jeye ajk (07-02-2026) sara ta din. So metasploitable2 install er jonno first a unzip kore nite hobe main zip file ta. Er por j &lt;code&gt;vmdk&lt;&#x2F;code&gt; file ta paoya jabe oida re add korte hobe exixting file hisabe virtmanager a. Os type hisabe generic os 2022 selecet korte hobe.&lt;&#x2F;p&gt;
 &lt;img src=&quot;&#x2F;vm_installation&#x2F;os_type.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
-![Network Image](&#x2F;vm_installation&#x2F;network.png)
+&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;NOTHING-R&#x2F;The_Orcas&#x2F;refs&#x2F;heads&#x2F;main&#x2F;static&#x2F;vm_installation&#x2F;network.png&quot; alt=&quot;IMAGE&quot; width=&quot;300&quot; height=&quot;220&quot;&gt;
 &lt;h2 id=&quot;disk-type-and-network-issue&quot;&gt;DISK TYPE AND NETWORK ISSUE&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;network&quot;&gt;NETWORK&lt;&#x2F;h3&gt;
 &lt;p&gt;Kahini hoye gece amr sathe storage type r network issue nia metasploitable2 onk purano ay jonno ayta te network paoyanor jonno &lt;code&gt;virtual network inteface&lt;&#x2F;code&gt; er jaigai &lt;code&gt;device model&lt;&#x2F;code&gt; a &lt;code&gt;e1000&lt;&#x2F;code&gt; likhte hoi na hoile network pai na….sothir system.&lt;&#x2F;p&gt;

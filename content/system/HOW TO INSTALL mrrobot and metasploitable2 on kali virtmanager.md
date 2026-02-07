@@ -13,7 +13,8 @@ author = "FAKE_SYSTEM"
 Bohut kahini kora lagce amr jibon da tejpata hoye gece ay korte jeye ajk (07-02-2026) sara ta din. So metasploitable2 install er jonno first a unzip kore nite hobe main zip file ta. Er por j `vmdk` file ta paoya jabe oida re add korte hobe exixting file hisabe virtmanager a. Os type hisabe generic os 2022 selecet korte hobe. 
 
 <img src="/vm_installation/os_type.png" alt="IMAGE" width="300" height="220">
-![Network Image](/vm_installation/network.png)
+
+<img src="https://raw.githubusercontent.com/NOTHING-R/The_Orcas/refs/heads/main/static/vm_installation/network.png" alt="IMAGE" width="300" height="220">
 
 
 ## DISK TYPE AND NETWORK ISSUE

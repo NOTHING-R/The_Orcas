@@ -6,6 +6,11 @@ Bohut kahini kora lagce amr jibon da tejpata hoye gece ay korte jeye ajk (07-02-
 <img src="/vm_installation/os_type.png" alt="IMAGE" width="300" height="220">
 #+END_EXPORT
 
+#+BEGIN_EXPORT html
+<img src="https://raw.githubusercontent.com/NOTHING-R/The_Orcas/refs/heads/main/static/vm_installation/network.png" alt="IMAGE" width="300" height="220">
+
+#+END_EXPORT
+
 ** DISK TYPE AND NETWORK ISSUE
 *** NETWORK
 Kahini hoye gece amr sathe storage type r network issue nia metasploitable2 onk purano ay jonno ayta te network paoyanor jonno ~virtual network inteface~ er jaigai ~device model~ a ~e1000~ likhte hoi na hoile network pai na....sothir system.
