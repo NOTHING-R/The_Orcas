@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vscode update - THE SILENT ORCAS</title>
+    <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+<div class="toc-sidebar" id="mobile-toc">
+    <h3>Table of Contents</h3>
+    <ul id="mobile-toc-list"></ul>
+</div>
+
+        </div>
+        
+        <header>
+            <nav>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   THE SILENT ORCAS
+                </a>
+                <div class="nav-links">
+		  <!-- THIS IS FOR MAIN FOLDERS  -->
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="">BLOG</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/whoami" class="">WHOAMI</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/system" class="active">SYSTEM</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">writeups</a>
+		    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;" target="_blank">GITHUB</a>
+                    
+                </div>
+            </nav>
+        </header>
+        
+
+        <main>
+            
+<div class="toc-sidebar" id="desktop-toc">
+    <h3>Table of Contents</h3>
+    <ul id="desktop-toc-list"></ul>
+</div>
+
+<article class="page-content">
+    <header class="page-header">
+        <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>vscode update</h1>
+        
+        <div class="page-meta">
+            <time datetime="2026-02-23">2026.02.23</time>
+        </div>
+        
+    </header>
+
+    <div class="content">
+        <h1 id="vs-code-a-ki-ki-update-korlam">VS CODE A KI KI UPDATE KORLAM</h1>
+<p>vs code a kicu smossa cilo last update er pore…vs code onk besi powerfull akta eidtor kintu amr moto public er smossa hocce keybinding. Ami keybinding cara system use korte pari na r vim motion cara file eidt korte pari na so amr khub baje akta obvab ayta ay jonno e amr vscode nia naracara kora lagce. R amr onk ta fix hoye gece bola jai 95%. Baki ja ja dorkar jdi hoi kore felbo insa’allah.</p>
+<h2 id="notun-ki-ki-add-kora-hoice">Notun ki ki add kora hoice</h2>
+<p>Ager config r keybindig gula te smossa cilo hocce terminal toggle kora jaito na neovim ba emacs er moto oita <code>ctrl+/</code> a add kora hoice. R akta major problem cilo terminal tarpore command pallate kno jaiga te e space key ta kaj korto na oita k fix kora hoice notun kore j ta <code>keybindigs.json</code> file a add kor hoice.</p>
+<p>R akta problem cio copy pasting vim er j smossa ta oita mane just editor er vitore copy paste mane y r p kaj korto oita fix kora hoice <code>settings.json</code> file a.</p>
+<p>So this is the main update of my vscode right now.</p>
+<h1 id="kon-kon-file-a-kivabe-ki-edit-kora-lagbe">kon kon file a kivabe ki edit kora lagbe</h1>
+<h2 id="setings-json">setings.json</h2>
+<p>first a ayta te 2 ta jinis add korte hobe <code>jj</code> for normal mode r global clipboard for copy paste from every where</p>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>// Ay line ta hocce jj exit er jonno</span></span>
+<span class="giallo-l"><span>{</span></span>
+<span class="giallo-l"><span>  &quot;vscode-neovim.compositeKeys&quot;: {</span></span>
+<span class="giallo-l"><span>    &quot;jj&quot;: {</span></span>
+<span class="giallo-l"><span>      &quot;command&quot;: &quot;vscode-neovim.escape&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  &quot;extensions.experimental.affinity&quot;: {</span></span>
+<span class="giallo-l"><span>    &quot;asvetliakov.vscode-neovim&quot;: 1</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  &quot;multiCommand.commands&quot;: [</span></span>
+<span class="giallo-l"><span>    {</span></span>
+<span class="giallo-l"><span>      &quot;command&quot;: &quot;multiCommand.toggleLastTwoEditors&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;sequence&quot;: [</span></span>
+<span class="giallo-l"><span>        &quot;workbench.action.openPreviousRecentlyUsedEditor&quot;</span></span>
+<span class="giallo-l"><span>      ]</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>  ],</span></span>
+<span class="giallo-l"><span>  &quot;glassit.alpha&quot;: 2,</span></span>
+<span class="giallo-l"><span>  &quot;glassit.force_sway&quot;: true,</span></span>
+<span class="giallo-l"><span>  &quot;window.menuBarVisibility&quot;: &quot;compact&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;workbench.activityBar.location&quot;: &quot;top&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;window.commandCenter&quot;: false,</span></span>
+<span class="giallo-l"><span>  &quot;workbench.iconTheme&quot;: &quot;material-icon-theme&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;workbench.colorTheme&quot;: &quot;GitHub Dark Default&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;background.editorBackgrounds&quot;: [</span></span>
+<span class="giallo-l"><span>    &quot;/home/fake/Downloads/wallpaperflare.com_wallpaper.jpg&quot;</span></span>
+<span class="giallo-l"><span>  ],</span></span>
+<span class="giallo-l"><span>  &quot;background.enabled&quot;: true,</span></span>
+<span class="giallo-l"><span>  &quot;background.sidebarBackgrounds&quot;: [</span></span>
+<span class="giallo-l"><span>    &quot;/home/fake/Downloads/tanjiro-kamado-fire-5120x2880-24474.jpg&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;/home/fake/FAKE/Fiels/dack.png&quot;</span></span>
+<span class="giallo-l"><span>  ],</span></span>
+<span class="giallo-l"><span>  &quot;editor.minimap.enabled&quot;: false,</span></span>
+<span class="giallo-l"><span>  &quot;editor.lineNumbers&quot;: &quot;relative&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;editor.cursorSmoothCaretAnimation&quot;: &quot;on&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;workbench.colorCustomizations&quot;: {</span></span>
+<span class="giallo-l"><span>    &quot;[Vira*]&quot;: {</span></span>
+<span class="giallo-l"><span>      &quot;statusBar.debuggingBackground&quot;: &quot;#80CBC433&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;statusBar.debuggingForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;toolbar.activeBackground&quot;: &quot;#80CBC426&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;button.background&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;button.hoverBackground&quot;: &quot;#80CBC4cc&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.separator&quot;: &quot;#80CBC433&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.background&quot;: &quot;#80CBC414&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.foreground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.hoverBackground&quot;: &quot;#80CBC433&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.prominentForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.prominentBackground&quot;: &quot;#80CBC414&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;extensionButton.prominentHoverBackground&quot;: &quot;#80CBC433&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;activityBarBadge.background&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;activityBar.activeBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;activityBarTop.activeBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;list.inactiveSelectionIconForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;list.activeSelectionForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;list.inactiveSelectionForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;list.highlightForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;sash.hoverBorder&quot;: &quot;#80CBC480&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;list.activeSelectionIconForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;scrollbarSlider.activeBackground&quot;: &quot;#80CBC480&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;editorSuggestWidget.highlightForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;textLink.foreground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;progressBar.background&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;pickerGroup.foreground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;tab.activeBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;tab.activeBorderTop&quot;: &quot;#80CBC400&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;tab.unfocusedActiveBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;tab.unfocusedActiveBorderTop&quot;: &quot;#80CBC400&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;tab.activeModifiedBorder&quot;: &quot;#80CBC400&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;notificationLink.foreground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;editorWidget.resizeBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;editorWidget.border&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;settings.modifiedItemIndicator&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;panelTitle.activeBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;breadcrumb.activeSelectionForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;menu.selectionForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;menubar.selectionForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;editor.findMatchBorder&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;selection.background&quot;: &quot;#80CBC440&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;statusBarItem.remoteBackground&quot;: &quot;#80CBC414&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;statusBarItem.remoteHoverBackground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;statusBarItem.remoteForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;notebook.inactiveFocusedCellBorder&quot;: &quot;#80CBC480&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;commandCenter.activeBorder&quot;: &quot;#80CBC480&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;chat.slashCommandForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;chat.avatarForeground&quot;: &quot;#80CBC4&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;activityBarBadge.foreground&quot;: &quot;#000000&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;button.foreground&quot;: &quot;#000000&quot;,</span></span>
+<span class="giallo-l"><span>      &quot;statusBarItem.remoteHoverForeground&quot;: &quot;#000000&quot;</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  &quot;editor.stickyScroll.enabled&quot;: false,</span></span>
+<span class="giallo-l"><span>  &quot;files.autoSave&quot;: &quot;afterDelay&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;editor.mouseWheelZoom&quot;: true,</span></span>
+<span class="giallo-l"><span>  &quot;editor.cursorHeight&quot;: 4,</span></span>
+<span class="giallo-l"><span>  &quot;liveServer.settings.donotShowInfoMsg&quot;: true,</span></span>
+<span class="giallo-l"><span>  &quot;editor.cursorBlinking&quot;: &quot;smooth&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;liveServer.settings.donotVerifyTags&quot;: true,</span></span>
+<span class="giallo-l"><span>  &quot;workbench.startupEditor&quot;: &quot;none&quot;,</span></span>
+<span class="giallo-l"><span>  &quot;background.windowBackgrounds&quot;: [],</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>// ay line dui ta dorkar hocce main copy pasting er jonno</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  &quot;terminal.integrated.allowChords&quot;: false,</span></span>
+<span class="giallo-l"><span>  &quot;vscode-neovim.useSystemClipboard&quot;: true</span></span>
+<span class="giallo-l"><span>}</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="keybindigs-json-ay-ta-hocce-main-keybindigs-ami-ja-ja-use-kori-oi-jonno">keybindigs.json ay ta hocce main keybindigs ami ja ja use kori oi jonno</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>[</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  // Window Management (SPC-w)</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w w&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusNextGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39; &amp;&amp; !sideBarVisible&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w w&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusSideBar&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39; &amp;&amp; sideBarVisible &amp;&amp; !sideBarFocus&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w w&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusActiveEditorGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39; &amp;&amp; sideBarVisible &amp;&amp; sideBarFocus&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w v&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.splitEditorRight&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w s&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.splitEditorDown&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w c&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.closeActiveEditor&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w h&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusLeftGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w l&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusRightGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w j&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusBelowGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space w k&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.focusAboveGroup&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  // Buffer Management (SPC-b)</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space b p&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.previousEditor&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space b n&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.nextEditor&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space b k&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.closeActiveEditor&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space b b&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;multiCommand.toggleLastTwoEditors&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  // Explorer Toggle (SPC-e)</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space e&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.toggleSidebarVisibility&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  // Terminal Toggle (SPC-t t)</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;space t t&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.terminal.toggleTerminal&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; neovim.mode == &#39;normal&#39;&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  // Ctrl+/ Terminal Toggle (Global)</span></span>
+<span class="giallo-l"><span>  // ==========================</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;ctrl+/&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;-editor.action.commentLine&quot;</span></span>
+<span class="giallo-l"><span>  },</span></span>
+<span class="giallo-l"><span>  {</span></span>
+<span class="giallo-l"><span>    &quot;key&quot;: &quot;ctrl+/&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;command&quot;: &quot;workbench.action.terminal.toggleTerminal&quot;</span></span>
+<span class="giallo-l"><span>  }</span></span>
+<span class="giallo-l"><span>]</span></span></code></pre>
+    </div>
+
+    
+</article>
+
+<script>
+// Auto-generate Table of Contents - LT Blog Style
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.content');
+    const desktopTocList = document.getElementById('desktop-toc-list');
+    const mobileTocList = document.getElementById('mobile-toc-list');
+    const desktopToc = document.getElementById('desktop-toc');
+    const mobileToc = document.getElementById('mobile-toc');
+
+    if (!content || !desktopTocList || !mobileTocList) return;
+
+    const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    if (headings.length === 0) {
+        if (desktopToc) desktopToc.style.display = 'none';
+        if (mobileToc) mobileToc.style.display = 'none';
+        return;
+    }
+
+    const createToc = (tocList) => {
+        let currentLevel = 0;
+        let currentUl = tocList;
+        let levelStack = [tocList];
+
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                heading.id = 'heading-' + index;
+            }
+
+            const level = parseInt(heading.tagName.charAt(1));
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.className = 'toc-' + heading.tagName.toLowerCase();
+
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                heading.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            if (level > currentLevel) {
+                const nestedUl = document.createElement('ul');
+                if (levelStack[levelStack.length - 1].lastElementChild) {
+                    levelStack[levelStack.length - 1].lastElementChild.appendChild(nestedUl);
+                } else {
+                    levelStack[levelStack.length - 1].appendChild(nestedUl);
+                }
+                levelStack.push(nestedUl);
+                currentUl = nestedUl;
+            } else if (level < currentLevel) {
+                while (levelStack.length > level && levelStack.length > 1) {
+                    levelStack.pop();
+                }
+                currentUl = levelStack[levelStack.length - 1];
+            }
+
+            currentLevel = level;
+            li.appendChild(a);
+            currentUl.appendChild(li);
+        });
+    };
+
+    createToc(desktopTocList);
+    createToc(mobileTocList);
+});
+</script>
+
+<style>
+/* Additional TOC styling specific to different heading levels */
+.toc-h1 { font-weight: bold; color: #e6edf3 !important; }
+.toc-h2 { font-weight: normal; color: #c478ff !important; }
+.toc-h3 { font-weight: normal; color: #8b949e !important; }
+.toc-h4, .toc-h5, .toc-h6 { font-weight: normal; color: #7d8590 !important; }
+</style>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

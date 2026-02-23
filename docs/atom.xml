@@ -5,8 +5,253 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-02-08T00:00:00+00:00</updated>
+    <updated>2026-02-23T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>vscode update</title>
+        <published>2026-02-23T00:00:00+00:00</published>
+        <updated>2026-02-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/vscode-update/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/vscode-update/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/vscode-update/">&lt;h1 id=&quot;vs-code-a-ki-ki-update-korlam&quot;&gt;VS CODE A KI KI UPDATE KORLAM&lt;&#x2F;h1&gt;
+&lt;p&gt;vs code a kicu smossa cilo last update er pore…vs code onk besi powerfull akta eidtor kintu amr moto public er smossa hocce keybinding. Ami keybinding cara system use korte pari na r vim motion cara file eidt korte pari na so amr khub baje akta obvab ayta ay jonno e amr vscode nia naracara kora lagce. R amr onk ta fix hoye gece bola jai 95%. Baki ja ja dorkar jdi hoi kore felbo insa’allah.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;notun-ki-ki-add-kora-hoice&quot;&gt;Notun ki ki add kora hoice&lt;&#x2F;h2&gt;
+&lt;p&gt;Ager config r keybindig gula te smossa cilo hocce terminal toggle kora jaito na neovim ba emacs er moto oita &lt;code&gt;ctrl+&#x2F;&lt;&#x2F;code&gt; a add kora hoice. R akta major problem cilo terminal tarpore command pallate kno jaiga te e space key ta kaj korto na oita k fix kora hoice notun kore j ta &lt;code&gt;keybindigs.json&lt;&#x2F;code&gt; file a add kor hoice.&lt;&#x2F;p&gt;
+&lt;p&gt;R akta problem cio copy pasting vim er j smossa ta oita mane just editor er vitore copy paste mane y r p kaj korto oita fix kora hoice &lt;code&gt;settings.json&lt;&#x2F;code&gt; file a.&lt;&#x2F;p&gt;
+&lt;p&gt;So this is the main update of my vscode right now.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;kon-kon-file-a-kivabe-ki-edit-kora-lagbe&quot;&gt;kon kon file a kivabe ki edit kora lagbe&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;setings-json&quot;&gt;setings.json&lt;&#x2F;h2&gt;
+&lt;p&gt;first a ayta te 2 ta jinis add korte hobe &lt;code&gt;jj&lt;&#x2F;code&gt; for normal mode r global clipboard for copy paste from every where&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&#x2F;&#x2F; Ay line ta hocce jj exit er jonno&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;vscode-neovim.compositeKeys&amp;quot;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;jj&amp;quot;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;command&amp;quot;: &amp;quot;vscode-neovim.escape&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;extensions.experimental.affinity&amp;quot;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;asvetliakov.vscode-neovim&amp;quot;: 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;multiCommand.commands&amp;quot;: [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;command&amp;quot;: &amp;quot;multiCommand.toggleLastTwoEditors&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;sequence&amp;quot;: [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        &amp;quot;workbench.action.openPreviousRecentlyUsedEditor&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      ]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ],&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;glassit.alpha&amp;quot;: 2,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;glassit.force_sway&amp;quot;: true,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;window.menuBarVisibility&amp;quot;: &amp;quot;compact&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;workbench.activityBar.location&amp;quot;: &amp;quot;top&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;window.commandCenter&amp;quot;: false,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;workbench.iconTheme&amp;quot;: &amp;quot;material-icon-theme&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;workbench.colorTheme&amp;quot;: &amp;quot;GitHub Dark Default&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;background.editorBackgrounds&amp;quot;: [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;&#x2F;home&#x2F;fake&#x2F;Downloads&#x2F;wallpaperflare.com_wallpaper.jpg&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ],&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;background.enabled&amp;quot;: true,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;background.sidebarBackgrounds&amp;quot;: [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;&#x2F;home&#x2F;fake&#x2F;Downloads&#x2F;tanjiro-kamado-fire-5120x2880-24474.jpg&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;&#x2F;home&#x2F;fake&#x2F;FAKE&#x2F;Fiels&#x2F;dack.png&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ],&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.minimap.enabled&amp;quot;: false,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.lineNumbers&amp;quot;: &amp;quot;relative&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.cursorSmoothCaretAnimation&amp;quot;: &amp;quot;on&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;workbench.colorCustomizations&amp;quot;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;[Vira*]&amp;quot;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBar.debuggingBackground&amp;quot;: &amp;quot;#80CBC433&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBar.debuggingForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;toolbar.activeBackground&amp;quot;: &amp;quot;#80CBC426&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;button.background&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;button.hoverBackground&amp;quot;: &amp;quot;#80CBC4cc&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.separator&amp;quot;: &amp;quot;#80CBC433&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.background&amp;quot;: &amp;quot;#80CBC414&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.foreground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.hoverBackground&amp;quot;: &amp;quot;#80CBC433&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.prominentForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.prominentBackground&amp;quot;: &amp;quot;#80CBC414&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;extensionButton.prominentHoverBackground&amp;quot;: &amp;quot;#80CBC433&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;activityBarBadge.background&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;activityBar.activeBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;activityBarTop.activeBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;list.inactiveSelectionIconForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;list.activeSelectionForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;list.inactiveSelectionForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;list.highlightForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;sash.hoverBorder&amp;quot;: &amp;quot;#80CBC480&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;list.activeSelectionIconForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;scrollbarSlider.activeBackground&amp;quot;: &amp;quot;#80CBC480&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;editorSuggestWidget.highlightForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;textLink.foreground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;progressBar.background&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;pickerGroup.foreground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;tab.activeBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;tab.activeBorderTop&amp;quot;: &amp;quot;#80CBC400&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;tab.unfocusedActiveBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;tab.unfocusedActiveBorderTop&amp;quot;: &amp;quot;#80CBC400&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;tab.activeModifiedBorder&amp;quot;: &amp;quot;#80CBC400&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;notificationLink.foreground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;editorWidget.resizeBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;editorWidget.border&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;settings.modifiedItemIndicator&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;panelTitle.activeBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;breadcrumb.activeSelectionForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;menu.selectionForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;menubar.selectionForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;editor.findMatchBorder&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;selection.background&amp;quot;: &amp;quot;#80CBC440&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBarItem.remoteBackground&amp;quot;: &amp;quot;#80CBC414&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBarItem.remoteHoverBackground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBarItem.remoteForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;notebook.inactiveFocusedCellBorder&amp;quot;: &amp;quot;#80CBC480&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;commandCenter.activeBorder&amp;quot;: &amp;quot;#80CBC480&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;chat.slashCommandForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;chat.avatarForeground&amp;quot;: &amp;quot;#80CBC4&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;activityBarBadge.foreground&amp;quot;: &amp;quot;#000000&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;button.foreground&amp;quot;: &amp;quot;#000000&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;quot;statusBarItem.remoteHoverForeground&amp;quot;: &amp;quot;#000000&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.stickyScroll.enabled&amp;quot;: false,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;files.autoSave&amp;quot;: &amp;quot;afterDelay&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.mouseWheelZoom&amp;quot;: true,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.cursorHeight&amp;quot;: 4,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;liveServer.settings.donotShowInfoMsg&amp;quot;: true,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;editor.cursorBlinking&amp;quot;: &amp;quot;smooth&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;liveServer.settings.donotVerifyTags&amp;quot;: true,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;workbench.startupEditor&amp;quot;: &amp;quot;none&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;background.windowBackgrounds&amp;quot;: [],&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&#x2F;&#x2F; ay line dui ta dorkar hocce main copy pasting er jonno&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;terminal.integrated.allowChords&amp;quot;: false,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;quot;vscode-neovim.useSystemClipboard&amp;quot;: true&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;keybindigs-json-ay-ta-hocce-main-keybindigs-ami-ja-ja-use-kori-oi-jonno&quot;&gt;keybindigs.json ay ta hocce main keybindigs ami ja ja use kori oi jonno&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; Window Management (SPC-w)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusNextGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39; &amp;amp;&amp;amp; !sideBarVisible&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusSideBar&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39; &amp;amp;&amp;amp; sideBarVisible &amp;amp;&amp;amp; !sideBarFocus&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w w&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusActiveEditorGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39; &amp;amp;&amp;amp; sideBarVisible &amp;amp;&amp;amp; sideBarFocus&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w v&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.splitEditorRight&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w s&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.splitEditorDown&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w c&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.closeActiveEditor&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w h&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusLeftGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w l&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusRightGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w j&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusBelowGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space w k&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.focusAboveGroup&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; Buffer Management (SPC-b)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b p&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.previousEditor&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b n&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.nextEditor&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b k&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.closeActiveEditor&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space b b&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;multiCommand.toggleLastTwoEditors&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; Explorer Toggle (SPC-e)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space e&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.toggleSidebarVisibility&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; Terminal Toggle (SPC-t t)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;space t t&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.terminal.toggleTerminal&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;when&amp;quot;: &amp;quot;editorTextFocus &amp;amp;&amp;amp; neovim.mode == &amp;#39;normal&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; Ctrl+&#x2F; Terminal Toggle (Global)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &#x2F;&#x2F; ==========================&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;ctrl+&#x2F;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;-editor.action.commentLine&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;key&amp;quot;: &amp;quot;ctrl+&#x2F;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;quot;command&amp;quot;: &amp;quot;workbench.action.terminal.toggleTerminal&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>HOW TO INSTALL mrrobot and metasploitable2 on kali virtmanager</title>
         <published>2026-02-08T00:00:00+00:00</published>
