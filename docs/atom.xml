@@ -5,8 +5,143 @@
     <link rel="self" type="application/atom+xml" href="https://nothing-r.github.io/The_Orcas/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-02-23T00:00:00+00:00</updated>
+    <updated>2026-02-27T00:00:00+00:00</updated>
     <id>https://nothing-r.github.io/The_Orcas/atom.xml</id>
+    <entry xml:lang="en">
+        <title>DWM ASWOMEBAR INSTALL</title>
+        <published>2026-02-27T00:00:00+00:00</published>
+        <updated>2026-02-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://nothing-r.github.io/The_Orcas/system/dwm-aswomebar-install/"/>
+        <id>https://nothing-r.github.io/The_Orcas/system/dwm-aswomebar-install/</id>
+        
+        <content type="html" xml:base="https://nothing-r.github.io/The_Orcas/system/dwm-aswomebar-install/">&lt;h1 id=&quot;dwm-awesomebar-patch-setup-arch-linux&quot;&gt;DWM Awesomebar Patch Setup (Arch Linux)&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;To use the Awesomebar patch in DWM on Arch Linux, we need to:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use the correct DWM version (6.6) compatible with the patch.&lt;&#x2F;li&gt;
+&lt;li&gt;Apply the patch cleanly.&lt;&#x2F;li&gt;
+&lt;li&gt;Compile and install the patched DWM.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;step-0-preconditions&quot;&gt;Step 0: Preconditions&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure base-devel tools installed:&lt;&#x2F;li&gt;
+&lt;li&gt;Inside the dwm source folder.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-1-check-current-dwm-version&quot;&gt;Step 1: Check current DWM version&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;cat config.mk | grep VERSION&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Expected output example:&lt;&#x2F;p&gt;
+&lt;p&gt;VERSION = 6.8&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-2-check-git-status&quot;&gt;Step 2: Check Git status&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;git status&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirm you are in the dwm source folder.&lt;&#x2F;li&gt;
+&lt;li&gt;Clean up any untracked or compiled files if needed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-3-clean-the-repository&quot;&gt;Step 3: Clean the repository&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;git reset --hard&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;git clean -fd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Removes all local changes, compiled objects, and untracked files.&lt;&#x2F;li&gt;
+&lt;li&gt;Output should show removal of files like `config.h`, `dwm`, `*.o`, patch files, etc.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-4-confirm-version-after-cleanup&quot;&gt;Step 4: Confirm version after cleanup&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;git describe --tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Should output something like:&lt;&#x2F;p&gt;
+&lt;p&gt;6.8-3-gc3dd6a8&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-5-switch-to-compatible-dwm-version-for-awesomebar-patch&quot;&gt;Step 5: Switch to compatible DWM version for Awesomebar patch&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;git checkout 6.6&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Now you are in a detached HEAD state at version 6.6, which matches the patch.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Output example:&lt;&#x2F;p&gt;
+&lt;p&gt;HEAD is now at 693d94d bump version to 6.6&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-6-download-the-awesomebar-patch&quot;&gt;Step 6: Download the Awesomebar patch&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;curl -O https:&#x2F;&#x2F;dwm.suckless.org&#x2F;patches&#x2F;awesomebar&#x2F;dwm-awesomebar-6.6.diff&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;This will download `dwm-awesomebar-6.6.diff` into your current folder.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-7-apply-the-patch&quot;&gt;Step 7: Apply the patch&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;patch -p1 &amp;lt; dwm-awesomebar-6.6.diff&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Expected output:&lt;&#x2F;p&gt;
+&lt;p&gt;patching file config.def.h
+Hunk #2 succeeded at 66 (offset -1 lines).
+Hunk #3 succeeded at 88 (offset -1 lines).
+patching file dwm.c&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;No errors or `.rej` files should appear. If conflicts exist, resolve manually.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-8-create-config-h&quot;&gt;Step 8: Create config.h&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;cp config.def.h config.h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensures the new config includes the patched changes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-9-compile-and-install-dwm&quot;&gt;Step 9: Compile and install DWM&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;sudo make clean install&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Cleans old binaries, compiles patched DWM, and installs it to `&#x2F;usr&#x2F;local&#x2F;bin&#x2F;dwm`.&lt;&#x2F;li&gt;
+&lt;li&gt;Output should show compilation of `drw.c`, `dwm.c`, `util.c`, and copying `dwm` binary and man page.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-10-run-dwm&quot;&gt;Step 10: Run DWM&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F8F8F2; background-color: #282A36;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;startx&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Or select DWM from your display manager (SDDM&#x2F;LightDM&#x2F;XDM).&lt;&#x2F;li&gt;
+&lt;li&gt;The Awesomebar should now appear and function.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;notes-tips&quot;&gt;Notes &#x2F; Tips&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We used Git to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reset to a clean state (`reset`, `clean`)&lt;&#x2F;li&gt;
+&lt;li&gt;Switch to compatible version (`checkout 6.6`)&lt;&#x2F;li&gt;
+&lt;li&gt;Apply patch safely&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Using DWM 6.6 ensures patch compatibility. Using 6.8 directly would cause compile&#x2F;runtime issues.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Backup config.h before patching:&lt;&#x2F;p&gt;
+&lt;p&gt;cp config.h config.h.backup&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;If needed, you can revert to 6.8 later:&lt;&#x2F;p&gt;
+&lt;p&gt;git checkout 6.8&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Clean source → 6.6 version → download patch → apply → config.h → make install → startx&lt;&#x2F;li&gt;
+&lt;li&gt;Now DWM is running with Awesomebar patch applied successfully.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>vscode update</title>
         <published>2026-02-23T00:00:00+00:00</published>

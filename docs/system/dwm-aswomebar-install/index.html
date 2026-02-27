@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWM ASWOMEBAR INSTALL - THE SILENT ORCAS</title>
+    <link rel="stylesheet" href="https://nothing-r.github.io/The_Orcas/style.css">
+    <link rel="icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://nothing-r.github.io/The_Orcas/favicon-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-drawer" id="nav-drawer">
+            
+<div class="toc-sidebar" id="mobile-toc">
+    <h3>Table of Contents</h3>
+    <ul id="mobile-toc-list"></ul>
+</div>
+
+        </div>
+        
+        <header>
+            <nav>
+                <a href="https://nothing-r.github.io/The_Orcas"
+                   class="home-link ">
+                   THE SILENT ORCAS
+                </a>
+                <div class="nav-links">
+		  <!-- THIS IS FOR MAIN FOLDERS  -->
+                    <a href="https://nothing-r.github.io/The_Orcas/blog" class="">BLOG</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/whoami" class="">WHOAMI</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/system" class="active">SYSTEM</a>
+                    <a href="https://nothing-r.github.io/The_Orcas/writeups" class="">writeups</a>
+		    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;NOTHING-R&#x2F;" target="_blank">GITHUB</a>
+                    
+                </div>
+            </nav>
+        </header>
+        
+
+        <main>
+            
+<div class="toc-sidebar" id="desktop-toc">
+    <h3>Table of Contents</h3>
+    <ul id="desktop-toc-list"></ul>
+</div>
+
+<article class="page-content">
+    <header class="page-header">
+        <h1><div class="back-nav"><a href="javascript:history.back()" class="back-link">../</a></div>DWM ASWOMEBAR INSTALL</h1>
+        
+        <div class="page-meta">
+            <time datetime="2026-02-27">2026.02.27</time>
+        </div>
+        
+    </header>
+
+    <div class="content">
+        <h1 id="dwm-awesomebar-patch-setup-arch-linux">DWM Awesomebar Patch Setup (Arch Linux)</h1>
+<h2 id="overview">Overview</h2>
+<p>To use the Awesomebar patch in DWM on Arch Linux, we need to:</p>
+<ol>
+<li>Use the correct DWM version (6.6) compatible with the patch.</li>
+<li>Apply the patch cleanly.</li>
+<li>Compile and install the patched DWM.</li>
+</ol>
+<h2 id="step-0-preconditions">Step 0: Preconditions</h2>
+<ul>
+<li>Make sure base-devel tools installed:</li>
+<li>Inside the dwm source folder.</li>
+</ul>
+<h2 id="step-1-check-current-dwm-version">Step 1: Check current DWM version</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>cat config.mk | grep VERSION</span></span></code></pre>
+<ul>
+<li>
+<p>Expected output example:</p>
+<p>VERSION = 6.8</p>
+</li>
+</ul>
+<h2 id="step-2-check-git-status">Step 2: Check Git status</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>git status</span></span></code></pre>
+<ul>
+<li>Confirm you are in the dwm source folder.</li>
+<li>Clean up any untracked or compiled files if needed.</li>
+</ul>
+<h2 id="step-3-clean-the-repository">Step 3: Clean the repository</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>git reset --hard</span></span>
+<span class="giallo-l"><span>git clean -fd</span></span></code></pre>
+<ul>
+<li>Removes all local changes, compiled objects, and untracked files.</li>
+<li>Output should show removal of files like `config.h`, `dwm`, `*.o`, patch files, etc.</li>
+</ul>
+<h2 id="step-4-confirm-version-after-cleanup">Step 4: Confirm version after cleanup</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>git describe --tags</span></span></code></pre>
+<ul>
+<li>
+<p>Should output something like:</p>
+<p>6.8-3-gc3dd6a8</p>
+</li>
+</ul>
+<h2 id="step-5-switch-to-compatible-dwm-version-for-awesomebar-patch">Step 5: Switch to compatible DWM version for Awesomebar patch</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>git checkout 6.6</span></span></code></pre>
+<ul>
+<li>
+<p>Now you are in a detached HEAD state at version 6.6, which matches the patch.</p>
+</li>
+<li>
+<p>Output example:</p>
+<p>HEAD is now at 693d94d bump version to 6.6</p>
+</li>
+</ul>
+<h2 id="step-6-download-the-awesomebar-patch">Step 6: Download the Awesomebar patch</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>curl -O https://dwm.suckless.org/patches/awesomebar/dwm-awesomebar-6.6.diff</span></span></code></pre>
+<ul>
+<li>This will download `dwm-awesomebar-6.6.diff` into your current folder.</li>
+</ul>
+<h2 id="step-7-apply-the-patch">Step 7: Apply the patch</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>patch -p1 &lt; dwm-awesomebar-6.6.diff</span></span></code></pre>
+<ul>
+<li>
+<p>Expected output:</p>
+<p>patching file config.def.h
+Hunk #2 succeeded at 66 (offset -1 lines).
+Hunk #3 succeeded at 88 (offset -1 lines).
+patching file dwm.c</p>
+</li>
+<li>
+<p>No errors or `.rej` files should appear. If conflicts exist, resolve manually.</p>
+</li>
+</ul>
+<h2 id="step-8-create-config-h">Step 8: Create config.h</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>cp config.def.h config.h</span></span></code></pre>
+<ul>
+<li>Ensures the new config includes the patched changes.</li>
+</ul>
+<h2 id="step-9-compile-and-install-dwm">Step 9: Compile and install DWM</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>sudo make clean install</span></span></code></pre>
+<ul>
+<li>Cleans old binaries, compiles patched DWM, and installs it to `/usr/local/bin/dwm`.</li>
+<li>Output should show compilation of `drw.c`, `dwm.c`, `util.c`, and copying `dwm` binary and man page.</li>
+</ul>
+<h2 id="step-10-run-dwm">Step 10: Run DWM</h2>
+<pre class="giallo" style="color: #F8F8F2; background-color: #282A36;"><code data-lang="plain"><span class="giallo-l"><span>startx</span></span></code></pre>
+<ul>
+<li>Or select DWM from your display manager (SDDM/LightDM/XDM).</li>
+<li>The Awesomebar should now appear and function.</li>
+</ul>
+<h2 id="notes-tips">Notes / Tips</h2>
+<ul>
+<li>
+<p>We used Git to:</p>
+<ul>
+<li>Reset to a clean state (`reset`, `clean`)</li>
+<li>Switch to compatible version (`checkout 6.6`)</li>
+<li>Apply patch safely</li>
+</ul>
+</li>
+<li>
+<p>Using DWM 6.6 ensures patch compatibility. Using 6.8 directly would cause compile/runtime issues.</p>
+</li>
+<li>
+<p>Backup config.h before patching:</p>
+<p>cp config.h config.h.backup</p>
+</li>
+<li>
+<p>If needed, you can revert to 6.8 later:</p>
+<p>git checkout 6.8</p>
+</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ol>
+<li>Clean source → 6.6 version → download patch → apply → config.h → make install → startx</li>
+<li>Now DWM is running with Awesomebar patch applied successfully.</li>
+</ol>
+
+    </div>
+
+    
+</article>
+
+<script>
+// Auto-generate Table of Contents - LT Blog Style
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.content');
+    const desktopTocList = document.getElementById('desktop-toc-list');
+    const mobileTocList = document.getElementById('mobile-toc-list');
+    const desktopToc = document.getElementById('desktop-toc');
+    const mobileToc = document.getElementById('mobile-toc');
+
+    if (!content || !desktopTocList || !mobileTocList) return;
+
+    const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    if (headings.length === 0) {
+        if (desktopToc) desktopToc.style.display = 'none';
+        if (mobileToc) mobileToc.style.display = 'none';
+        return;
+    }
+
+    const createToc = (tocList) => {
+        let currentLevel = 0;
+        let currentUl = tocList;
+        let levelStack = [tocList];
+
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                heading.id = 'heading-' + index;
+            }
+
+            const level = parseInt(heading.tagName.charAt(1));
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.className = 'toc-' + heading.tagName.toLowerCase();
+
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                heading.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            if (level > currentLevel) {
+                const nestedUl = document.createElement('ul');
+                if (levelStack[levelStack.length - 1].lastElementChild) {
+                    levelStack[levelStack.length - 1].lastElementChild.appendChild(nestedUl);
+                } else {
+                    levelStack[levelStack.length - 1].appendChild(nestedUl);
+                }
+                levelStack.push(nestedUl);
+                currentUl = nestedUl;
+            } else if (level < currentLevel) {
+                while (levelStack.length > level && levelStack.length > 1) {
+                    levelStack.pop();
+                }
+                currentUl = levelStack[levelStack.length - 1];
+            }
+
+            currentLevel = level;
+            li.appendChild(a);
+            currentUl.appendChild(li);
+        });
+    };
+
+    createToc(desktopTocList);
+    createToc(mobileTocList);
+});
+</script>
+
+<style>
+/* Additional TOC styling specific to different heading levels */
+.toc-h1 { font-weight: bold; color: #e6edf3 !important; }
+.toc-h2 { font-weight: normal; color: #c478ff !important; }
+.toc-h3 { font-weight: normal; color: #8b949e !important; }
+.toc-h4, .toc-h5, .toc-h6 { font-weight: normal; color: #7d8590 !important; }
+</style>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger-button');
+            const navDrawer = document.getElementById('nav-drawer');
+
+            if (hamburger && navDrawer) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('is-active');
+                    navDrawer.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
